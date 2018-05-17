@@ -3,3 +3,5 @@
 /dist/
 /nbbuild/
 /nbdist/
+/nbactions.xml/
+/nb-configuration.xml/
