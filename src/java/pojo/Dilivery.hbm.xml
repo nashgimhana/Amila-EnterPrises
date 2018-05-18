@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 18, 2018 5:44:17 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.Dilivery" table="dilivery" catalog="amiladb" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="route" class="pojo.Route" fetch="select">
+            <column name="route_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="vehicle" class="pojo.Vehicle" fetch="select">
+            <column name="vehicle_id" not-null="true" />
+        </many-to-one>
+        <property name="date" type="date">
+            <column name="date" length="10" />
+        </property>
+        <set name="invoices" table="invoice" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="dilivery_id" not-null="true" />
+            </key>
+            <one-to-many class="pojo.Invoice" />
+        </set>
+        <set name="ongoingDiliveries" table="ongoing_dilivery" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="dilivery_id" not-null="true" />
+            </key>
+            <one-to-many class="pojo.OngoingDilivery" />
+        </set>
+        <set name="diliveryEmployeeLogs" table="dilivery_employee_log" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="dilivery_id" not-null="true" />
+            </key>
+            <one-to-many class="pojo.DiliveryEmployeeLog" />
+        </set>
+        <set name="diliveryItemLogs" table="dilivery_item_log" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="dilivery_id" not-null="true" />
+            </key>
+            <one-to-many class="pojo.DiliveryItemLog" />
+        </set>
+        <set name="diliveryLoads" table="dilivery_load" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="dilivery_id" not-null="true" />
+            </key>
+            <one-to-many class="pojo.DiliveryLoad" />
+        </set>
+    </class>
+</hibernate-mapping>

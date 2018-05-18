@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 18, 2018 5:44:17 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.Vehicle" table="vehicle" catalog="amiladb" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="vehicleNumber" type="string">
+            <column name="vehicle_number" length="45" />
+        </property>
+        <property name="discription" type="string">
+            <column name="discription" length="100" />
+        </property>
+        <set name="diliveries" table="dilivery" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="vehicle_id" not-null="true" />
+            </key>
+            <one-to-many class="pojo.Dilivery" />
+        </set>
+        <set name="vehicleStocks" table="vehicle_stock" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="vehicle_id" not-null="true" />
+            </key>
+            <one-to-many class="pojo.VehicleStock" />
+        </set>
+    </class>
+</hibernate-mapping>
