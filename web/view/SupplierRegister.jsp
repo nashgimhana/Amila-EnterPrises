@@ -40,7 +40,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
+<!--                    <div class="form-group">
                         <label class="control-label col-sm-2" for="email">E-Mail:</label>
                         <div class="col-sm-4">
                             <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email">
@@ -63,7 +63,7 @@
                             <input type="submit" class="btn btn-info" value="Register">
                             <input type="reset" class="btn btn-info" value="reset">
                         </label>
-                    </div>
+                    </div>-->
 
                 </div>
             </form>
