@@ -19,7 +19,7 @@
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="Home.php">GreenHouse</a>
+                    <a class="navbar-brand" href="Home.php">Coca-cola</a>
                 </div>
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">User Manage</a></li>
