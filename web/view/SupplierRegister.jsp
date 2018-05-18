@@ -19,10 +19,6 @@
         <div class="page-header" >
             <h2>Supplier Registation</h2>
         </div>
-        <ul class="nav nav-pills">
-            <li role="presentation"><a href="login.jsp">Login</a></li>
-            <li role="presentation"><a href="home.jsp">Home</a></li>
-        </ul>
         <div class="control-label" style=" margin: auto;">
 
             <form class="form-horizontal" action="SaveUser">
