@@ -4,9 +4,17 @@
         <servlet-name>A</servlet-name>
         <servlet-class>test.A</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>suplierreg</servlet-name>
+        <servlet-class>servlet.suplierreg</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>A</servlet-name>
         <url-pattern>/A</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>suplierreg</servlet-name>
+        <url-pattern>/suplierreg</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
