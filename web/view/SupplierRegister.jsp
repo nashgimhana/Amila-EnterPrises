@@ -50,12 +50,12 @@
         </div>
         <div class="control-label" style=" margin: auto;">
 
-            <form class="form-horizontal" action="SaveUser">
+            <form class="form-horizontal" action="../SupplierReg" method="post">
                 <div id="mainform">
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="fname">First Name:</label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="fname" placeholder="Enter First Name" name="fname">
+                            <input type="text" class="form-control" id="fname" placeholder="Enter First Name" name="fname" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -68,19 +68,25 @@
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="adress">address:</label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="adress" placeholder="Enter address" name="adress">
+                            <input type="text" class="form-control" id="adress" placeholder="Enter address" name="adress" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="uname">User Name:</label>
+                        <label class="control-label col-sm-2" for="contact1">Contact No Primary:</label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="uname" placeholder="Enter UserName" name="uname">
+                            <input type="tel" class="form-control" id="contact1" placeholder="Enter Contact" name="contact1" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="password">Password:</label>
+                        <label class="control-label col-sm-2" for="contact2">Contact No Secondary:</label>
                         <div class="col-sm-4">
-                            <input type="password" class="form-control" id="password" placeholder="Enter Password" name="password">
+                            <input type="tel" class="form-control" id="contact2" placeholder="Enter Contact" name="contact2">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="details">Details:</label>
+                        <div class="col-sm-4">
+                            <input type="password" class="form-control" id="details" placeholder="Enter Details" name="details">
                         </div>
                     </div>
                     <div class="form-group">

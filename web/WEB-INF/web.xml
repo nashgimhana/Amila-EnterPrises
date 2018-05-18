@@ -5,25 +5,20 @@
         <servlet-class>test.A</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>suplierreg</servlet-name>
-        <servlet-class>servlet.suplierreg</servlet-class>
+        <servlet-name>SupplierReg</servlet-name>
+        <servlet-class>servlet.SupplierReg</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>A</servlet-name>
         <url-pattern>/A</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>suplierreg</servlet-name>
-        <url-pattern>/suplierreg</url-pattern>
+        <servlet-name>SupplierReg</servlet-name>
+        <url-pattern>/SupplierReg</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
-    
-    <error-page>
-        <error-code>404</error-code>
-        <location>/WEB-INF/jsp/errorpages/ErrorPage404.jsp</location>
-    </error-page>
 </web-app>
