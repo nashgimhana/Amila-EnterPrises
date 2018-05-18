@@ -1,0 +1,61 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 5, 2017, 1:19:30 PM
+    Author     : suhada
+*/
+body{
+    background-image: url("../img/back-main.jpg");
+    background-attachment: fixed;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+body>.container-fluid{
+    margin-top: 60px;
+}
+.back-li-green{background-color: #d9f2db;}
+.back-li-blue{background-color: #d9e9f2;}
+.back-li-red{background-color: #f2d9d9;}
+.back-li-orange{background-color: #f2edd9;}
+.back-li-yellow{background-color: #f7f5da;}
+.back-li-purple{background-color: #f2d9f2;}
+.back-li-brown{background-color: #fdebdb;}
+
+.back-da-green{background-color: #52d356;}
+.back-da-blue{background-color: #66aaf2;}
+.back-da-red{background-color: #f35a5a;}
+.back-da-orange{background-color: #e9bb53;}
+.back-da-yellow{background-color: #e9e053;}
+.back-da-purple{background-color: #ec68f0;}
+.back-da-brown{background-color: #f09c56;}
+
+.front-red{color: #f35a5a;}
+.front-brown{color: #f0972d;}
+.front-green{color: #52d356;}
+.front-white{color: #ffffff;}
+.front-blue{color: #66aaf2;}
+
+.board{
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+    box-shadow: 0px 0px 5px 1px #a7a7a7;
+    float: left;
+    border: 5px solid #ffffff;
+}
+
+.link{cursor: pointer;}
+.link:hover{text-decoration: underline;}
+
+.align-right{text-align: right;}
+.align-center{text-align: center;}
+.align-left{text-align: left;}
+
+.float-left{float: left;}
+.float-right{float: right;}
+
+.cursor-point{cursor: pointer;}
