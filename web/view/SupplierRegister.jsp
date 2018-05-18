@@ -36,30 +36,30 @@
                         </div>
                     </div>
 
-<!--                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="email">E-Mail:</label>
-                        <div class="col-sm-4">
-                            <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="uname">User Name:</label>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" id="uname" placeholder="Enter UserName" name="uname">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="password">Password:</label>
-                        <div class="col-sm-4">
-                            <input type="password" class="form-control" id="password" placeholder="Enter Password" name="password">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-6" for="Register">
-                            <input type="submit" class="btn btn-info" value="Register">
-                            <input type="reset" class="btn btn-info" value="reset">
-                        </label>
-                    </div>-->
+                    <!--                    <div class="form-group">
+                                            <label class="control-label col-sm-2" for="email">E-Mail:</label>
+                                            <div class="col-sm-4">
+                                                <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="uname">User Name:</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="uname" placeholder="Enter UserName" name="uname">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="password">Password:</label>
+                                            <div class="col-sm-4">
+                                                <input type="password" class="form-control" id="password" placeholder="Enter Password" name="password">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-6" for="Register">
+                                                <input type="submit" class="btn btn-info" value="Register">
+                                                <input type="reset" class="btn btn-info" value="reset">
+                                            </label>
+                                        </div>-->
 
                 </div>
             </form>
