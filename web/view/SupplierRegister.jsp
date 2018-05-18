@@ -17,7 +17,7 @@
     </head>
     <body>  
         <div class="page-header" >
-            <h2>User Registation</h2>
+            <h2>Supplier Registation</h2>
         </div>
         <ul class="nav nav-pills">
             <li role="presentation"><a href="login.jsp">Login</a></li>
