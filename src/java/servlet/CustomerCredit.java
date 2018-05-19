@@ -7,6 +7,8 @@ package servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,8 +19,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author RM.LasanthaRanga@gmail.com
  */
-@WebServlet(name = "CustomerReg", urlPatterns = {"/CustomerReg"})
-public class CustomerReg extends HttpServlet {
+@WebServlet(name = "CustomerCredit", urlPatterns = {"/CustomerCredit"})
+public class CustomerCredit extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,10 +39,13 @@ public class CustomerReg extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet CustomerReg</title>");
+            out.println("<title>Servlet CustomerCredit</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet CustomerReg at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet CustomerCredit at " + request.getContextPath() + "</h1>");
+            out.println(request.getParameter("day"));
+            out.println(request.getParameter("cusId"));
+            out.println(request.getParameter("credit"));
 
             out.println("</body>");
             out.println("</html>");
@@ -73,16 +78,18 @@ public class CustomerReg extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int cusid = model.GetInstans.getCustomerModle().saveCustomer(request.getParameter("fname"), request.getParameter("lname"),
-                request.getParameter("adressl1"), request.getParameter("adressl2"),
-                request.getParameter("contact1"), request.getParameter("contact2"),
-                request.getParameter("details"));
-        if (cusid > 0) {
-            response.sendRedirect("view/customer_credit.jsp?cus="+cusid+"");
-        } else {
-            response.sendRedirect("view/customer_reg.jsp?error=er");
+        Date date;
+        String cusid = request.getParameter("cusId");
+        Double credit;
+        try {
+            date = new SimpleDateFormat().parse(request.getParameter("day"));
+            credit = Double.parseDouble(request.getParameter("credit"));
+            System.out.println("PK");
+        } catch (Exception e) {
+            response.sendRedirect("view/customer_credit.jsp?cus=" + cusid + "&er=credit");
         }
 
+        
     }
 
     /**

@@ -5,8 +5,11 @@
  */
 package model;
 
+import java.io.Serializable;
+import java.util.Date;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import pojo.CustomerCredit;
 
 /**
  *
@@ -14,7 +17,7 @@ import org.hibernate.Transaction;
  */
 public class Customer {
 
-    public boolean saveCustomer(String fname, String lname, String adl1, String adl2, String con1, String con2, String details) {
+    public int saveCustomer(String fname, String lname, String adl1, String adl2, String con1, String con2, String details) {
         Session session = conn.NewHibernateUtil.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
         try {
@@ -27,7 +30,41 @@ public class Customer {
             cus.setContact2(con2);
             cus.setDiscription(details);
             cus.setStatus(1);
-            session.saveOrUpdate(cus);
+            Serializable save = session.save(cus);
+            pojo.Customer cust = (pojo.Customer) session.load(pojo.Customer.class, save);
+            transaction.commit();
+            return cust.getId();
+        } catch (Exception e) {
+            transaction.rollback();
+            e.printStackTrace();
+            return 0;
+        } finally {
+            session.close();
+        }
+    }
+
+    public String getCustomerByCusId(String cusID) {
+        Session session = conn.NewHibernateUtil.getSessionFactory().openSession();
+        try {
+            pojo.Customer cus = (pojo.Customer) session.load(pojo.Customer.class, Integer.parseInt(cusID));
+            return cus.getFame() + " " + cus.getLname();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "";
+        } finally {
+            session.close();
+        }
+    }
+
+    public boolean saveCustomerCredit(Date day, String cusID, Double credit) {
+        Session session = conn.NewHibernateUtil.getSessionFactory().openSession();
+        Transaction transaction = session.beginTransaction();
+        try {
+            pojo.Customer cus = (pojo.Customer) session.load(pojo.Customer.class, Integer.parseInt(cusID));
+            CustomerCredit cr = new pojo.CustomerCredit(cus);
+            cr.setAmount(credit);
+            cr.setDate(day);
+            session.save(cr);
             transaction.commit();
             return true;
         } catch (Exception e) {
@@ -38,4 +75,7 @@ public class Customer {
             session.close();
         }
     }
+
+
+
 }
