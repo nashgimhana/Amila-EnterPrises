@@ -5,10 +5,30 @@
  */
 package model;
 
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
 /**
  *
  * @author Nash
  */
 public class Supplier {
-    
+
+    public int save(pojo.Supplier supplier) {
+        Session s = conn.NewHibernateUtil.getSessionFactory().openSession();
+        try {
+            Transaction beginTransaction = s.beginTransaction();
+            int i = (int) s.save(supplier);
+            beginTransaction.commit();
+            s.flush();
+            System.out.println("done");
+            return i;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0;
+        } finally {
+            s.close();
+        }
+    }
 }
