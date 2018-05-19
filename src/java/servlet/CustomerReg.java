@@ -80,7 +80,7 @@ public class CustomerReg extends HttpServlet {
                 request.getParameter("details"))) {
             response.sendRedirect("index.html");
         } else {
-            response.sendRedirect("view/customer_ret.jsp");
+            response.sendRedirect("view/customer_reg.jsp?error=er");
         }
 
     }

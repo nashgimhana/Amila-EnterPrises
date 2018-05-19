@@ -26,7 +26,28 @@
 
         <div class="control-label" style=" margin: auto;">
             <form class="form-horizontal" action="../CustomerReg" method="post">
+
                 <div id="mainform">
+
+                    <%
+                        if (request.getParameter("error") != null) {
+                            System.out.println("OK");
+                            if (request.getParameter("error").equals("er")) {
+                                System.out.println("OKK");
+                    %>
+                    <div class="form-group">
+                        <div class="col-sm-6 alert alert-warning">
+                            <strong> Error!</strong > Customer Registration Fail
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                    <%   }
+                        }%>
+
+
+
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="fname">First Name:</label>
                         <div class="col-sm-4">
@@ -70,7 +91,7 @@
                             <textarea type="text" class="form-control" id="details" placeholder="Enter Details" name="details"></textarea>
                         </div>
                     </div>
-                
+
                     <div class="form-group">
                         <label class="control-label col-sm-6" for="Register">
                             <input type="submit" class="btn btn-info" value="Register">
