@@ -82,14 +82,20 @@ public class CustomerCredit extends HttpServlet {
         String cusid = request.getParameter("cusId");
         Double credit;
         try {
-            date = new SimpleDateFormat().parse(request.getParameter("day"));
+            date = new SimpleDateFormat("dd-MM-yyyy").parse(request.getParameter("day"));
             credit = Double.parseDouble(request.getParameter("credit"));
-            System.out.println("PK");
+            boolean saveCustomerCredit = model.GetInstans.getCustomerModle().saveCustomerCredit(date, cusid, credit);
+            if (saveCustomerCredit) {
+                boolean boo = model.GetInstans.getCustomerModle().updateCurrentCredit(cusid);
+                if (boo) {
+                    response.sendRedirect("index.html");
+                }
+            }
         } catch (Exception e) {
+            e.printStackTrace();
             response.sendRedirect("view/customer_credit.jsp?cus=" + cusid + "&er=credit");
         }
 
-        
     }
 
     /**

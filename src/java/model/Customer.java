@@ -7,8 +7,10 @@ package model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
 import pojo.CustomerCredit;
 
 /**
@@ -62,7 +64,8 @@ public class Customer {
         try {
             pojo.Customer cus = (pojo.Customer) session.load(pojo.Customer.class, Integer.parseInt(cusID));
             CustomerCredit cr = new pojo.CustomerCredit(cus);
-            cr.setAmount(credit);
+            double roundOff = (double) Math.round(credit * 100) / 100;
+            cr.setAmount(roundOff);
             cr.setDate(day);
             session.save(cr);
             transaction.commit();
@@ -76,6 +79,30 @@ public class Customer {
         }
     }
 
+    public boolean updateCurrentCredit(String cusId) {
+        Session session = conn.NewHibernateUtil.getSessionFactory().openSession();
+        Transaction transaction = session.beginTransaction();
+        try {
+            pojo.Customer cus = (pojo.Customer) session.load(pojo.Customer.class, Integer.parseInt(cusId));
+            //CustomerCredit cr = new pojo.CustomerCredit(cus);
+            List<pojo.CustomerCredit> list = session.createCriteria(pojo.CustomerCredit.class).add(Restrictions.eq("customer", cus)).list();
 
+            double xx = 0;
+            for (CustomerCredit cc : list) {
+                xx += cc.getAmount();
+            }
+            double curentCredit = (double) Math.round(xx * 100) / 100;
+            cus.setCurrentCredit(curentCredit);
+            session.update(cus);
+            transaction.commit();
+            return true;
+        } catch (Exception e) {
+            transaction.rollback();
+            e.printStackTrace();
+            return false;
+        } finally {
+            session.close();
+        }
+    }
 
 }
