@@ -6,3 +6,6 @@
 /nbactions.xml/
 /Amila-EnterPrises/nbproject/project.properties/
 /nb-configuration.xml/
+*.properties
+nbproject/project.properties
+nbproject/project.properties
