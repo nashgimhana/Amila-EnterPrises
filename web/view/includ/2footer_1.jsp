@@ -2,7 +2,11 @@
     <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">
+<<<<<<< HEAD
           <small>Copyright © NADEESHAGE POLONNARUWE Company EKA 2018</small>
+=======
+          <small>Copyright © Xocodes 2018</small>
+>>>>>>> 7e532e6084c074d95d7ea327becd1ea34cec5e04
         </div>
       </div>
     </footer>

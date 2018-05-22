@@ -10,5 +10,5 @@ package model;
  * @author Nash
  */
 public class Products {
-    
+
 }
