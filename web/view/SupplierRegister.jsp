@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Supplier Register</title>
         <link rel="stylesheet" href="../boot/css/bootstrap.css">
         <script src="../boot/js/bootstrap.js"></script>
         <script src="../boot/js/jquery.min.js"></script>      
@@ -27,15 +27,23 @@
                 <ul class="nav navbar-nav">
                     <li><a href="#">User Manage</a></li>
                     <li class="active" class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Supplier
+                        <a class="dropdown-toggle" data-toggle="dropdown">Supplier
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li class="active"><a href="#">Supplier Register</a></li>
+                            <li class="active"><a href="SupplierRegister.jsp">Supplier Register</a></li>
                             <li><a href="#">Supplier Credit</a></li>
                             <li><a href="#">Supplier Debit</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Add Products</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Stock
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="UnitSave.jsp">Units</a></li>
+                            <li><a href="#">Product Register</a></li>
+                            <li><a href="#">GRN</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#">View Invoices</a></li>
                     <li><a href="#">View GRN</a></li>
                     <li><a href="#">Product Manage</a></li>
@@ -105,7 +113,6 @@
                 </div>
             </form>
         </div>
-    </div>
 
 </body>
 </html>
