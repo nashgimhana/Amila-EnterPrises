@@ -63,7 +63,7 @@
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="unitname">Unit Name:</label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="fname" placeholder="Enter Unit Name" name="fname" required>
+                            <input type="text" class="form-control" id="unitname" placeholder="Enter Unit Name" name="name" required>
                         </div>
                     </div>
                 
@@ -75,6 +75,8 @@
                 </div>
                 </div>
             </form>
+            <hr>
+            <h2>Currently saved units</h2>
         </div>
     </body>
 </html>
