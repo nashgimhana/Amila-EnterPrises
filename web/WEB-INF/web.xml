@@ -8,6 +8,10 @@
         <servlet-name>SupplierReg</servlet-name>
         <servlet-class>servlet.SupplierReg</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UnitSave</servlet-name>
+        <servlet-class>servlet.UnitSave</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>A</servlet-name>
         <url-pattern>/A</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>SupplierReg</servlet-name>
         <url-pattern>/SupplierReg</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UnitSave</servlet-name>
+        <url-pattern>/UnitSave</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

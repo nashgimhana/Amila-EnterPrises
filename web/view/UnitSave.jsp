@@ -58,7 +58,7 @@
         </div>
         <div class="control-label" style=" margin: auto;">
 
-            <form class="form-horizontal" action="../SupplierReg" method="post">
+            <form class="form-horizontal" action="../UnitSave" method="post">
                 <div id="mainform">
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="unitname">Unit Name:</label>
