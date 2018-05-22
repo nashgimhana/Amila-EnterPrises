@@ -19,11 +19,9 @@
     <body class="fixed-nav sticky-footer bg-dark" id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-<<<<<<< HEAD
-            <a class="navbar-brand" href="index.html">Amila EnterPrises</a>
-=======
+          <a class="navbar-brand" href="index.html">Amila EnterPrises</a>
             <a class="navbar-brand" href="index.html">Coca-Cola</a>
->>>>>>> 4f0c0579edf95f8a3093cdedf2ab851322e9b4e0
+
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
