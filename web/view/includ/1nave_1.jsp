@@ -19,31 +19,39 @@
     <body class="fixed-nav sticky-footer bg-dark" id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-            <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+            <a class="navbar-brand" href="index.html">Amila EnterPrises</a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                    
+<!--                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
                         <a class="nav-link" href="index.html">
                             <i class="fa fa-fw fa-dashboard"></i>
                             <span class="nav-link-text">Dashboard</span>
                         </a>
-                    </li>
-                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+                    </li>-->
+
+
+<!--                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
                         <a class="nav-link" href="charts.html">
                             <i class="fa fa-fw fa-area-chart"></i>
                             <span class="nav-link-text">Charts</span>
                         </a>
-                    </li>
-                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+                    </li>-->
+                    
+                    
+<!--                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
                         <a class="nav-link" href="tables.html">
                             <i class="fa fa-fw fa-table"></i>
                             <span class="nav-link-text">Tables</span>
                         </a>
-                    </li>
-                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+                    </li>-->
+                    
+                    
+                    
+<!--                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
                         <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
                             <i class="fa fa-fw fa-wrench"></i>
                             <span class="nav-link-text">Components</span>
@@ -56,8 +64,12 @@
                                 <a href="cards.html">Cards</a>
                             </li>
                         </ul>
-                    </li>
-                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+                    </li>-->
+                    
+                    
+                    
+                    
+<!--                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
                         <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
                             <i class="fa fa-fw fa-file"></i>
                             <span class="nav-link-text">Example Pages</span>
@@ -76,8 +88,11 @@
                                 <a href="blank.html">Blank Page</a>
                             </li>
                         </ul>
-                    </li>
-                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
+                    </li>-->
+
+
+
+<!--                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
                         <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
                             <i class="fa fa-fw fa-sitemap"></i>
                             <span class="nav-link-text">Menu Levels</span>
@@ -107,24 +122,39 @@
                                 </ul>
                             </li>
                         </ul>
-                    </li>
-                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
+                    </li>-->
+
+
+
+<!--                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
                         <a class="nav-link" href="#">
                             <i class="fa fa-fw fa-link"></i>
                             <span class="nav-link-text">Link</span>
                         </a>
-                    </li>
+
+                    </li>-->
+                    
+                    
+                    
                     <!--//==================================-->
-                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
-                        <a class="nav-link" href="customer_reg.jsp">
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title=Customer">
+                        <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#cusReg" data-parent="#exampleAccordion">
                             <i class="fa fa-fw fa-user"></i>
                             <span class="nav-link-text">Customer Registration</span>
                         </a>
+                        <ul class="sidenav-second-level collapse" id="cusReg">
+                            <li>
+                                <a class="active" href="customer_reg.jsp">Registration</a>
+                            </li>
+                            <li>
+                                <a href="customer_credit.jsp">Credit</a>
+                            </li>
+                        </ul>
                     </li>
-                    
-                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
+
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
                         <a class="nav-link" href="SupplierRegister.jsp">
-                            <i class="fa fa-fw fa-user"></i>
+                            <i class="fa fa-fw fa-cart-plus"></i>
                             <span class="nav-link-text">Supplier Registration</span>
                         </a>
                     </li>
