@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>SB Admin - Start Bootstrap Template</title>
+        <title>Amila-Enterprices</title>
         <!-- Bootstrap core CSS-->
         <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <!-- Custom fonts for this template-->
@@ -19,7 +19,11 @@
     <body class="fixed-nav sticky-footer bg-dark" id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+<<<<<<< HEAD
             <a class="navbar-brand" href="index.html">Amila EnterPrises</a>
+=======
+            <a class="navbar-brand" href="index.html">Coca-Cola</a>
+>>>>>>> 4f0c0579edf95f8a3093cdedf2ab851322e9b4e0
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -31,6 +35,7 @@
                             <i class="fa fa-fw fa-dashboard"></i>
                             <span class="nav-link-text">Dashboard</span>
                         </a>
+<<<<<<< HEAD
                     </li>-->
 
 
@@ -52,16 +57,20 @@
                     
                     
 <!--                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+=======
+                    </li>
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+>>>>>>> 4f0c0579edf95f8a3093cdedf2ab851322e9b4e0
                         <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
-                            <i class="fa fa-fw fa-wrench"></i>
-                            <span class="nav-link-text">Components</span>
+                            <i class="fa fa-fw fa-industry"></i>
+                            <span class="nav-link-text">Stock</span>
                         </a>
                         <ul class="sidenav-second-level collapse" id="collapseComponents">
                             <li>
-                                <a href="navbar.html">Navbar</a>
+                                <a href="../view/UnitSave.jsp">Units</a>
                             </li>
                             <li>
-                                <a href="cards.html">Cards</a>
+                                <a href="../view/ProductReg.jsp">Products</a>
                             </li>
                         </ul>
                     </li>-->
@@ -71,7 +80,7 @@
                     
 <!--                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
                         <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
-                            <i class="fa fa-fw fa-file"></i>
+                            <i class="fa fa-fw fa-industry"></i>
                             <span class="nav-link-text">Example Pages</span>
                         </a>
                         <ul class="sidenav-second-level collapse" id="collapseExamplePages">
