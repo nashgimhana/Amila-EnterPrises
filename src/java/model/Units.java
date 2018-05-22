@@ -5,6 +5,8 @@
  */
 package model;
 
+import java.util.ArrayList;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -13,8 +15,8 @@ import org.hibernate.Transaction;
  * @author Nash
  */
 public class Units {
-    
-     public int save(pojo.Units units) {
+
+    public int save(pojo.Units units) {
         Session s = conn.NewHibernateUtil.getSessionFactory().openSession();
         try {
             Transaction beginTransaction = s.beginTransaction();
@@ -30,5 +32,19 @@ public class Units {
             s.close();
         }
     }
-    
+
+    public ArrayList<pojo.Units> viewAllUnits() {
+        Session s = conn.NewHibernateUtil.getSessionFactory().openSession();
+        ArrayList<pojo.Units> un = null;
+        try {
+            Criteria createCriteria = s.createCriteria(pojo.Units.class);
+            un = (ArrayList<pojo.Units>) createCriteria.list();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            s.close();
+        }
+        return un;
+    }
+
 }

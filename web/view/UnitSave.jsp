@@ -4,6 +4,8 @@
     Author     : Nash
 --%>
 
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.Units"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -66,17 +68,35 @@
                             <input type="text" class="form-control" id="unitname" placeholder="Enter Unit Name" name="name" required>
                         </div>
                     </div>
-                
-                <div class="form-group">
-                    <label class="control-label col-sm-6" for="Save">
-                        <input type="submit" class="btn btn-info" value="Save">
-                        <input type="reset" class="btn btn-info" value="reset">
-                    </label>
-                </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-6" for="Save">
+                            <input type="submit" class="btn btn-info" value="Save">
+                            <input type="reset" class="btn btn-info" value="reset">
+                        </label>
+                    </div>
                 </div>
             </form>
-            <hr>
-            <h2>Currently saved units</h2>
+
+        </div>
+        <div style=" min-width: 100px;
+             padding: 24px 24px 0;
+             overflow:hidden;">
+            <h3 style="color: red; font-family: fantasy;">Currently saved units</h3>
+            <ul class="list-group">      
+                <%
+
+                    Units units = new Units();
+                    ArrayList<pojo.Units> unitslist = units.viewAllUnits();
+                    for (pojo.Units u : unitslist) {
+
+
+                %>
+
+                <li class="list-group-item list-group-item-info"> <% out.write(u.getUnitName()); %></li>
+
+                <% }%>
+            </ul>
         </div>
     </body>
 </html>

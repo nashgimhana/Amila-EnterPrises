@@ -21,7 +21,6 @@ public class UnitSave extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
         try {
-            System.out.println("asas");
             String name = request.getParameter("name");
             int saveUnits = new controller.stockcontroller().saveUnits(name);
             if (saveUnits != 0) {
