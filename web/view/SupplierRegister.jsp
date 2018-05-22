@@ -6,18 +6,15 @@
     <!-- Breadcrumbs-->
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="index.html">Dashboard</a>
+            <a href="index.html">Home</a>
         </li>
-        <li class="breadcrumb-item active">Customer Registration</li>
+        <li class="breadcrumb-item active">Supplier Register</li>
     </ol>
     <div class="row">
         <div class="col-12">
 
 
             <!--// Methanini Uda tika daganna-->
-            <div class="page-header" >
-                <h2>Supplier Register</h2>
-            </div>
             <div class="control-label" style=" margin: auto;">
 
                 <form class="form-horizontal" action="../SupplierReg" method="post">
