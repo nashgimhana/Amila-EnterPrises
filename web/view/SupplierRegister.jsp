@@ -25,12 +25,12 @@
                     <a class="navbar-brand" href="Home.php">Coca-cola</a>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">User Manage</a></li>
-                    <li class="dropdown">
+                    <li><a href="#">User Manage</a></li>
+                    <li class="active" class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Supplier
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Supplier Register</a></li>
+                            <li class="active"><a href="#">Supplier Register</a></li>
                             <li><a href="#">Supplier Credit</a></li>
                             <li><a href="#">Supplier Debit</a></li>
                         </ul>
@@ -66,19 +66,25 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="adress">address:</label>
+                        <label class="control-label col-sm-2" for="adress">Address:</label>
                         <div class="col-sm-4">
                             <input type="text" class="form-control" id="adress" placeholder="Enter address" name="adress" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="contact1">Contact No Primary:</label>
+                        <label class="control-label col-sm-2" for="email">Email:</label>
+                        <div class="col-sm-4">
+                            <input type="email" class="form-control" id="email" placeholder="Enter Email" name="emails" >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="contact1">Contact Number Primary:</label>
                         <div class="col-sm-4">
                             <input type="tel" class="form-control" id="contact1" placeholder="Enter Contact" name="contact1" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="contact2">Contact No Secondary:</label>
+                        <label class="control-label col-sm-2" for="contact2">Contact Number Secondary:</label>
                         <div class="col-sm-4">
                             <input type="tel" class="form-control" id="contact2" placeholder="Enter Contact" name="contact2">
                         </div>
@@ -86,7 +92,7 @@
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="details">Details:</label>
                         <div class="col-sm-4">
-                            <input type="password" class="form-control" id="details" placeholder="Enter Details" name="details">
+                            <input type="text" class="form-control" id="details" placeholder="Enter Details" name="details">
                         </div>
                     </div>
                     <div class="form-group">
