@@ -12,6 +12,10 @@
         <servlet-name>UnitSave</servlet-name>
         <servlet-class>servlet.UnitSave</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ProductReg</servlet-name>
+        <servlet-class>servlet.ProductReg</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>A</servlet-name>
         <url-pattern>/A</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>UnitSave</servlet-name>
         <url-pattern>/UnitSave</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProductReg</servlet-name>
+        <url-pattern>/ProductReg</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
