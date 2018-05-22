@@ -114,12 +114,21 @@
                             <span class="nav-link-text">Link</span>
                         </a>
                     </li>
+                    <!--//==================================-->
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
-                        <a class="nav-link" href="view/customer_reg.jsp">
+                        <a class="nav-link" href="customer_reg.jsp">
                             <i class="fa fa-fw fa-user"></i>
                             <span class="nav-link-text">Customer Registration</span>
                         </a>
                     </li>
+                    
+                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
+                        <a class="nav-link" href="SupplierRegister.jsp">
+                            <i class="fa fa-fw fa-user"></i>
+                            <span class="nav-link-text">Supplier Registration</span>
+                        </a>
+                    </li>
+                    <!--//========================================-->
                 </ul>
                 <ul class="navbar-nav sidenav-toggler">
                     <li class="nav-item">
