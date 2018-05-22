@@ -14,16 +14,12 @@
     <!-- Breadcrumbs-->
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="index.html">Home</a>
+            <a href="index.html">Stock</a>
         </li>
-        <li class="breadcrumb-item active">Supplier Register</li>
+        <li class="breadcrumb-item active">Units</li>
     </ol>
     <div class="row">
         <div class="col-12">
-            <hr>
-            <div class="page-header" >
-                <h2>Units</h2>
-            </div>
             <div class="control-label" style=" margin: auto;">
 
                 <form class="form-horizontal" action="../UnitSave" method="post">

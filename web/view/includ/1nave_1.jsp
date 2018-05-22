@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>SB Admin - Start Bootstrap Template</title>
+        <title>Amila-Enterprices</title>
         <!-- Bootstrap core CSS-->
         <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <!-- Custom fonts for this template-->
@@ -19,7 +19,7 @@
     <body class="fixed-nav sticky-footer bg-dark" id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-            <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+            <a class="navbar-brand" href="index.html">Coca-Cola</a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -31,35 +31,23 @@
                             <span class="nav-link-text">Dashboard</span>
                         </a>
                     </li>
-                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-                        <a class="nav-link" href="charts.html">
-                            <i class="fa fa-fw fa-area-chart"></i>
-                            <span class="nav-link-text">Charts</span>
-                        </a>
-                    </li>
-                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-                        <a class="nav-link" href="tables.html">
-                            <i class="fa fa-fw fa-table"></i>
-                            <span class="nav-link-text">Tables</span>
-                        </a>
-                    </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
                         <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
-                            <i class="fa fa-fw fa-wrench"></i>
-                            <span class="nav-link-text">Components</span>
+                            <i class="fa fa-fw fa-industry"></i>
+                            <span class="nav-link-text">Stock</span>
                         </a>
                         <ul class="sidenav-second-level collapse" id="collapseComponents">
                             <li>
-                                <a href="navbar.html">Navbar</a>
+                                <a href="../view/UnitSave.jsp">Units</a>
                             </li>
                             <li>
-                                <a href="cards.html">Cards</a>
+                                <a href="../view/ProductReg.jsp">Products</a>
                             </li>
                         </ul>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
                         <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
-                            <i class="fa fa-fw fa-file"></i>
+                            <i class="fa fa-fw fa-industry"></i>
                             <span class="nav-link-text">Example Pages</span>
                         </a>
                         <ul class="sidenav-second-level collapse" id="collapseExamplePages">

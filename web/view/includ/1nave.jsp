@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>SB Admin - Start Bootstrap Template</title>
+        <title>Amila-Enterprices</title>
         <!-- Bootstrap core CSS-->
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <!-- Custom fonts for this template-->
@@ -46,7 +46,7 @@
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
                         <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
                             <i class="fa fa-fw fa-wrench"></i>
-                            <span class="nav-link-text">Components</span>
+                            <span class="nav-link-text">Stock</span>
                         </a>
                         <ul class="sidenav-second-level collapse" id="collapseComponents">
                             <li>
