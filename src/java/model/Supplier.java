@@ -15,10 +15,12 @@ import org.hibernate.Transaction;
 public class Supplier {
 
     public int save(pojo.Supplier supplier) {
+        System.out.println("save ekta awa");
         Session s = conn.NewHibernateUtil.getSessionFactory().openSession();
         try {
             Transaction beginTransaction = s.beginTransaction();
             int i = (int) s.save(supplier);
+            System.out.println("save metto");
             beginTransaction.commit();
             s.flush();
             System.out.println("done");

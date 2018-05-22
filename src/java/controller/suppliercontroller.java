@@ -14,9 +14,9 @@ import pojo.Supplier;
 public class suppliercontroller {
 
     Supplier sm;
-    model.Supplier m;
 
     public int savesup(String fname, String lname, String address, String mobile1, String mobile2, String details) {
+        System.out.println("save sup awa");
         sm = new Supplier();
         sm.setName(fname);
         sm.setLname(lname);
@@ -25,7 +25,9 @@ public class suppliercontroller {
         sm.setMobile2(mobile2);
         sm.setDetails(details);
         sm.setStatus(1);
-        int save = m.save(sm);
+        System.out.println("set una");
+        int save = new model.Supplier().save(sm);
+        System.out.println("save eken awa");
         System.out.println(save);
         return save;
     }
