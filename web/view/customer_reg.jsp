@@ -88,4 +88,4 @@
     </div>
 </div>
 <!-- /.container-fluid-->
-<%@include file="includ/2footer.jsp" %>
+<%@include file="includ/2footer_1.jsp" %>
