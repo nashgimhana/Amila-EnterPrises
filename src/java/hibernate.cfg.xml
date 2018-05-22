@@ -60,14 +60,12 @@ Contributor(s):
     <mapping resource="pojo/DiliveryLoad.hbm.xml"/>
     <mapping resource="pojo/Employee.hbm.xml"/>
     <mapping resource="pojo/Supplier.hbm.xml"/>
-    <mapping resource="pojo/CustomerDebit.hbm.xml"/>
     <mapping resource="pojo/VehicleStock.hbm.xml"/>
     <mapping resource="pojo/CustomerCredit.hbm.xml"/>
     <mapping resource="pojo/Discount.hbm.xml"/>
-    <mapping resource="pojo/Grn.hbm.xml"/>
-    <mapping resource="pojo/DiliveryEmployeeLog.hbm.xml"/>
+    <mapping resource="pojo/SupplierHasCheques.hbm.xml"/>
     <mapping resource="pojo/Cheques.hbm.xml"/>
     <mapping resource="pojo/Customer.hbm.xml"/>
-    <mapping resource="pojo/GrnLog.hbm.xml"/>
+    <mapping resource="pojo/InvoiceHasCheques.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

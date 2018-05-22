@@ -1,5 +1,5 @@
 package pojo;
-// Generated May 22, 2018 8:29:43 PM by Hibernate Tools 4.3.1
+// Generated May 22, 2018 8:34:55 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -15,24 +15,26 @@ public class Supplier  implements java.io.Serializable {
      private String name;
      private String lname;
      private String adress;
+     private String email;
      private String mobile1;
      private String mobile2;
      private Integer status;
      private String details;
-     private Set grns = new HashSet(0);
+     private Set supplierHasChequeses = new HashSet(0);
 
     public Supplier() {
     }
 
-    public Supplier(String name, String lname, String adress, String mobile1, String mobile2, Integer status, String details, Set grns) {
+    public Supplier(String name, String lname, String adress, String email, String mobile1, String mobile2, Integer status, String details, Set supplierHasChequeses) {
        this.name = name;
        this.lname = lname;
        this.adress = adress;
+       this.email = email;
        this.mobile1 = mobile1;
        this.mobile2 = mobile2;
        this.status = status;
        this.details = details;
-       this.grns = grns;
+       this.supplierHasChequeses = supplierHasChequeses;
     }
    
     public Integer getId() {
@@ -63,6 +65,13 @@ public class Supplier  implements java.io.Serializable {
     public void setAdress(String adress) {
         this.adress = adress;
     }
+    public String getEmail() {
+        return this.email;
+    }
+    
+    public void setEmail(String email) {
+        this.email = email;
+    }
     public String getMobile1() {
         return this.mobile1;
     }
@@ -91,12 +100,12 @@ public class Supplier  implements java.io.Serializable {
     public void setDetails(String details) {
         this.details = details;
     }
-    public Set getGrns() {
-        return this.grns;
+    public Set getSupplierHasChequeses() {
+        return this.supplierHasChequeses;
     }
     
-    public void setGrns(Set grns) {
-        this.grns = grns;
+    public void setSupplierHasChequeses(Set supplierHasChequeses) {
+        this.supplierHasChequeses = supplierHasChequeses;
     }
 
 

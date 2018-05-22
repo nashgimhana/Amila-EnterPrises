@@ -1,5 +1,5 @@
 package pojo;
-// Generated May 22, 2018 8:29:43 PM by Hibernate Tools 4.3.1
+// Generated May 22, 2018 8:34:55 PM by Hibernate Tools 4.3.1
 
 
 
@@ -11,8 +11,8 @@ public class DiliveryItemLog  implements java.io.Serializable {
 
      private Integer id;
      private Dilivery dilivery;
-     private GrnLog grnLog;
      private Product product;
+     private int grnLogId;
      private Double fullQty;
      private Double remainingQuantity;
 
@@ -20,15 +20,15 @@ public class DiliveryItemLog  implements java.io.Serializable {
     }
 
 	
-    public DiliveryItemLog(Dilivery dilivery, GrnLog grnLog, Product product) {
+    public DiliveryItemLog(Dilivery dilivery, Product product, int grnLogId) {
         this.dilivery = dilivery;
-        this.grnLog = grnLog;
         this.product = product;
+        this.grnLogId = grnLogId;
     }
-    public DiliveryItemLog(Dilivery dilivery, GrnLog grnLog, Product product, Double fullQty, Double remainingQuantity) {
+    public DiliveryItemLog(Dilivery dilivery, Product product, int grnLogId, Double fullQty, Double remainingQuantity) {
        this.dilivery = dilivery;
-       this.grnLog = grnLog;
        this.product = product;
+       this.grnLogId = grnLogId;
        this.fullQty = fullQty;
        this.remainingQuantity = remainingQuantity;
     }
@@ -47,19 +47,19 @@ public class DiliveryItemLog  implements java.io.Serializable {
     public void setDilivery(Dilivery dilivery) {
         this.dilivery = dilivery;
     }
-    public GrnLog getGrnLog() {
-        return this.grnLog;
-    }
-    
-    public void setGrnLog(GrnLog grnLog) {
-        this.grnLog = grnLog;
-    }
     public Product getProduct() {
         return this.product;
     }
     
     public void setProduct(Product product) {
         this.product = product;
+    }
+    public int getGrnLogId() {
+        return this.grnLogId;
+    }
+    
+    public void setGrnLogId(int grnLogId) {
+        this.grnLogId = grnLogId;
     }
     public Double getFullQty() {
         return this.fullQty;

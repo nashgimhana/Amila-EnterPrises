@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 22, 2018 8:34:55 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.InvoiceHasCheques" table="invoice_has_cheques" catalog="amiladb" optimistic-lock="version">
+        <id name="idInvoiceHasCheques" type="java.lang.Integer">
+            <column name="Id_invoice_has_cheques" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="cheques" class="pojo.Cheques" fetch="select">
+            <column name="cheques_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="invoice" class="pojo.Invoice" fetch="select">
+            <column name="invoice_id" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

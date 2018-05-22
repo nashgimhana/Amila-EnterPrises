@@ -1,5 +1,5 @@
 package pojo;
-// Generated May 22, 2018 8:29:43 PM by Hibernate Tools 4.3.1
+// Generated May 22, 2018 8:34:55 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -22,13 +22,12 @@ public class Customer  implements java.io.Serializable {
      private Integer status;
      private Double currentCredit;
      private Set invoices = new HashSet(0);
-     private Set customerDebits = new HashSet(0);
      private Set customerCredits = new HashSet(0);
 
     public Customer() {
     }
 
-    public Customer(String fame, String lname, String adressLine1, String adressLine2, String contact1, String contact2, String discription, Integer status, Double currentCredit, Set invoices, Set customerDebits, Set customerCredits) {
+    public Customer(String fame, String lname, String adressLine1, String adressLine2, String contact1, String contact2, String discription, Integer status, Double currentCredit, Set invoices, Set customerCredits) {
        this.fame = fame;
        this.lname = lname;
        this.adressLine1 = adressLine1;
@@ -39,7 +38,6 @@ public class Customer  implements java.io.Serializable {
        this.status = status;
        this.currentCredit = currentCredit;
        this.invoices = invoices;
-       this.customerDebits = customerDebits;
        this.customerCredits = customerCredits;
     }
    
@@ -119,13 +117,6 @@ public class Customer  implements java.io.Serializable {
     
     public void setInvoices(Set invoices) {
         this.invoices = invoices;
-    }
-    public Set getCustomerDebits() {
-        return this.customerDebits;
-    }
-    
-    public void setCustomerDebits(Set customerDebits) {
-        this.customerDebits = customerDebits;
     }
     public Set getCustomerCredits() {
         return this.customerCredits;

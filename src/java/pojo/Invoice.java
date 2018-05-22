@@ -1,5 +1,5 @@
 package pojo;
-// Generated May 22, 2018 8:29:43 PM by Hibernate Tools 4.3.1
+// Generated May 22, 2018 8:34:55 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -17,7 +17,10 @@ public class Invoice  implements java.io.Serializable {
      private Dilivery dilivery;
      private Date date;
      private Double fulltotal;
+     private Double cash;
+     private Double cheack;
      private Set discounts = new HashSet(0);
+     private Set invoiceHasChequeses = new HashSet(0);
      private Set invoiceLogs = new HashSet(0);
 
     public Invoice() {
@@ -28,12 +31,15 @@ public class Invoice  implements java.io.Serializable {
         this.customer = customer;
         this.dilivery = dilivery;
     }
-    public Invoice(Customer customer, Dilivery dilivery, Date date, Double fulltotal, Set discounts, Set invoiceLogs) {
+    public Invoice(Customer customer, Dilivery dilivery, Date date, Double fulltotal, Double cash, Double cheack, Set discounts, Set invoiceHasChequeses, Set invoiceLogs) {
        this.customer = customer;
        this.dilivery = dilivery;
        this.date = date;
        this.fulltotal = fulltotal;
+       this.cash = cash;
+       this.cheack = cheack;
        this.discounts = discounts;
+       this.invoiceHasChequeses = invoiceHasChequeses;
        this.invoiceLogs = invoiceLogs;
     }
    
@@ -72,12 +78,33 @@ public class Invoice  implements java.io.Serializable {
     public void setFulltotal(Double fulltotal) {
         this.fulltotal = fulltotal;
     }
+    public Double getCash() {
+        return this.cash;
+    }
+    
+    public void setCash(Double cash) {
+        this.cash = cash;
+    }
+    public Double getCheack() {
+        return this.cheack;
+    }
+    
+    public void setCheack(Double cheack) {
+        this.cheack = cheack;
+    }
     public Set getDiscounts() {
         return this.discounts;
     }
     
     public void setDiscounts(Set discounts) {
         this.discounts = discounts;
+    }
+    public Set getInvoiceHasChequeses() {
+        return this.invoiceHasChequeses;
+    }
+    
+    public void setInvoiceHasChequeses(Set invoiceHasChequeses) {
+        this.invoiceHasChequeses = invoiceHasChequeses;
     }
     public Set getInvoiceLogs() {
         return this.invoiceLogs;

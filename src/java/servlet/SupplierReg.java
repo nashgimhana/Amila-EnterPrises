@@ -18,13 +18,14 @@ import javax.servlet.http.HttpServletResponse;
  * @author Nash
  */
 public class SupplierReg extends HttpServlet {
-    
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
         try {
             String fname = request.getParameter("fname");
             String lname = request.getParameter("lname");
             String adress = request.getParameter("adress");
+            String email = request.getParameter("email");
             String contact1 = request.getParameter("contact1");
             String contact2 = request.getParameter("contact2");
             String details = request.getParameter("details");
@@ -35,16 +36,16 @@ public class SupplierReg extends HttpServlet {
 //            System.out.println(contact2);
 //            System.out.println(details);
             suppliercontroller sc = new suppliercontroller();
-            int savesup = sc.savesup(fname, lname, adress, contact1, contact2, details);
+            int savesup = sc.savesup(fname, lname, adress, email, contact1, contact2, details);
             if (savesup != 0) {
                 response.sendRedirect("view/SupplierRegister.jsp");
-            }else{
+            } else {
                 System.out.println("fuck");
             }
-            
+
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    
+
 }

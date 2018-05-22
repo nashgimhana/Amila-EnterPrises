@@ -74,7 +74,7 @@
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="email">Email:</label>
                         <div class="col-sm-4">
-                            <input type="email" class="form-control" id="email" placeholder="Enter Email" name="emails" >
+                            <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email" >
                         </div>
                     </div>
                     <div class="form-group">

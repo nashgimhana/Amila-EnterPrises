@@ -1,5 +1,5 @@
 package pojo;
-// Generated May 22, 2018 8:29:43 PM by Hibernate Tools 4.3.1
+// Generated May 22, 2018 8:34:55 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -17,7 +17,6 @@ public class Product  implements java.io.Serializable {
      private Double currentStock;
      private Double currentPrice;
      private Set discounts = new HashSet(0);
-     private Set grnLogs = new HashSet(0);
      private Set diliveryItemLogs = new HashSet(0);
      private Set invoiceLogs = new HashSet(0);
      private Set vehicleStocks = new HashSet(0);
@@ -30,13 +29,12 @@ public class Product  implements java.io.Serializable {
     public Product(Units units) {
         this.units = units;
     }
-    public Product(Units units, String name, Double currentStock, Double currentPrice, Set discounts, Set grnLogs, Set diliveryItemLogs, Set invoiceLogs, Set vehicleStocks, Set diliveryLoads) {
+    public Product(Units units, String name, Double currentStock, Double currentPrice, Set discounts, Set diliveryItemLogs, Set invoiceLogs, Set vehicleStocks, Set diliveryLoads) {
        this.units = units;
        this.name = name;
        this.currentStock = currentStock;
        this.currentPrice = currentPrice;
        this.discounts = discounts;
-       this.grnLogs = grnLogs;
        this.diliveryItemLogs = diliveryItemLogs;
        this.invoiceLogs = invoiceLogs;
        this.vehicleStocks = vehicleStocks;
@@ -84,13 +82,6 @@ public class Product  implements java.io.Serializable {
     
     public void setDiscounts(Set discounts) {
         this.discounts = discounts;
-    }
-    public Set getGrnLogs() {
-        return this.grnLogs;
-    }
-    
-    public void setGrnLogs(Set grnLogs) {
-        this.grnLogs = grnLogs;
     }
     public Set getDiliveryItemLogs() {
         return this.diliveryItemLogs;
