@@ -19,24 +19,65 @@
     <body class="fixed-nav sticky-footer bg-dark" id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+          <a class="navbar-brand" href="index.html">Amila EnterPrises</a>
             <a class="navbar-brand" href="index.html">Coca-Cola</a>
+
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+<<<<<<< HEAD
+                    <!-- nevbar items starts-->
+
+                    <!-- dashbord start-->
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+=======
+                    
+<!--                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+>>>>>>> 333574d0326c094e830c52a3ebe2ab13388266fe
                         <a class="nav-link" href="index.html">
                             <i class="fa fa-fw fa-dashboard"></i>
                             <span class="nav-link-text">Dashboard</span>
                         </a>
+<<<<<<< HEAD
+                    </li>-->
+
+
+<!--                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+                        <a class="nav-link" href="charts.html">
+                            <i class="fa fa-fw fa-area-chart"></i>
+                            <span class="nav-link-text">Charts</span>
+                        </a>
+                    </li>-->
+                    
+                    
+<!--                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+                        <a class="nav-link" href="tables.html">
+                            <i class="fa fa-fw fa-table"></i>
+                            <span class="nav-link-text">Tables</span>
+                        </a>
+                    </li>-->
+                    
+                    
+                    
+<!--                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+=======
                     </li>
+                    <!-- dashbord ends-->
+
+                    <!-- Stock Start-->
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+<<<<<<< HEAD
+                        <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#stock" data-parent="#exampleAccordion">
+=======
+>>>>>>> 4f0c0579edf95f8a3093cdedf2ab851322e9b4e0
                         <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+>>>>>>> 333574d0326c094e830c52a3ebe2ab13388266fe
                             <i class="fa fa-fw fa-industry"></i>
                             <span class="nav-link-text">Stock</span>
                         </a>
-                        <ul class="sidenav-second-level collapse" id="collapseComponents">
+                        <ul class="sidenav-second-level collapse" id="stock">
                             <li>
                                 <a href="../view/UnitSave.jsp">Units</a>
                             </li>
@@ -44,79 +85,147 @@
                                 <a href="../view/ProductReg.jsp">Products</a>
                             </li>
                         </ul>
+<<<<<<< HEAD
                     </li>
+                    <!-- Stock ends-->
+
+                    <!--Supplier starts-->
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+=======
+                    </li>-->
+                    
+                    
+                    
+                    
+<!--                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+>>>>>>> 333574d0326c094e830c52a3ebe2ab13388266fe
                         <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
-                            <i class="fa fa-fw fa-industry"></i>
-                            <span class="nav-link-text">Example Pages</span>
+                            <i class="fa fa-fw fa-ambulance"></i>
+                            <span class="nav-link-text">Supplier</span>
                         </a>
                         <ul class="sidenav-second-level collapse" id="collapseExamplePages">
                             <li>
-                                <a href="login.html">Login Page</a>
+                                <a href="../view/SupplierRegister.jsp">Supplier Register</a>
                             </li>
                             <li>
-                                <a href="register.html">Registration Page</a>
-                            </li>
-                            <li>
-                                <a href="forgot-password.html">Forgot Password Page</a>
-                            </li>
-                            <li>
-                                <a href="blank.html">Blank Page</a>
+                                <a href="#">Supplier Debit</a>
                             </li>
                         </ul>
+<<<<<<< HEAD
                     </li>
-                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
+
+                    <!--Supplier ends-->
+
+                    <!--menu levels start-->
+
+
+                    <!--                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
+                                            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
+                                                <i class="fa fa-fw fa-sitemap"></i>
+                                                <span class="nav-link-text">Menu Levels</span>
+                                            </a>
+                                            <ul class="sidenav-second-level collapse" id="collapseMulti">
+                                                <li>
+                                                    <a href="#">Second Level Item</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Second Level Item</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Second Level Item</a>
+                                                </li>
+                                                <li>
+                                                    <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">Third Level</a>
+                                                    <ul class="sidenav-third-level collapse" id="collapseMulti2">
+                                                        <li>
+                                                            <a href="#">Third Level Item</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">Third Level Item</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">Third Level Item</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>-->
+
+
+                    <!--menu level ends-->
+
+
+                    <!--customer start-->
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+                        <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#Customer" data-parent="#exampleAccordion">
+                            <i class="fa fa-fw fa-street-view"></i>
+                            <span class="nav-link-text">Customer</span>
+=======
+                    </li>-->
+
+
+
+<!--                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
                         <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
                             <i class="fa fa-fw fa-sitemap"></i>
                             <span class="nav-link-text">Menu Levels</span>
+>>>>>>> 333574d0326c094e830c52a3ebe2ab13388266fe
                         </a>
-                        <ul class="sidenav-second-level collapse" id="collapseMulti">
+                        <ul class="sidenav-second-level collapse" id="Customer">
                             <li>
-                                <a href="#">Second Level Item</a>
+                                <a href="../view/customer_reg.jsp">Customer Register</a>
                             </li>
                             <li>
-                                <a href="#">Second Level Item</a>
+                                <a href="#">Customer Credit</a>
                             </li>
                             <li>
-                                <a href="#">Second Level Item</a>
-                            </li>
-                            <li>
-                                <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">Third Level</a>
-                                <ul class="sidenav-third-level collapse" id="collapseMulti2">
-                                    <li>
-                                        <a href="#">Third Level Item</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Item</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Item</a>
-                                    </li>
-                                </ul>
+                                <a href="#">Customer Debit</a>
                             </li>
                         </ul>
+<<<<<<< HEAD
                     </li>
-                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
+
+
+                    <!--customer ends-->
+=======
+                    </li>-->
+
+
+
+<!--                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
                         <a class="nav-link" href="#">
                             <i class="fa fa-fw fa-link"></i>
                             <span class="nav-link-text">Link</span>
                         </a>
-                    </li>
+
+                    </li>-->
+                    
+                    
+                    
                     <!--//==================================-->
-                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
-                        <a class="nav-link" href="customer_reg.jsp">
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title=Customer">
+                        <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#cusReg" data-parent="#exampleAccordion">
                             <i class="fa fa-fw fa-user"></i>
                             <span class="nav-link-text">Customer Registration</span>
                         </a>
+                        <ul class="sidenav-second-level collapse" id="cusReg">
+                            <li>
+                                <a class="active" href="customer_reg.jsp">Registration</a>
+                            </li>
+                            <li>
+                                <a href="customer_credit.jsp">Credit</a>
+                            </li>
+                        </ul>
                     </li>
-                    
-                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
+
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
                         <a class="nav-link" href="SupplierRegister.jsp">
-                            <i class="fa fa-fw fa-user"></i>
+                            <i class="fa fa-fw fa-cart-plus"></i>
                             <span class="nav-link-text">Supplier Registration</span>
                         </a>
                     </li>
                     <!--//========================================-->
+>>>>>>> 333574d0326c094e830c52a3ebe2ab13388266fe
                 </ul>
                 <ul class="navbar-nav sidenav-toggler">
                     <li class="nav-item">
