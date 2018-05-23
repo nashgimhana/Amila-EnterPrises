@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
 
 /**
  *
@@ -45,6 +46,19 @@ public class Units {
             s.close();
         }
         return un;
+    }
+
+    public pojo.Units getBy(int id) {
+        Session s = conn.NewHibernateUtil.getSessionFactory().openSession();
+        pojo.Units uni = null;
+        try {
+            Criteria cr = s.createCriteria(pojo.Units.class);
+            cr.add(Restrictions.eq("id", id));
+            uni = (pojo.Units) cr.uniqueResult();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return uni;
     }
 
 }

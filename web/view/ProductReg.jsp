@@ -38,7 +38,7 @@
                                 %>
                                 }
                                 %>
-                                <option value="<% out.write(un.getId()); %>"><% out.write(un.getUnitName()); %></option>
+                                <option value="<% out.write(un.getId().toString()); %>"><% out.write(un.getUnitName()); %></option>
 
                                 <%
                                     }
