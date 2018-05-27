@@ -1,4 +1,5 @@
 
+<%@page import="java.util.List"%>
 <%@include file="includ/1nave_1.jsp" %>
 
 
@@ -14,48 +15,44 @@
         <div class="col-12">
             <div class="offset-3 col-md-6">              
                 <form method="POST" action="../EmployeeReg">
+                    
                     <div class="form-group">
                         <label for="exampleInputEmail1">Employee Type</label>    
-                        <select class="form-control" >
-                            <option value="volvo">Volvo</option>
-                            <option value="saab">Saab</option>
-                            <option value="mercedes">Mercedes</option>
-                            <option value="audi">Audi</option>
+                        <select class="form-control" name="position" >
+                            <option value="">Select One</option>
+                            <%
+                                List<String> list = model.GetInstans.getEmployeePosition().getPositionList();
+                                for (String pos : list) { %>
+                                <option value="<% out.print(pos); %>"><% out.print(pos); %></option>      
+                             <%   }  %>
                         </select>
                     </div>
 
-
                     <div class="form-group">
                         <label for="exampleInputEmail1">First Name </label>                        
-                        <input class="form-control" id="exampleInputEmail1" type="text" name="ename" aria-describedby="emailHelp" placeholder="Enter email">
+                        <input name="fname" class="form-control" id="" type="text" >
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Last Name</label>
-                        <input class="form-control" id="exampleInputEmail1" type="text" name="ename" aria-describedby="emailHelp" placeholder="Enter email">
+                        <input class="form-control" id="" type="text" name="lname" >
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Address Line 1</label>
-                        <input class="form-control" id="exampleInputEmail1" type="text" name="ename" aria-describedby="emailHelp" placeholder="Enter email">
+                        <input class="form-control" id="" type="text" name="adl1">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Address Line 2</label>
-                        <input class="form-control" id="exampleInputEmail1" type="text" name="ename" aria-describedby="emailHelp" placeholder="Enter email">
+                        <input class="form-control" id="" type="text" name="adl2">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Contact No 1</label>
-                        <input class="form-control" id="exampleInputEmail1" type="text" name="ename" aria-describedby="emailHelp" placeholder="Enter email">
+                        <input class="form-control" id="" type="text" name="con1" >
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Contact No 2</label>
-                        <input class="form-control" id="exampleInputEmail1" type="text" name="ename" aria-describedby="emailHelp" placeholder="Enter email">
+                        <input class="form-control" id="" type="text" name="con2">
                     </div>
 
-                    <div class="form-group">
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox"> Remember Password</label>
-                        </div>
-                    </div>
                     <input type="submit" class="btn btn-primary"/>
 
                 </form>

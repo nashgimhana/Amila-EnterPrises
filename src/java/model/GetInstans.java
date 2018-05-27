@@ -13,6 +13,7 @@ import com.sun.xml.internal.ws.api.server.Module;
  */
 public class GetInstans {
     private static model.Customer customerModle;
+    private static model.EmployeePosition employeePosition;
 
     /**
      * @return the customerModle
@@ -20,5 +21,13 @@ public class GetInstans {
     public static model.Customer getCustomerModle() {
         if(customerModle==null){customerModle = new Customer();}
         return customerModle;
+    }
+
+    /**
+     * @return the employeePosition
+     */
+    public static model.EmployeePosition getEmployeePosition() {
+        if(employeePosition==null){employeePosition = new EmployeePosition();}
+        return employeePosition;
     }
 }

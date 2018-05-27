@@ -31,8 +31,9 @@ public class EmployeeReg extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String ename = request.getParameter("ename");
-        System.out.println(ename);
+        String ename = request.getParameter("fname");
+        String pos = request.getParameter("position");
+        System.out.println(pos);
         
     }
 
