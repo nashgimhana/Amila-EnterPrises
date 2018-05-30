@@ -20,7 +20,7 @@
             <script>
                 function addRow() {
 
-                    var medicinename = document.getElementById("medicinename");
+                    var supname = document.getElementById("supname");
                     var time = document.getElementById("time");
                     var duration = document.getElementById("duration");
                     var when = document.getElementById("when");
@@ -30,11 +30,11 @@
                     var row = table.insertRow(rowCount);
 
                     row.insertCell(0).innerHTML = '<input type="button" value = "Delete" onClick="Javacsript:deleteRow(this)">';
-                    row.insertCell(1).innerHTML = medicinename.value;
+                    row.insertCell(1).innerHTML = supname.value;
                     row.insertCell(2).innerHTML = time.value;
                     row.insertCell(3).innerHTML = duration.value;
                     row.insertCell(4).innerHTML = when.value;
-                    document.getElementById('medicinename').value = '';
+                    document.getElementById('supname').value = '';
                     document.getElementById('time').value = '';
                     document.getElementById('duration').value = '';
                     document.getElementById('when').value = '';
@@ -78,9 +78,9 @@
             <form class="form-horizontal" action="../SupplierReg" method="post">
                 <div id="mainform">
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="medicinename">First Name:</label>
+                        <label class="control-label col-sm-2" for="supname">Suplier Name:</label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="medicinename" placeholder="Enter First Name" name="fname" required>
+                            <input type="text" class="form-control" id="supname" placeholder="Enter Supplier Name" name="supname" required>
                         </div>
                     </div>
                 </div>
