@@ -16,121 +16,109 @@
 
 
             <!--// Methanini Uda tika daganna-->
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-            <link href="../cssfiles/cssgrn.css" rel="stylesheet">
-
-
-            <form id="regForm" action="/action_page.php">
-                <h1>GRN</h1>
-                <!-- One "tab" for each step in the form: -->
-                <div class="tab">Supplier Name:
-                    <p><input type="text" placeholder="Enter Supplier Name..." oninput="this.className = ''" name="name" required></p>
-                    <p><input type="date" placeholder="Choose Date" oninput="this.className = ''" name="date"></p>
-                </div>
-                <div class="tab">
-                    <label class="control-label col-sm-2" for="fname">Product Name:</label>
-                    <div class="col-sm-4">
-                        <input type="text" class="form-control" id="fname" placeholder="Enter First Name" name="fname" required>
-
-                    </div>
-                </div>
-
-                <div style="overflow:auto;">
-                    <div style="float:right;">
-                        <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-                        <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
-                    </div>
-                </div>
-                <!-- Circles which indicates the steps of the form: -->
-                <div style="text-align:center;margin-top:40px;">
-                    <span class="step"></span>
-                    <span class="step"></span>
-                </div>
-            </form>
 
             <script>
-                var currentTab = 0; // Current tab is set to be the first tab (0)
-                showTab(currentTab); // Display the crurrent tab
+                function addRow() {
 
-                function showTab(n) {
-                    // This function will display the specified tab of the form...
-                    var x = document.getElementsByClassName("tab");
-                    x[n].style.display = "block";
-                    //... and fix the Previous/Next buttons:
-                    if (n == 0) {
-                        document.getElementById("prevBtn").style.display = "none";
-                    } else {
-                        document.getElementById("prevBtn").style.display = "inline";
-                    }
-                    if (n == (x.length - 1)) {
-                        document.getElementById("nextBtn").innerHTML = "Save";
-                    } else {
-                        document.getElementById("nextBtn").innerHTML = "Next";
-                    }
-                    //... and run a function that will display the correct step indicator:
-                    fixStepIndicator(n)
+                    var medicinename = document.getElementById("medicinename");
+                    var time = document.getElementById("time");
+                    var duration = document.getElementById("duration");
+                    var when = document.getElementById("when");
+                    var table = document.getElementById("myTableData");
+
+                    var rowCount = table.rows.length;
+                    var row = table.insertRow(rowCount);
+
+                    row.insertCell(0).innerHTML = '<input type="button" value = "Delete" onClick="Javacsript:deleteRow(this)">';
+                    row.insertCell(1).innerHTML = medicinename.value;
+                    row.insertCell(2).innerHTML = time.value;
+                    row.insertCell(3).innerHTML = duration.value;
+                    row.insertCell(4).innerHTML = when.value;
+                    document.getElementById('medicinename').value = '';
+                    document.getElementById('time').value = '';
+                    document.getElementById('duration').value = '';
+                    document.getElementById('when').value = '';
                 }
 
-                function nextPrev(n) {
-                    // This function will figure out which tab to display
-                    var x = document.getElementsByClassName("tab");
-                    // Exit the function if any field in the current tab is invalid:
-                    if (n == 1 && !validateForm())
-                        return false;
-                    // Hide the current tab:
-                    x[currentTab].style.display = "none";
-                    // Increase or decrease the current tab by 1:
-                    currentTab = currentTab + n;
-                    // if you have reached the end of the form...
-                    if (currentTab >= x.length) {
-                        // ... the form gets submitted:
-                        document.getElementById("regForm").submit();
-                        return false;
-                    }
-                    // Otherwise, display the correct tab:
-                    showTab(currentTab);
+                function deleteRow(obj) {
+
+                    var index = obj.parentNode.parentNode.rowIndex;
+                    var table = document.getElementById("myTableData");
+                    table.deleteRow(index);
+
                 }
 
-                function validateForm() {
-                    // This function deals with validation of the form fields
-                    var x, y, i, valid = true;
-                    x = document.getElementsByClassName("tab");
-                    y = x[currentTab].getElementsByTagName("input");
-                    // A loop that checks every input field in the current tab:
-                    for (i = 0; i < y.length; i++) {
-                        // If a field is empty...
-                        if (y[i].value == "") {
-                            // add an "invalid" class to the field:
-                            y[i].className += " invalid";
-                            // and set the current valid status to false
-                            valid = false;
-                        }
-                    }
-                    // If the valid status is true, mark the step as finished and valid:
-                    if (valid) {
-                        document.getElementsByClassName("step")[currentTab].className += " finish";
-                    }
-                    return valid; // return the valid status
-                }
+//            function addTable() {
+//
+//                var myTableDiv = document.getElementById("myDynamicTable");
+//
+//                var table = document.createElement('TABLE');
+//                table.border = '1';
+//
+//                var tableBody = document.createElement('TBODY');
+//                table.appendChild(tableBody);
+//
+//                for (var i = 0; i < 3; i++) {
+//                    var tr = document.createElement('TR');
+//                    tableBody.appendChild(tr);
+//
+//                    for (var j = 0; j < 4; j++) {
+//                        var td = document.createElement('TD');
+//                        td.width = '75';
+//                        td.appendChild(document.createTextNode("Cell " + i + "," + j));
+//                        tr.appendChild(td);
+//                    }
+//                }
+//                myTableDiv.appendChild(table);
+//
+//            }
 
-                function fixStepIndicator(n) {
-                    // This function removes the "active" class of all steps...
-                    var i, x = document.getElementsByClassName("step");
-                    for (i = 0; i < x.length; i++) {
-                        x[i].className = x[i].className.replace(" active", "");
-                    }
-                    //... and adds the "active" class on the current step:
-                    x[n].className += " active";
-                }
             </script>
 
+            <form class="form-horizontal" action="../SupplierReg" method="post">
+                <div id="mainform">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="medicinename">First Name:</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="medicinename" placeholder="Enter First Name" name="fname" required>
+                        </div>
+                    </div>
+                </div>
+                <div id="mainform">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="time">First Name:</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="time" placeholder="Enter First Name" name="fname" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-6" for="add">
+                        <input type="button" class="btn btn-info" value="Add" id="add"onclick="Javascript:addRow()">
+                        <input type="reset" class="btn btn-info" value="reset">
+                    </label>
+                </div>
+                </tr>
 
-            <!--// methanin yata tika daganna-->
+            </form>
 
 
+            <div id="mydata">
+                <table id="myTableData"  border="1" cellpadding="2">
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td><b>Medicine Name</b></td>
+                        <td><b>Medicine Time&nbsp</b></td>
+                        <td><b>Medicine Duration</b></td>
+                        <td><b>Medicine When?</b></td>
+                    </tr>
+                </table>
+                <!--// methanin yata tika daganna-->
+
+
+            </div>
         </div>
+        </form>
     </div>
-</div>
-<!-- /.container-fluid-->
-<%@include file="includ/2footer_1.jsp" %>
+    <!-- /.container-fluid-->
+    <%@include file="includ/2footer_1.jsp" %>
