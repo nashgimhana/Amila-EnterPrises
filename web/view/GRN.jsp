@@ -20,7 +20,7 @@
             <script>
                 function addRow() {
 
-                    var prname = document.getElementById("prname");
+                    var myprname = document.getElementById("prname");
                     var mybuyprice = document.getElementById("buyprice").value;
                     var myqty = document.getElementById('qty').value;
                     var prtotal = mybuyprice * myqty;
@@ -35,15 +35,17 @@
 
                     var rowCount = table.rows.length;
                     var row = table.insertRow(rowCount);
-
+                    var i = 1;
                     row.insertCell(0).innerHTML = '<input type="button" value = "Delete" onClick="Javacsript:deleteRow(this)">';
-                    row.insertCell(1).innerHTML = prname.value;
+                    row.insertCell(1).innerHTML = myprname.value;
                     row.insertCell(2).innerHTML = mybuyprice;
                     row.insertCell(3).innerHTML = myqty;
                     row.insertCell(4).innerHTML = prtotal.toFixed(2);//value eka round krna ganne
+                    document.getElementById('tblrowcount').value = i;
                     document.getElementById('prname').value = "";
                     document.getElementById('buyprice').value = "";
                     document.getElementById('qty').value = "";
+                    i++;
                 }
 
                 function deleteRow(obj) {
@@ -86,7 +88,7 @@
 
             </script>
 
-            <form class="form-horizontal" action="../SupplierReg" method="post">
+            <form class="form-horizontal" action="../Grn" method="post">
                 <div style="background-color: #cccccc; margin-right: 300pt;padding: auto; width: auto;">
                     <div id="mainform">
                         <div class="form-group">
@@ -144,27 +146,36 @@
                         <input type="reset" class="btn btn-info" value="reset">
                     </label>
                 </div>
-                </tr>
 
+
+
+
+
+                <div id="mydata">
+                    <table id="myTableData"  border="1" cellpadding="2">
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td><b>Product Name</b></td>
+                            <td><b>Buying Price</b></td>
+                            <td><b>Quantity</b></td>
+                            <td><b>Product Total</b></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-6" for="save">
+                        <input type="hidden" id="tblrowcount" value=""/>
+                        <input type="submit" class="btn btn-danger" value="save">
+
+                    </label>
+                </div>
             </form>
+            <!--// methanin yata tika daganna-->
 
 
-            <div id="mydata">
-                <table id="myTableData"  border="1" cellpadding="2">
-                    <tr>
-                        <td>&nbsp;</td>
-                        <td><b>Product Name</b></td>
-                        <td><b>Buying Price</b></td>
-                        <td><b>Quantity</b></td>
-                        <td><b>Product Total</b></td>
-                    </tr>
-                </table>
-                <!--// methanin yata tika daganna-->
-
-
-            </div>
         </div>
-        </form>
     </div>
-    <!-- /.container-fluid-->
-    <%@include file="includ/2footer_1.jsp" %>
+</form>
+</div>
+<!-- /.container-fluid-->
+<%@include file="includ/2footer_1.jsp" %>

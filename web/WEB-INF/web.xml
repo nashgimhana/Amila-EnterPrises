@@ -16,6 +16,10 @@
         <servlet-name>ProductReg</servlet-name>
         <servlet-class>servlet.ProductReg</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Grn</servlet-name>
+        <servlet-class>servlet.Grn</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>A</servlet-name>
         <url-pattern>/A</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>ProductReg</servlet-name>
         <url-pattern>/ProductReg</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Grn</servlet-name>
+        <url-pattern>/Grn</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
