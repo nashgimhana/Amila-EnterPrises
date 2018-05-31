@@ -20,30 +20,41 @@
             <script>
                 function addRow() {
 
-                    var supname = document.getElementById("supname");
-                    var time = document.getElementById("time");
-                    var duration = document.getElementById("duration");
-                    var when = document.getElementById("when");
+                    var prname = document.getElementById("prname");
+                    var mybuyprice = document.getElementById("buyprice").value;
+                    var myqty = document.getElementById('qty').value;
+                    var prtotal = mybuyprice * myqty;
+
+
                     var table = document.getElementById("myTableData");
+
+                    var getfulltotal = parseFloat(document.getElementById('total').value);
+                    var fulltot = (getfulltotal + prtotal);
+                    document.getElementById('total').value = "";
+                    document.getElementById('total').value = fulltot.toFixed(2);
 
                     var rowCount = table.rows.length;
                     var row = table.insertRow(rowCount);
 
                     row.insertCell(0).innerHTML = '<input type="button" value = "Delete" onClick="Javacsript:deleteRow(this)">';
-                    row.insertCell(1).innerHTML = supname.value;
-                    row.insertCell(2).innerHTML = time.value;
-                    row.insertCell(3).innerHTML = duration.value;
-                    row.insertCell(4).innerHTML = when.value;
-                    document.getElementById('supname').value = '';
-                    document.getElementById('time').value = '';
-                    document.getElementById('duration').value = '';
-                    document.getElementById('when').value = '';
+                    row.insertCell(1).innerHTML = prname.value;
+                    row.insertCell(2).innerHTML = mybuyprice;
+                    row.insertCell(3).innerHTML = myqty;
+                    row.insertCell(4).innerHTML = prtotal.toFixed(2);//value eka round krna ganne
+                    document.getElementById('prname').value = "";
+                    document.getElementById('buyprice').value = "";
+                    document.getElementById('qty').value = "";
                 }
 
                 function deleteRow(obj) {
 
                     var index = obj.parentNode.parentNode.rowIndex;
                     var table = document.getElementById("myTableData");
+                    var tbvalue = parseFloat(document.getElementById('myTableData').rows[index].cells[3].value);
+                    var getfulltotal = parseFloat(document.getElementById('total').value);
+                    var fulltot = (getfulltotal - tbvalue);
+                    document.getElementById('total').value = "";
+                    document.getElementById('total').value = fulltot.toFixed(2);
                     table.deleteRow(index);
 
                 }
@@ -76,22 +87,57 @@
             </script>
 
             <form class="form-horizontal" action="../SupplierReg" method="post">
-                <div id="mainform">
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="supname">Suplier Name:</label>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" id="supname" placeholder="Enter Supplier Name" name="supname" required>
+                <div style="background-color: #cccccc; margin-right: 300pt;padding: auto; width: auto;">
+                    <div id="mainform">
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="supname">Suplier Name:</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="supname" placeholder="Enter Supplier Name" name="supname" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="mainform">
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="date">Date:</label>
+                            <div class="col-sm-4">
+                                <input type="date" class="form-control" id="date" placeholder="Select Date" name="date" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="mainform">
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="total">Full Total:</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="total" name="fultot" disabled value=0>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div id="mainform">
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="time">First Name:</label>
+                        <label class="control-label col-sm-2" for="prname">Product Name:</label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="time" placeholder="Enter First Name" name="fname" required>
+                            <input type="text" class="form-control" id="prname" placeholder="Enter Product Name" name="prname" reqired>
                         </div>
                     </div>
                 </div>
+                <div id="mainform">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="buyprice">Buying Price:</label>
+                        <div class="col-sm-4">
+                            <input type="number" class="form-control" id="buyprice" placeholder="Enter Buying Price" name="buyprice" required>
+                        </div>
+                    </div>
+                </div>
+                <div id="mainform">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="qty">Quantity:</label>
+                        <div class="col-sm-4">
+                            <input type="number" class="form-control" id="qty" placeholder="Enter Quantity" name="qty" required>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="form-group">
                     <label class="control-label col-sm-6" for="add">
                         <input type="button" class="btn btn-info" value="Add" id="add"onclick="Javascript:addRow()">
@@ -107,10 +153,10 @@
                 <table id="myTableData"  border="1" cellpadding="2">
                     <tr>
                         <td>&nbsp;</td>
-                        <td><b>Medicine Name</b></td>
-                        <td><b>Medicine Time&nbsp</b></td>
-                        <td><b>Medicine Duration</b></td>
-                        <td><b>Medicine When?</b></td>
+                        <td><b>Product Name</b></td>
+                        <td><b>Buying Price</b></td>
+                        <td><b>Quantity</b></td>
+                        <td><b>Product Total</b></td>
                     </tr>
                 </table>
                 <!--// methanin yata tika daganna-->
