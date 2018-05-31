@@ -20,6 +20,10 @@
         <servlet-name>Grn</servlet-name>
         <servlet-class>servlet.Grn</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Vehiclesave</servlet-name>
+        <servlet-class>servlet.Vehiclesave</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>A</servlet-name>
         <url-pattern>/A</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>Grn</servlet-name>
         <url-pattern>/Grn</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Vehiclesave</servlet-name>
+        <url-pattern>/Vehiclesave</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
