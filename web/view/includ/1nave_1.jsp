@@ -64,7 +64,7 @@
                                 <a href="../view/SupplierRegister.jsp">Supplier Register</a>
                             </li>
                             <li>
-                                <a href="#">Supplier Debit</a>
+                                <a href="../view/GRN.jsp">GRN</a>
                             </li>
                         </ul>
                     </li>
@@ -132,7 +132,25 @@
 
                     <!--customer ends-->
 
- 
+                    <!--Dilivery Start-->
+
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+                        <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#Dilivery" data-parent="#exampleAccordion">
+                            <i class="fa fa-fw fa-envelope"></i>
+                            <span class="nav-link-text">Dilivery</span>
+                        </a>
+                        <ul class="sidenav-second-level collapse" id="Dilivery">
+                            <li>
+                                <a href="../view/Vehicle.jsp">Vehicle Register</a>
+                            </li>
+                            <li>
+                                <a href="../view/Route.jsp">Route Register</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!--dilivery ends-->
+
                     <!--//========================================-->
                 </ul>
                 <ul class="navbar-nav sidenav-toggler">
