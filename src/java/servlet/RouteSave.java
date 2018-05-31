@@ -22,15 +22,16 @@ public class RouteSave extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            String number = request.getParameter("vehino");
+            String name = request.getParameter("routename");
             String discription = request.getParameter("discription");
-            int saveVehicle = new controller.Vehiclecontroller().saveVehicles(number, discription);
-            if (saveVehicle != 0) {
-                response.sendRedirect("view/Vehicle.jsp");
+            int saveRoute = new controller.RouteController().saveVehicles(name, discription);
+            if (saveRoute != 0) {
+                response.sendRedirect("view/Route.jsp");
             } else {
                 System.out.println("fuck");
             }
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }
