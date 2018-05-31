@@ -151,6 +151,25 @@
 
                     <!--dilivery ends-->
 
+                    <!--Cheques Start-->
+
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+                        <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#Cheques" data-parent="#exampleAccordion">
+                            <i class="fa fa-fw fa-circle"></i>
+                            <span class="nav-link-text">Cheques</span>
+                        </a>
+                        <ul class="sidenav-second-level collapse" id="Cheques">
+                            <li>
+                                <a href="../view/Bank.jsp">Bank Register</a>
+                            </li>
+                            <li>
+                                <a href="#">Cheque View</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!--Cheques ends-->
+
                     <!--//========================================-->
                 </ul>
                 <ul class="navbar-nav sidenav-toggler">

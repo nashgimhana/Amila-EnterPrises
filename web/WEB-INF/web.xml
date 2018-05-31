@@ -28,6 +28,10 @@
         <servlet-name>RouteSave</servlet-name>
         <servlet-class>servlet.RouteSave</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>BankSave</servlet-name>
+        <servlet-class>servlet.BankSave</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>A</servlet-name>
         <url-pattern>/A</url-pattern>
@@ -55,6 +59,10 @@
     <servlet-mapping>
         <servlet-name>RouteSave</servlet-name>
         <url-pattern>/RouteSave</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BankSave</servlet-name>
+        <url-pattern>/BankSave</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
