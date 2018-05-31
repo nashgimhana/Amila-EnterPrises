@@ -43,7 +43,9 @@ public class EmployeeReg extends HttpServlet {
         emp.put("con2", request.getParameter("con2"));
         
         boolean b = model.GetInstans.getEmpModle().saveEmplooee(emp);
-
+        if(b){
+        response.sendRedirect("index.html");
+        }else{}
     }
 
 }
