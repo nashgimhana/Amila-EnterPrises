@@ -24,6 +24,10 @@
         <servlet-name>Vehiclesave</servlet-name>
         <servlet-class>servlet.Vehiclesave</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RouteSave</servlet-name>
+        <servlet-class>servlet.RouteSave</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>A</servlet-name>
         <url-pattern>/A</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>Vehiclesave</servlet-name>
         <url-pattern>/Vehiclesave</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RouteSave</servlet-name>
+        <url-pattern>/RouteSave</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
