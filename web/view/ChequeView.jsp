@@ -15,7 +15,33 @@
 
             <!--// Methanini Uda tika daganna-->
 
+            <div class="container">
+                <h2 style="color: blue;">Cheques</h2>
+                <div class="checkbox">
+                    <label><input type="checkbox" value="">Supplier Cheques</label>
+                    <label><input type="checkbox" value="">Customer Cheques</label>
+                </div>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Cheque Number</th>
+                            <th>Amount( RS :)</th>
+                            <th>Date</th>
+                            <th>Cheque Return Date</th>
+                            <th>Bank<th>
+                            <th>Action<th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--                        <tr>
+                                                    <td>John</td>
+                                                    <td>Doe</td>
+                                                    <td>john@example.com</td>
+                                                </tr>-->
 
+                    </tbody>
+                </table>
+            </div>
 
 
             <!--// methanin yata tika daganna-->

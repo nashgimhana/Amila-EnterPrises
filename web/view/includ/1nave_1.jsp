@@ -163,7 +163,7 @@
                                 <a href="../view/Bank.jsp">Bank Register</a>
                             </li>
                             <li>
-                                <a href="#">Cheque View</a>
+                                <a href="../view/ChequeView.jsp">Cheque View</a>
                             </li>
                         </ul>
                     </li>
