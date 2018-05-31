@@ -7,6 +7,7 @@ package servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -31,12 +32,20 @@ public class EmployeeReg extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String ename = request.getParameter("fname");
-        String pos = request.getParameter("position");
-        System.out.println(pos);
-        
-    }
 
-    
+        HashMap<String, String> emp = new HashMap<>();
+        emp.put("position", request.getParameter("position"));
+        emp.put("fname", request.getParameter("fname"));
+        emp.put("lname", request.getParameter("lname"));
+        emp.put("adl1", request.getParameter("adl1"));
+        emp.put("adl2", request.getParameter("adl2"));
+        emp.put("con1", request.getParameter("con1"));
+        emp.put("con2", request.getParameter("con2"));
+        
+        boolean b = model.GetInstans.getEmpModle().saveEmplooee(emp);
+        if(b){
+        response.sendRedirect("index.html");
+        }else{}
+    }
 
 }
