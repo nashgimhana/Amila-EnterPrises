@@ -15,7 +15,7 @@
         <script>
             function load() {
                 alert("call una");
-                var x = document.getElementById("name").value;
+                var x = {"name": "John", "age": 30};
                 var myJson = JSON.stringify(x);
                 var xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function () {

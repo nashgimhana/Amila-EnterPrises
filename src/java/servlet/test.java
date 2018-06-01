@@ -6,11 +6,15 @@
 package servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+import javafx.scene.chart.PieChart.Data;
+import javax.json.JsonObject;
+import javax.json.JsonValue;
+import javax.json.stream.JsonParser;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import jdk.nashorn.internal.parser.JSONParser;
 
 /**
  *
@@ -24,7 +28,12 @@ public class test extends HttpServlet {
         try {
             System.out.println("awaaa");
             String name = request.getParameter("obj");
-            System.out.println(name);
+
+            org.json.simple.parser.JSONParser parser = new org.json.simple.parser.JSONParser();
+            JsonObject json = (JsonObject) parser.parse(name);
+            JsonValue x = json.get("name");
+            String y = x.toString();
+            System.out.println(y);
         } catch (Exception e) {
         }
     }
