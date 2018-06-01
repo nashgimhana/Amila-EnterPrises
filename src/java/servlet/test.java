@@ -5,6 +5,8 @@
  */
 package servlet;
 
+import com.google.gson.Gson;
+import controller.testing;
 import java.io.IOException;
 import javafx.scene.chart.PieChart.Data;
 import javax.json.JsonObject;
@@ -28,12 +30,11 @@ public class test extends HttpServlet {
         try {
             System.out.println("awaaa");
             String name = request.getParameter("obj");
-
-            org.json.simple.parser.JSONParser parser = new org.json.simple.parser.JSONParser();
-            JsonObject json = (JsonObject) parser.parse(name);
-            JsonValue x = json.get("name");
-            String y = x.toString();
-            System.out.println(y);
+            System.out.println(name);
+            Gson g = new Gson();
+            testing p = g.fromJson(name, testing.class);
+            System.out.println(p.getName());
+            System.out.println(p.getAge());
         } catch (Exception e) {
         }
     }
