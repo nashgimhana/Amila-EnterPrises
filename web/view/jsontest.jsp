@@ -23,13 +23,13 @@
 
                     }
                 }
-                xhttp.open("GET", "test?obj=" + myJson, true);
+                xhttp.open("GET", "../test?obj=" + myJson, true);
                 xhttp.send();
             }
         </script>
         <form>
             <input type="text" id="name">
-            <button onclick="load();">ok</button>
+            <button onclick="load()">ok</button>
         </form>
     </body>
 </html>
