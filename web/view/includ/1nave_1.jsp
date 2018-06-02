@@ -137,7 +137,7 @@
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
                         <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#Dilivery" data-parent="#exampleAccordion">
                             <i class="fa fa-fw fa-envelope"></i>
-                            <span class="nav-link-text">Dilivery</span>
+                            <span class="nav-link-text">Delivery</span>
                         </a>
                         <ul class="sidenav-second-level collapse" id="Dilivery">
                             <li>
@@ -146,11 +146,36 @@
                             <li>
                                 <a href="../view/Route.jsp">Route Register</a>
                             </li>
+                             <li>
+                                <a href="../view/delivery.jsp">Create Delivery</a>
+                            </li>
                         </ul>
                     </li>
 
                     <!--dilivery ends-->
 
+                    
+                     <!--Employee Start-->
+
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+                        <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#Employee" data-parent="#exampleAccordion">
+                            <i class="fa fa-fw fa-envelope"></i>
+                            <span class="nav-link-text">Employee</span>
+                        </a>
+                        <ul class="sidenav-second-level collapse" id="Employee">
+                            <li>
+                                <a href="../view/employe.jsp">Employee Register</a>
+                            </li>
+<!--                            <li>
+                                <a href="../view/Route.jsp">Route Register</a>
+                            </li>-->
+                        </ul>
+                    </li>
+
+                    <!--Employee ends-->
+                    
+                    
+                    
                     <!--Cheques Start-->
 
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
