@@ -14,6 +14,8 @@
         <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <!-- Custom styles for this template-->
         <link href="css/sb-admin.css" rel="stylesheet">
+        <script src="../js/jquery-1.9.1.min.js"></script>
+        <script src="../js/jquery.tabletojson.min.js"></script>
     </head>
 
     <body class="fixed-nav sticky-footer bg-dark" id="page-top">
