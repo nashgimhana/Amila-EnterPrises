@@ -124,12 +124,12 @@
 
 <div class="container-fluid">
     <!-- Breadcrumbs-->
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-            <a href="index.html">Home</a>
-        </li>
-        <li class="breadcrumb-item active">Create Delivery</li>
-    </ol>
+    <!--    <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="index.html">Home</a>
+            </li>
+            <li class="breadcrumb-item active">Create Delivery</li>
+        </ol>-->
     <div class="row">
         <div class="col-12">
 
@@ -150,9 +150,9 @@
                         <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Summary</a>
                     </li>
                 </ul>
+
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-
 
                         <form autocomplete="off" class="form-horizontal" action="../view/delivery.jsp#profile" method="post">
                             <div id="mainform">
@@ -241,6 +241,7 @@
 
 
                     </div>
+
                     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 
 
@@ -249,31 +250,77 @@
                             <form class="modal-content" action="">
                                 <div class="col-sm-12">
                                     <span onclick="document.getElementById('id01').style.display = 'none'" class="close" title="Close Modal">&times;</span>
-                                    <h1>Sign Up</h1>
-                                    <p>Please fill in this form to create an account.</p>
+                                    <h1>Add More</h1>
+                                    <p>Product Name</p>
                                     <hr>
-                                    <label for="email"><b>Email</b></label>
-                                    <input type="text" placeholder="Enter Email" name="email" required>
 
-                                    <label for="psw"><b>Password</b></label>
-                                    <input type="password" placeholder="Enter Password" name="psw" required>
+                                    <row>
+                                        <div class="col-sm-5 form-group">
+                                            <select name="case" class="form-control">
+                                                <option>Bottles</option>
+                                                <option>Case 9B</option>
+                                                <option>Case 12B</option>
+                                                <option>Case 24B</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-5 form-group">
+                                            <h4> Current Total Stock Qty : 200</h4>
+                                        </div>  
+                                    </row>
 
-                                    <label for="psw-repeat"><b>Repeat Password</b></label>
-                                    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
 
-                                    <label>
-                                        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-                                    </label>
 
-                                    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+                                    <div id="selectpack"class="card-content table-responsive col-sm-12" style="overflow-y:scroll; height:350px;  display:block;">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>GRN No</th>
+                                                    <th>Date :</th>
+                                                    <th>Current Qty :</th>
+                                                    <th>Load Qty</th>
+                                                    <th>Load </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>10</td>
+                                                    <td>2018-5-14</td>
+                                                    <td>20.5</td>
+                                                    <td><input type="text" class="form-control" name=""/></td>
+                                                    <td><button class="btn btn-sm btn-info">Load</button></td>
+                                                </tr>
 
-                                    <div class="clearfix">
-                                        <button type="button" onclick="document.getElementById('id01').style.display = 'none'" class="cancelbtn">Cancel</button>
-                                        <button type="submit" class="signupbtn">Sign Up</button>
+                                                <tr>
+                                                    <td>10</td>
+                                                    <td>2018-5-14</td>
+                                                    <td>20.5</td>
+                                                    <td><input type="text" name=""/></td>
+                                                    <td><button class="btn btn-sm btn-info">Load</button></td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>10</td>
+                                                    <td>2018-5-14</td>
+                                                    <td>20.5</td>
+                                                    <td><input type="text" name=""/></td>
+                                                    <td><button class="btn btn-sm btn-info">Load</button></td>
+                                                </tr>
+
+
+                                            </tbody>
+                                        </table>
                                     </div>
+
                                 </div>
-                            </form>
-                        </div>    
+
+
+                                <div class="clearfix col-sm-12">
+                                    <button type="button" onclick="document.getElementById('id01').style.display = 'none'" class="cancelbtn ">Cancel</button>
+                                    <button type="submit" class="signupbtn">DONE</button>
+                                </div>
+                        </div>
+                        </form>
+
 
 
 
@@ -385,8 +432,7 @@
                                 <h5>Current Unit Price : 3000 </h5>
                                 <h5>Current Total Price : 3000 </h5>
                                 <br>
-                                <button class="btn btn-success" id="addmor">Add More</button>
-                                <button onclick="document.getElementById('id01').style.display = 'block'" style="width:auto;">Sign Up</button>
+                                <button onclick="document.getElementById('id01').style.display = 'block'" style="width:auto;">Add More</button>
 
                             </div>
 
@@ -397,26 +443,12 @@
                     </div>
                     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                         <h1>Summary</h1>
-
-
                     </div>
                 </div>
-
-
             </div>
-
-
-
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
 <!-- /.container-fluid-->
 <%@include file="includ/2footer_1.jsp" %>
 
@@ -424,20 +456,14 @@
 
 <script>
 
+                            // Javascript to enable link to tab
+                            var url = document.location.toString();
+                            if (url.match('#')) {
+                                $('.nav-tabs a[href="#' + url.split('#')[1] + '"]').tab('show');
+                            }
 
-                                    // Javascript to enable link to tab
-                                    var url = document.location.toString();
-                                    if (url.match('#')) {
-                                        $('.nav-tabs a[href="#' + url.split('#')[1] + '"]').tab('show');
-                                    }
-
-                                    // Change hash for page-reload
-                                    $('.nav-tabs a').on('shown.bs.tab', function (e) {
-                                        window.location.hash = e.target.hash;
-                                    })
-
-
-
-
-
+                            // Change hash for page-reload
+                            $('.nav-tabs a').on('shown.bs.tab', function (e) {
+                                window.location.hash = e.target.hash;
+                            })
 </script>
