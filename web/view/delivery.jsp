@@ -132,7 +132,7 @@
         </ol>-->
     <div class="row">
         <div class="col-12">
-
+            <br><br>
             <div class="control-label" style=" margin: auto;">
 
 
@@ -154,16 +154,14 @@
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 
-                        <form autocomplete="off" class="form-horizontal" action="../view/delivery.jsp#profile" method="post">
+                        <form autocomplete="off" class="form-horizontal" action="../Deliver" method="post">
                             <div id="mainform">
                                 <div class="form-group">
-                                    <label class="control-label col-sm-2" for="dp" >Delivery Date :</label>
-                                    <div class="col-sm-4 ">
-                                        <input  id="dp" name="dp" data-provide="datepicker" class="form-control" placeholder="YYYY-MM-DD">
+                                    <label class="control-label col-sm-2" for="date">Date:</label>
+                                    <div class="col-sm-4">
+                                        <input type="date" class="form-control" id="date" placeholder="Select Date" name="date" >
                                     </div>
                                 </div>
-
-
                                 <div class="form-group">
                                     <label class="control-label col-sm-2" for="root">Select Rote :</label>
                                     <div class="col-sm-4">
@@ -199,7 +197,7 @@
                                     <label class="control-label col-sm-2" for="vehicle">Vehicle NO :</label>
                                     <div class="col-sm-4">
 
-                                        <select name="root" id="vehicle" class="form-control">
+                                        <select name="vn" id="vehicle" class="form-control">
                                             <option value="0">Select One</option>
 
                                             <%                                                Session ss2 = conn.NewHibernateUtil.getSessionFactory().openSession();
@@ -456,14 +454,14 @@
 
 <script>
 
-                            // Javascript to enable link to tab
-                            var url = document.location.toString();
-                            if (url.match('#')) {
-                                $('.nav-tabs a[href="#' + url.split('#')[1] + '"]').tab('show');
-                            }
+                                    // Javascript to enable link to tab
+                                    var url = document.location.toString();
+                                    if (url.match('#')) {
+                                        $('.nav-tabs a[href="#' + url.split('#')[1] + '"]').tab('show');
+                                    }
 
-                            // Change hash for page-reload
-                            $('.nav-tabs a').on('shown.bs.tab', function (e) {
-                                window.location.hash = e.target.hash;
-                            })
+                                    // Change hash for page-reload
+                                    $('.nav-tabs a').on('shown.bs.tab', function (e) {
+                                        window.location.hash = e.target.hash;
+                                    })
 </script>
