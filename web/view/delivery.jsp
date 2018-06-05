@@ -333,7 +333,7 @@
 
 
                         <br>
-                        <input type="text" id="pid" class="form-control col-sm-5"/><br>
+                        <input type="text" id="pnsearch" onkeyup="searchProduct()" class="form-control col-sm-5"/><br>
                         <div class=" row">
                             <div  class="col-sm-5 ">     
 
@@ -351,85 +351,7 @@
                                                 <th>Select</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>John</td>
-                                                <td>Doe</td>
-                                                <td>20.50</td>
-                                                <td><button class="btn btn-sm btn-info">Select</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Mary</td>
-                                                <td>Moe</td>
-                                                <td>40.50</td>
-                                                <td><button class="btn btn-info">Select</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>July</td>
-                                                <td>Dooley</td>
-                                                <td>j</td>
-                                                <td><button class="btn btn-info">Select</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>July</td>
-                                                <td>Dooley</td>
-                                                <td>july</td>
-                                                <td><button class="btn btn-info">Select</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>July</td>
-                                                <td>Dooley</td>
-                                                <td>jul</td>
-                                                <td><button class="btn btn-info">Select</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>July</td>
-                                                <td>Dooley</td>
-                                                <td>jul</td>
-                                                <td><button class="btn btn-info">Select</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>July</td>
-                                                <td>Dooley</td>
-                                                <td>jul</td>
-                                                <td><button class="btn btn-info">Select</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>July</td>
-                                                <td>Dooley</td>
-                                                <td>july</td>
-                                                <td><button class="btn btn-info">Select</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>July</td>
-                                                <td>Dooley</td>
-                                                <td>july</td>
-                                                <td><button class="btn btn-info">Select</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>July</td>
-                                                <td>Dooley</td>
-                                                <td>jul</td>
-                                                <td><button class="btn btn-info">Select</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>July</td>
-                                                <td>Dooley</td>
-                                                <td>july</td>
-                                                <td><button class="btn btn-info">Select</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>July</td>
-                                                <td>Dooley</td>
-                                                <td>july</td>
-                                                <td><button class="btn btn-info">Select</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>July</td>
-                                                <td>Dooley</td>
-                                                <td>500.50</td>
-                                                <td><button class="btn btn-info">Select</button></td>
-                                            </tr>
+                                        <tbody id="ptbody">
 
                                         </tbody>
                                     </table>
@@ -471,8 +393,15 @@
 
 <script src="../js/ranga.js"></script>
 
+
+
+
 <script>
 
+                                    loadProduct();
+                                    function searchProduct() {
+                                        loadProduct();
+                                    }
                                     // Javascript to enable link to tab
                                     var url = document.location.toString();
                                     if (url.match('#')) {
