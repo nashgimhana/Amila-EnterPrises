@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated May 22, 2018 8:34:55 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated Jun 5, 2018 11:17:45 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="pojo.CustomerCredit" table="customer_credit" catalog="amiladb" optimistic-lock="version">
         <id name="id" type="java.lang.Integer">
@@ -16,6 +16,9 @@
         </property>
         <property name="date" type="date">
             <column name="date" length="10" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status" />
         </property>
     </class>
 </hibernate-mapping>

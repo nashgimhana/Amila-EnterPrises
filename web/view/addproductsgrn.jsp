@@ -30,12 +30,22 @@
 
                     }
                 }
-                xhttp.open("GET", "../test?obj=" + myJson, true);
+                xhttp.open("POST", "../Grn?obj=" + myJson, true);
                 xhttp.send();
             }
         </script>
     </head>
     <body>
+        <%
+            String supname = request.getParameter("supname");
+            String supdate = request.getParameter("date");
+            if (supname != null || supdate != null) {
+                HttpSession hs = request.getSession();
+                hs.setAttribute("grndetails", supname + "/" + supdate);
+                if (hs != null) {
+
+
+        %>
         <div style="width: 640px; float: left; background-color: #ede8e8; height: auto;">
 
 
@@ -57,7 +67,7 @@
             </div>
             <div id="mainform">
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="buyprice">Buying Price:</label>
+                    <label class="control-label col-sm-2" for="buyprice">Unit Price:</label>
                     <div class="col-sm-4">
                         <input type="number" class="form-control" id="buyprice" placeholder="Enter Buying Price" name="buyprice" >
                     </div>
@@ -65,7 +75,15 @@
             </div>
             <div id="mainform">
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="qty">Quantity:</label>
+                    <label class="control-label col-sm-2" for="qty">Case Type:</label>
+                    <div class="col-sm-4">
+                        <input type="number" class="form-control" id="qty" placeholder="Enter Quantity" name="qty">
+                    </div>
+                </div>
+            </div>
+            <div id="mainform">
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="qty">Quantity:(cases)</label>
                     <div class="col-sm-4">
                         <input type="number" class="form-control" id="qty" placeholder="Enter Quantity" name="qty">
                     </div>
@@ -87,15 +105,21 @@
                 <table id="myTableData"  border="1" cellpadding="2">
                     <tr>
                         <td>&nbsp;</td>
-                        <td><b>Product Name</b></td>
-                        <td><b>Buying Price</b></td>
+                        <td><b>Product_Name</b></td>
+                        <td><b>Buying_Price</b></td>
                         <td><b>Quantity</b></td>
-                        <td><b>Product Total</b></td>
+                        <td><b>Product_Total</b></td>
                     </tr>
                 </table>
             </div>
             <button onclick="load()">Save GRN</button>
         </div>
-
+        <%                } else {
+                    out.print("Parameters are null");
+                }
+            } else {
+                out.print("httpsession not created");
+            }
+        %>
     </body>
 </html>
