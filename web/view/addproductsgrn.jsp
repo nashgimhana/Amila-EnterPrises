@@ -4,6 +4,8 @@
     Author     : Nash
 --%>
 
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.Products"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -57,13 +59,25 @@
                     </div>
                 </div>
             </div>
-            <div id="mainform">
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="prname">Product Name:</label>
-                    <div class="col-sm-4">
-                        <input type="text" class="form-control" id="prname" placeholder="Enter Product Name" name="prname">
-                    </div>
-                </div>
+            <div class="form-group">
+                <label for="unit">Product:</label>
+
+                <select class="form-control" id="prname" name="unit" required>
+                    <option value="0">Select Unit</option>
+                    <% Products u = new Products();
+                        ArrayList<pojo.Product> unitslist = u.viewAllProducts();
+                        for (pojo.Product un : unitslist) {
+
+                    %>
+                    }
+                    %>
+                    <option value="<% out.write(un.getId().toString()); %>"><% out.write(un.getName()); %></option>
+
+                    <%
+                        }
+                    %>
+
+                </select>
             </div>
             <div id="mainform">
                 <div class="form-group">
@@ -77,7 +91,7 @@
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="qty">Case Type:</label>
                     <div class="col-sm-4">
-                        <input type="number" class="form-control" id="qty" placeholder="Enter Quantity" name="qty">
+                        <input type="number" class="form-control" id="casetype" placeholder="Enter Quantity" name="cases">
                     </div>
                 </div>
             </div>

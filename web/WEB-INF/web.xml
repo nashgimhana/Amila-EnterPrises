@@ -36,6 +36,10 @@
         <servlet-name>test</servlet-name>
         <servlet-class>servlet.test</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Casesave</servlet-name>
+        <servlet-class>servlet.Casesave</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>A</servlet-name>
         <url-pattern>/A</url-pattern>
@@ -71,6 +75,10 @@
     <servlet-mapping>
         <servlet-name>test</servlet-name>
         <url-pattern>/test</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Casesave</servlet-name>
+        <url-pattern>/Casesave</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -10,24 +10,20 @@ import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
-import pojo.Product;
 
 /**
  *
  * @author Nash
  */
-public class Products {
+public class Case {
 
-    public int save(Product product) {
-
+    public int save(pojo.CaseType caseType) {
         Session s = conn.NewHibernateUtil.getSessionFactory().openSession();
         try {
             Transaction beginTransaction = s.beginTransaction();
-            int i = (int) s.save(product);
-
+            int i = (int) s.save(caseType);
             beginTransaction.commit();
             s.flush();
-
             return i;
 
         } catch (Exception e) {
@@ -37,12 +33,13 @@ public class Products {
             s.close();
         }
     }
-     public ArrayList<pojo.Product> viewAllProducts() {
+
+    public ArrayList<pojo.CaseType> viewAllCases() {
         Session s = conn.NewHibernateUtil.getSessionFactory().openSession();
-        ArrayList<pojo.Product> un = null;
+        ArrayList<pojo.CaseType> un = null;
         try {
-            Criteria createCriteria = s.createCriteria(pojo.Product.class);
-            un = (ArrayList<pojo.Product>) createCriteria.list();
+            Criteria createCriteria = s.createCriteria(pojo.CaseType.class);
+            un = (ArrayList<pojo.CaseType>) createCriteria.list();
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -51,16 +48,17 @@ public class Products {
         return un;
     }
 
-    public pojo.Product getBy(int id) {
+    public pojo.CaseType getBy(int id) {
         Session s = conn.NewHibernateUtil.getSessionFactory().openSession();
-        pojo.Product uni = null;
+        pojo.CaseType uni = null;
         try {
-            Criteria cr = s.createCriteria(pojo.Product.class);
+            Criteria cr = s.createCriteria(pojo.CaseType.class);
             cr.add(Restrictions.eq("id", id));
-            uni = (pojo.Product) cr.uniqueResult();
+            uni = (pojo.CaseType) cr.uniqueResult();
         } catch (Exception e) {
             e.printStackTrace();
         }
         return uni;
     }
+
 }

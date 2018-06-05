@@ -5,6 +5,7 @@
  */
 package controller;
 
+import pojo.CaseType;
 import pojo.Product;
 import pojo.Units;
 
@@ -44,6 +45,18 @@ public class stockcontroller {
 
             return 0;
         }
+    }
+    public int saveCase(int type) {
+        try {
+            CaseType caseType=new CaseType();
+            caseType.setType(type);
+            int save = new model.Case().save(caseType);
+            return save;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0;
+        }
+
     }
 
 }

@@ -1,3 +1,4 @@
+<%@page import="model.Products"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.Units"%>
 <%@include file="includ/1nave_1.jsp" %>
@@ -29,7 +30,7 @@
                         <div class="form-group">
                             <label for="unit">Unit:</label>
 
-                            <select class="form-control" id="unit" name="unit" required>
+                            <select class="selectpicker" data-style="btn-primary" id="unit" name="unit" required data-live-search="true">
                                 <option value="0">Select Unit</option>
                                 <% Units u = new Units();
                                     ArrayList<pojo.Units> unitslist = u.viewAllUnits();
@@ -55,6 +56,24 @@
 
                     </div>
                 </form>
+            </div>
+            <div style=" min-width: 100px;
+                 padding: 24px 24px 0;
+                 overflow:hidden;">
+                <h3 style="color: red; font-family: fantasy;">Currently saved Products</h3>
+                <ul class="list-group">      
+                    <%
+                        Products c = new Products();
+                        ArrayList<pojo.Product> uProducts = c.viewAllProducts();
+                        for (pojo.Product p : uProducts) {
+
+
+                    %>
+
+                    <li class="list-group-item list-group-item-info"> <% out.write(p.getName()); %></li>
+
+                    <% }%>
+                </ul>
             </div>
             <!--// methanin yata tika daganna-->
 
