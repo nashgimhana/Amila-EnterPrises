@@ -402,6 +402,7 @@
                                     function searchProduct() {
                                         loadProduct();
                                     }
+                                   
                                     // Javascript to enable link to tab
                                     var url = document.location.toString();
                                     if (url.match('#')) {
