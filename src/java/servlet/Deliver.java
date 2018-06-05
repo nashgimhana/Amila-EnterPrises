@@ -1,17 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import org.hibernate.Session;
+import pojo.Route;
+import pojo.Vehicle;
 
 /**
  *
@@ -34,18 +34,30 @@ public class Deliver extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
 
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet Deliver</title>");
-            out.println(request.getParameter("date"));
-            out.println(request.getParameter("root"));
-            out.println(request.getParameter("vn"));
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet Deliver at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            if (request.getSession().getAttribute("d1") == null) {
+
+                HttpSession session = request.getSession();
+                HashMap<String, String> hm = new HashMap<String, String>();
+
+                Session ses = conn.NewHibernateUtil.getSessionFactory().openSession();
+                try {
+                    hm.put("date", request.getParameter("date"));
+                    Vehicle vehicle = (pojo.Vehicle) ses.load(pojo.Vehicle.class, Integer.parseInt(request.getParameter("vn")));
+                    hm.put("vn", vehicle.getVehicleNumber());
+
+                    Route route = (pojo.Route) ses.load(pojo.Route.class, Integer.parseInt(request.getParameter("root")));
+                    hm.put("root", route.getName());
+                    session.setAttribute("d1", hm);
+                    response.sendRedirect("view/delivery.jsp#profile ");
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } finally {
+                    ses.close();
+                }
+            } else {
+                request.getSession().removeAttribute("d1");
+            }
 
         }
     }
@@ -77,6 +89,7 @@ public class Deliver extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+
     }
 
     /**

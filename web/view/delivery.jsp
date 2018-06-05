@@ -1,4 +1,5 @@
 
+<%@page import="java.util.HashMap"%>
 <%@page import="java.util.List"%>
 <%@page import="org.hibernate.Session"%>
 <%@page import="java.util.ArrayList"%>
@@ -242,6 +243,15 @@
 
                     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 
+                        <% if (request.getSession().getAttribute("d1") != null) {
+                                HashMap<String, String> hm = (HashMap) request.getSession().getAttribute("d1");
+                        %>        
+
+
+
+
+
+
 
                         <div id="id01" class="modal">
 
@@ -328,6 +338,10 @@
                             <div  class="col-sm-5 ">     
 
                                 <div id="selectpack"class="card-content table-responsive col-sm-12" style="overflow-y:scroll; height:350px;  display:block;">
+
+
+
+
                                     <table class="table table-bordered">
                                         <thead>
                                             <tr>
@@ -424,7 +438,10 @@
                             </div>
 
                             <div class="col-sm-4">
-                                <h3>Vehicle No</h3>
+                                <h6>Date : <% out.print(hm.get("date"));  %></h6>
+                                <h6>Vehicle No : <% out.print(hm.get("vn"));  %>    </h6>
+                                <h6>Route Name : <% out.print(hm.get("root"));  %></h6>
+                                <br>
                                 <h4>Product Name</h4>
                                 <h5>Current Stock In Vehicle : 3000 </h5>
                                 <h5>Current Unit Price : 3000 </h5>
@@ -435,9 +452,11 @@
                             </div>
 
 
-
-
                         </div>
+
+                        <% }%> <!--sessinon d1 is not null-->
+
+
                     </div>
                     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                         <h1>Summary</h1>
