@@ -25,7 +25,7 @@ import jdk.nashorn.internal.parser.JSONParser;
 public class test extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
             System.out.println("awaaa");
@@ -33,17 +33,8 @@ public class test extends HttpServlet {
             System.out.println(name);
             Gson g = new Gson();
             testing p = g.fromJson(name, testing.class);
-            System.out.println(p.getName());
-            System.out.println(p.getAge());
-        } catch (Exception e) {
-        }
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        try {
-
+//            System.out.println(p.getName());
+//            System.out.println(p.getAge());
         } catch (Exception e) {
         }
     }

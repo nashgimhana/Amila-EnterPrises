@@ -30,12 +30,22 @@
 
                     }
                 }
-                xhttp.open("GET", "../test?obj=" + myJson, true);
+                xhttp.open("POST", "../Grn?obj=" + myJson, true);
                 xhttp.send();
             }
         </script>
     </head>
     <body>
+        <%
+            String supname = request.getParameter("supname");
+            String supdate = request.getParameter("date");
+            if (supname != null || supdate != null) {
+                HttpSession hs = request.getSession();
+                hs.setAttribute("grndetails", supname + "/" + supdate);
+                if (hs != null) {
+
+
+        %>
         <div style="width: 640px; float: left; background-color: #ede8e8; height: auto;">
 
 
@@ -87,15 +97,21 @@
                 <table id="myTableData"  border="1" cellpadding="2">
                     <tr>
                         <td>&nbsp;</td>
-                        <td><b>Product Name</b></td>
-                        <td><b>Buying Price</b></td>
+                        <td><b>Product_Name</b></td>
+                        <td><b>Buying_Price</b></td>
                         <td><b>Quantity</b></td>
-                        <td><b>Product Total</b></td>
+                        <td><b>Product_Total</b></td>
                     </tr>
                 </table>
             </div>
             <button onclick="load()">Save GRN</button>
         </div>
-
+        <%                } else {
+                    out.print("Parameters are null");
+                }
+            } else {
+                out.print("httpsession not created");
+            }
+        %>
     </body>
 </html>

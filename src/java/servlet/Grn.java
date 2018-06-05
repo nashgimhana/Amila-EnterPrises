@@ -5,6 +5,8 @@
  */
 package servlet;
 
+import com.google.gson.Gson;
+import controller.testing;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -18,17 +20,20 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class Grn extends HttpServlet {
 
-
-    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        System.out.println("servlet ekta awaa");
         try {
-            String i=request.getParameter("tblrowcount");
-            System.out.println(i);
+            System.out.println("awaaa");
+            System.out.println(request.getSession().getAttribute("grndetails"));
+            request.getSession().invalidate();
+            String name = request.getParameter("obj");
+            System.out.println(name);
+            Gson g = new Gson();
+            testing p = g.fromJson(name, testing.class);
+            System.out.println(p.getProduct_Name());
+            System.out.println(p.getQuantity());
         } catch (Exception e) {
         }
     }
-
 
 }

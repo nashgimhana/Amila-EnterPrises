@@ -12,33 +12,62 @@ package controller;
 public class testing {
 
     /**
-     * @return the name
+     * @return the Product_Name
      */
-    public String getName() {
-        return name;
+    public String getProduct_Name() {
+        return Product_Name;
     }
 
     /**
-     * @param name the name to set
+     * @param Product_Name the Product_Name to set
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setProduct_Name(String Product_Name) {
+        this.Product_Name = Product_Name;
     }
 
     /**
-     * @return the age
+     * @return the Buying_price
      */
-    public int getAge() {
-        return age;
+    public double getBuying_price() {
+        return Buying_price;
     }
 
     /**
-     * @param age the age to set
+     * @param Buying_price the Buying_price to set
      */
-    public void setAge(int age) {
-        this.age = age;
+    public void setBuying_price(double Buying_price) {
+        this.Buying_price = Buying_price;
     }
-    private String name;
-    private int age;
-    
+
+    /**
+     * @return the Quantity
+     */
+    public double getQuantity() {
+        return Quantity;
+    }
+
+    /**
+     * @param Quantity the Quantity to set
+     */
+    public void setQuantity(double Quantity) {
+        this.Quantity = Quantity;
+    }
+
+    /**
+     * @return the Product_Total
+     */
+    public double getProduct_Total() {
+        return Product_Total;
+    }
+
+    /**
+     * @param Product_Total the Product_Total to set
+     */
+    public void setProduct_Total(double Product_Total) {
+        this.Product_Total = Product_Total;
+    }
+    private String Product_Name;
+    private double Buying_price;
+    private double Quantity;
+    private double Product_Total;
 }
