@@ -70,4 +70,17 @@ public class testing {
     private double Buying_price;
     private double Quantity;
     private double Product_Total;
+
+    public testing(String Product_Name, double Buying_price, double Quantity, double Product_Total) {
+        this.Product_Name = Product_Name;
+        this.Buying_price = Buying_price;
+        this.Quantity = Quantity;
+        this.Product_Total = Product_Total;
+    }
+
+    @Override
+    public String toString() {
+        return "testing{" + "Product_Name=" + Product_Name + ", Buying_price=" + Buying_price + ", Quantity=" + Quantity + ", Product_Total=" + Product_Total + '}';
+    }
+
 }

@@ -5,10 +5,8 @@
  */
 package servlet;
 
-import com.google.gson.Gson;
-import controller.testing;
 import java.io.IOException;
-import java.io.PrintWriter;
+import org.json.*;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -28,12 +26,23 @@ public class Grn extends HttpServlet {
             request.getSession().invalidate();
             String name = request.getParameter("obj");
             System.out.println(name);
-            Gson g = new Gson();
-            testing p = g.fromJson(name, testing.class);
-            System.out.println(p.getProduct_Name());
-            System.out.println(p.getQuantity());
+//            org.json.JSONObject object = new org.json.JSONObject(name);
+
+            JSONArray jsonArray = new JSONArray(name);//import org.json jar eka use krna JSONArray ekakta string ekak convert kala
+            for (int i = 0; i < jsonArray.length(); i++) {
+                System.out.println("loop awaaa");
+                JSONObject jsnObj = (JSONObject) jsonArray.get(i);
+                String finalValue = (String) jsnObj.get("Product_Name");
+                System.out.println(finalValue);
+
+            }
+//            Gson g = new Gson();
+//            testing p = g.fromJson(name, testing.class);
+//            System.out.println(p.getProduct_Name());
+//            System.out.println(p.getQuantity());
         } catch (Exception e) {
+            e.printStackTrace();
+
         }
     }
-
 }
