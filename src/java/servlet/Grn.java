@@ -23,7 +23,7 @@ public class Grn extends HttpServlet {
         try {
             System.out.println("awaaa");
             System.out.println(request.getSession().getAttribute("grndetails"));
-            request.getSession().invalidate();
+
             String name = request.getParameter("obj");
             System.out.println(name);
 //            org.json.JSONObject object = new org.json.JSONObject(name);
@@ -43,6 +43,8 @@ public class Grn extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
 
+        } finally {
+            request.getSession().invalidate();
         }
     }
 }

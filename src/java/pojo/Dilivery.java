@@ -1,5 +1,5 @@
 package pojo;
-// Generated May 22, 2018 8:34:55 PM by Hibernate Tools 4.3.1
+// Generated Jun 5, 2018 11:17:44 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -18,6 +18,7 @@ public class Dilivery  implements java.io.Serializable {
      private Date date;
      private Set invoices = new HashSet(0);
      private Set ongoingDiliveries = new HashSet(0);
+     private Set diliveryEmployeeLogs = new HashSet(0);
      private Set diliveryItemLogs = new HashSet(0);
      private Set diliveryLoads = new HashSet(0);
 
@@ -29,12 +30,13 @@ public class Dilivery  implements java.io.Serializable {
         this.route = route;
         this.vehicle = vehicle;
     }
-    public Dilivery(Route route, Vehicle vehicle, Date date, Set invoices, Set ongoingDiliveries, Set diliveryItemLogs, Set diliveryLoads) {
+    public Dilivery(Route route, Vehicle vehicle, Date date, Set invoices, Set ongoingDiliveries, Set diliveryEmployeeLogs, Set diliveryItemLogs, Set diliveryLoads) {
        this.route = route;
        this.vehicle = vehicle;
        this.date = date;
        this.invoices = invoices;
        this.ongoingDiliveries = ongoingDiliveries;
+       this.diliveryEmployeeLogs = diliveryEmployeeLogs;
        this.diliveryItemLogs = diliveryItemLogs;
        this.diliveryLoads = diliveryLoads;
     }
@@ -80,6 +82,13 @@ public class Dilivery  implements java.io.Serializable {
     
     public void setOngoingDiliveries(Set ongoingDiliveries) {
         this.ongoingDiliveries = ongoingDiliveries;
+    }
+    public Set getDiliveryEmployeeLogs() {
+        return this.diliveryEmployeeLogs;
+    }
+    
+    public void setDiliveryEmployeeLogs(Set diliveryEmployeeLogs) {
+        this.diliveryEmployeeLogs = diliveryEmployeeLogs;
     }
     public Set getDiliveryItemLogs() {
         return this.diliveryItemLogs;

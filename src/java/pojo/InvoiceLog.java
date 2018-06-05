@@ -1,5 +1,5 @@
 package pojo;
-// Generated May 22, 2018 8:34:55 PM by Hibernate Tools 4.3.1
+// Generated Jun 5, 2018 11:17:44 PM by Hibernate Tools 4.3.1
 
 
 
@@ -14,6 +14,7 @@ public class InvoiceLog  implements java.io.Serializable {
      private Product product;
      private Double qty;
      private Double sellingPrice;
+     private Double discount;
      private Double total;
 
     public InvoiceLog() {
@@ -24,11 +25,12 @@ public class InvoiceLog  implements java.io.Serializable {
         this.invoice = invoice;
         this.product = product;
     }
-    public InvoiceLog(Invoice invoice, Product product, Double qty, Double sellingPrice, Double total) {
+    public InvoiceLog(Invoice invoice, Product product, Double qty, Double sellingPrice, Double discount, Double total) {
        this.invoice = invoice;
        this.product = product;
        this.qty = qty;
        this.sellingPrice = sellingPrice;
+       this.discount = discount;
        this.total = total;
     }
    
@@ -66,6 +68,13 @@ public class InvoiceLog  implements java.io.Serializable {
     
     public void setSellingPrice(Double sellingPrice) {
         this.sellingPrice = sellingPrice;
+    }
+    public Double getDiscount() {
+        return this.discount;
+    }
+    
+    public void setDiscount(Double discount) {
+        this.discount = discount;
     }
     public Double getTotal() {
         return this.total;

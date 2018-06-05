@@ -1,5 +1,5 @@
 package pojo;
-// Generated May 22, 2018 8:34:55 PM by Hibernate Tools 4.3.1
+// Generated Jun 5, 2018 11:17:44 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -19,7 +19,6 @@ public class Invoice  implements java.io.Serializable {
      private Double fulltotal;
      private Double cash;
      private Double cheack;
-     private Set discounts = new HashSet(0);
      private Set invoiceHasChequeses = new HashSet(0);
      private Set invoiceLogs = new HashSet(0);
 
@@ -31,14 +30,13 @@ public class Invoice  implements java.io.Serializable {
         this.customer = customer;
         this.dilivery = dilivery;
     }
-    public Invoice(Customer customer, Dilivery dilivery, Date date, Double fulltotal, Double cash, Double cheack, Set discounts, Set invoiceHasChequeses, Set invoiceLogs) {
+    public Invoice(Customer customer, Dilivery dilivery, Date date, Double fulltotal, Double cash, Double cheack, Set invoiceHasChequeses, Set invoiceLogs) {
        this.customer = customer;
        this.dilivery = dilivery;
        this.date = date;
        this.fulltotal = fulltotal;
        this.cash = cash;
        this.cheack = cheack;
-       this.discounts = discounts;
        this.invoiceHasChequeses = invoiceHasChequeses;
        this.invoiceLogs = invoiceLogs;
     }
@@ -91,13 +89,6 @@ public class Invoice  implements java.io.Serializable {
     
     public void setCheack(Double cheack) {
         this.cheack = cheack;
-    }
-    public Set getDiscounts() {
-        return this.discounts;
-    }
-    
-    public void setDiscounts(Set discounts) {
-        this.discounts = discounts;
     }
     public Set getInvoiceHasChequeses() {
         return this.invoiceHasChequeses;

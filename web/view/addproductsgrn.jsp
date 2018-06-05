@@ -67,7 +67,7 @@
             </div>
             <div id="mainform">
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="buyprice">Buying Price:</label>
+                    <label class="control-label col-sm-2" for="buyprice">Unit Price:</label>
                     <div class="col-sm-4">
                         <input type="number" class="form-control" id="buyprice" placeholder="Enter Buying Price" name="buyprice" >
                     </div>
@@ -75,7 +75,15 @@
             </div>
             <div id="mainform">
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="qty">Quantity:</label>
+                    <label class="control-label col-sm-2" for="qty">Case Type:</label>
+                    <div class="col-sm-4">
+                        <input type="number" class="form-control" id="qty" placeholder="Enter Quantity" name="qty">
+                    </div>
+                </div>
+            </div>
+            <div id="mainform">
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="qty">Quantity:(cases)</label>
                     <div class="col-sm-4">
                         <input type="number" class="form-control" id="qty" placeholder="Enter Quantity" name="qty">
                     </div>

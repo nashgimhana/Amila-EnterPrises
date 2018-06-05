@@ -1,5 +1,5 @@
 package pojo;
-// Generated May 22, 2018 8:34:55 PM by Hibernate Tools 4.3.1
+// Generated Jun 5, 2018 11:17:44 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -14,6 +14,7 @@ public class CustomerCredit  implements java.io.Serializable {
      private Customer customer;
      private Double amount;
      private Date date;
+     private Integer status;
 
     public CustomerCredit() {
     }
@@ -22,10 +23,11 @@ public class CustomerCredit  implements java.io.Serializable {
     public CustomerCredit(Customer customer) {
         this.customer = customer;
     }
-    public CustomerCredit(Customer customer, Double amount, Date date) {
+    public CustomerCredit(Customer customer, Double amount, Date date, Integer status) {
        this.customer = customer;
        this.amount = amount;
        this.date = date;
+       this.status = status;
     }
    
     public Integer getId() {
@@ -55,6 +57,13 @@ public class CustomerCredit  implements java.io.Serializable {
     
     public void setDate(Date date) {
         this.date = date;
+    }
+    public Integer getStatus() {
+        return this.status;
+    }
+    
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 
 
