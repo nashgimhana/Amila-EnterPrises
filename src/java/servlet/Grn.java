@@ -6,6 +6,8 @@
 package servlet;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import org.json.*;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -22,13 +24,19 @@ public class Grn extends HttpServlet {
             throws ServletException, IOException {
         try {
             System.out.println("awaaa");
-            System.out.println(request.getSession().getAttribute("grndetails"));
-
+            String session = (String) request.getSession().getAttribute("grndetails");
+            String[] splitses = session.split("/");
+            int supid = Integer.parseInt(splitses[0]);
+            System.out.println(supid);
+            SimpleDateFormat formatter1 = new SimpleDateFormat("yyyy-mm-dd");
+            Date date1 = formatter1.parse(splitses[1]);
+            System.out.println(date1);
             String name = request.getParameter("obj");
-            System.out.println(name);
+            String[] split = name.split("/");
+            System.out.println(split[1]);
 //            org.json.JSONObject object = new org.json.JSONObject(name);
 
-            JSONArray jsonArray = new JSONArray(name);//import org.json jar eka use krna JSONArray ekakta string ekak convert kala
+            JSONArray jsonArray = new JSONArray(split[0]);//import org.json jar eka use krna JSONArray ekakta string ekak convert kala
             for (int i = 0; i < jsonArray.length(); i++) {
                 System.out.println("loop awaaa");
                 JSONObject jsnObj = (JSONObject) jsonArray.get(i);

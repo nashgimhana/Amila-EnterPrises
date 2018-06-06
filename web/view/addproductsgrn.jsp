@@ -4,6 +4,7 @@
     Author     : Nash
 --%>
 
+<%@page import="model.Case"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.Products"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -24,7 +25,8 @@
 
                 });
                 alert("call una");
-                var x = {"name": "John", "age": 30};
+                
+                var x = document.getElementById("total");
                 var myJson = JSON.stringify(table);
                 var xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function () {
@@ -32,7 +34,7 @@
 
                     }
                 }
-                xhttp.open("POST", "../Grn?obj=" + myJson, true);
+                xhttp.open("POST", "../Grn?obj=" + myJson+"/"+x.value, true);
                 xhttp.send();
             }
         </script>
@@ -51,89 +53,113 @@
         <div style="width: 640px; float: left; background-color: #ede8e8; height: auto;">
 
 
-            <div id="mainform">
+
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="total">Full Total:</label>
+                    <label for="prname" class="col-sm-2 control-label">Product Name:</label>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control" id="total" name="fultot" disabled value=0>
+                        <select class="form-control" id="prname" required>
+                            <option value="0">Select Product</option>
+                            <% Products u = new Products();
+                                ArrayList<pojo.Product> unitslist = u.viewAllProducts();
+                                for (pojo.Product un : unitslist) {
+
+                            %>
+                            }
+                            %>
+                            <option value="<% out.write(un.getId().toString()); %>"><% out.write(un.getName()); %></option>
+
+                            <%
+                                }
+                            %>
+
+
+                        </select>
                     </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="unit">Product:</label>
-
-                <select class="form-control" id="prname" name="unit" required>
-                    <option value="0">Select Unit</option>
-                    <% Products u = new Products();
-                        ArrayList<pojo.Product> unitslist = u.viewAllProducts();
-                        for (pojo.Product un : unitslist) {
-
-                    %>
-                    }
-                    %>
-                    <option value="<% out.write(un.getId().toString()); %>"><% out.write(un.getName()); %></option>
-
-                    <%
-                        }
-                    %>
-
-                </select>
-            </div>
-            <div id="mainform">
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="buyprice">Unit Price:</label>
-                    <div class="col-sm-4">
-                        <input type="number" class="form-control" id="buyprice" placeholder="Enter Buying Price" name="buyprice" >
+                <div id="mainform">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="buyprice">Unit Price(RS):</label>
+                        <div class="col-sm-4">
+                            <input type="number" class="form-control" id="buyprice" placeholder="Enter Buying Price" name="buyprice" >
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div id="mainform">
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="qty">Case Type:</label>
+                    <label for="casetype" class="col-sm-2 control-label">Case Type:</label>
                     <div class="col-sm-4">
-                        <input type="number" class="form-control" id="casetype" placeholder="Enter Quantity" name="cases">
-                    </div>
-                </div>
-            </div>
-            <div id="mainform">
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="qty">Quantity:(cases)</label>
-                    <div class="col-sm-4">
-                        <input type="number" class="form-control" id="qty" placeholder="Enter Quantity" name="qty">
-                    </div>
-                </div>
-            </div>
+                        <select class="form-control" id="casetype" required>
+                            <option value="0">Select CaseType</option>
+                            <% Case n = new Case();
+                                ArrayList<pojo.CaseType> caselist = n.viewAllCases();
+                                for (pojo.CaseType ct : caselist) {
 
-            <div class="form-group">
-                <label class="control-label col-sm-6" for="add">
-                    <input type="button" class="btn btn-info" value="Add" id="add"onclick="Javascript:addRow()">
-                    <input type="reset" class="btn btn-info" value="reset">
-                </label>
-            </div>
+                            %>
+                            }
+                            %>
+                            <option value="<% out.write(ct.getType().toString()); %>"><% out.write(ct.getType().toString()); %></option>
+
+                            <%
+                                }
+                            %>
+
+
+                        </select>
+                    </div>
+                </div>
+                <div id="mainform">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="qty">Quantity:(cases)</label>
+                        <div class="col-sm-4">
+                            <input type="number" class="form-control" id="qty" placeholder="Enter Quantity" name="qty" >
+                        </div>
+                    </div>
+                </div>
+                <div id="mainform">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="discount">Discount(RS):</label>
+                        <div class="col-sm-4">
+                            <input type="number" class="form-control" id="discount" placeholder="Enter Discount" >
+                        </div>
+                    </div>
+                </div>
+                <div id="mainform">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="total">Full Total(RS):</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="total" name="fultot" disabled value=0>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-6" for="add">
+                        <input type="button" class="btn btn-info" value="Add" id="add"onclick="Javascript:addRow()">
+                        <input type="reset" class="btn btn-info" value="reset">
+                    </label>
+                </div>
 
         </div>
-
-
-        <div style="width: 700px;float: right; background-color: #dacdfa; height: auto;">
-            <div id="mydata">
-                <table id="myTableData"  border="1" cellpadding="2">
-                    <tr>
-                        <td>&nbsp;</td>
-                        <td><b>Product_Name</b></td>
-                        <td><b>Buying_Price</b></td>
-                        <td><b>Quantity</b></td>
-                        <td><b>Product_Total</b></td>
-                    </tr>
-                </table>
-            </div>
-            <button onclick="load()">Save GRN</button>
+    <div style="width: 700px;float: right; background-color: #dacdfa; height: auto;">
+        <div id="mydata">
+            <table id="myTableData"  border="1" cellpadding="2">
+                <tr>
+                    <td>&nbsp;</td>
+                    <td><b>Product_Name</b></td>
+                    <td><b>Buying_Price</b></td>
+                    <td><b>Case_Type</b></td>
+                    <td><b>Quantity</b></td>
+                    <td><b>Product_Total</b></td>
+                    <td><b>Total_Discount</b></td>
+                </tr>
+            </table>
         </div>
-        <%                } else {
-                    out.print("Parameters are null");
-                }
-            } else {
-                out.print("httpsession not created");
+        <button onclick="load()">Save GRN</button>
+    </div>
+    <%                } else {
+                out.print("Parameters are null");
             }
-        %>
-    </body>
+        } else {
+            out.print("httpsession not created");
+        }
+    %>
+</body>
 </html>

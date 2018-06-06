@@ -1,3 +1,4 @@
+<%@page import="model.Supplier"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.Units"%>
 <%@include file="includ/1nave_1.jsp" %>
@@ -19,12 +20,25 @@
 
             <form class="form-horizontal" action="addproductsgrn.jsp" method="post">
 
-                <div id="mainform">
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="supname">Suplier Name:</label>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" id="supname" placeholder="Enter Supplier Name" name="supname" required>
-                        </div>
+                <div class="form-group">
+                    <label for="supplier" class="col-sm-2 control-label">Supplier:</label>
+                    <div class="col-sm-4">
+                        <select class="form-control" id="supplier" name="supname" required>
+                            <option value="0">Select Supplier</option>
+                            <% Supplier s = new Supplier();
+                                ArrayList<pojo.Supplier> suplist = s.viewAllSuppliers();
+                                for (pojo.Supplier un : suplist) {
+
+                            %>
+                            }
+                            %>
+                            <option value="<% out.write(un.getId().toString()); %>"><% out.write(un.getName() + " " + un.getLname()); %></option>
+
+                            <%
+                                }
+                            %>
+
+                        </select>
                     </div>
                 </div>
                 <div id="mainform">

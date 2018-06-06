@@ -28,24 +28,25 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="unit">Unit:</label>
+                            <label for="unit" class="col-sm-2 control-label">Unit:</label>
+                            <div class="col-sm-4">
+                                <select class="form-control" id="unit" name="unit" required>
+                                    <option value="0">Select Unit</option>
+                                    <% Units u = new Units();
+                                        ArrayList<pojo.Units> unitslist = u.viewAllUnits();
+                                        for (pojo.Units un : unitslist) {
 
-                            <select class="selectpicker" data-style="btn-primary" id="unit" name="unit" required data-live-search="true">
-                                <option value="0">Select Unit</option>
-                                <% Units u = new Units();
-                                    ArrayList<pojo.Units> unitslist = u.viewAllUnits();
-                                    for (pojo.Units un : unitslist) {
-
-                                %>
-                                }
-                                %>
-                                <option value="<% out.write(un.getId().toString()); %>"><% out.write(un.getUnitName()); %></option>
-
-                                <%
+                                    %>
                                     }
-                                %>
+                                    %>
+                                    <option value="<% out.write(un.getId().toString()); %>"><% out.write(un.getUnitName()); %></option>
 
-                            </select>
+                                    <%
+                                        }
+                                    %>
+
+                                </select>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-sm-6" for="Register">

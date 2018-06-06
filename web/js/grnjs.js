@@ -8,10 +8,14 @@ function addRow() {
 
     var e = document.getElementById("prname");
     var myprname = e.options[e.selectedIndex].text;//selected value eke name eka gaddi text use krne value eka ganwnam value use krne
+    var myprvalue = e.options[e.selectedIndex].value;
     var mybuyprice = document.getElementById("buyprice").value;
+    var mycasetype = document.getElementById("casetype").value;
     var myqty = document.getElementById('qty').value;
+    var mydiscount = document.getElementById('discount').value;
     var prtotal = mybuyprice * myqty;
-
+    var fixeddiscount = mydiscount * 1;
+    var fixedbuyprice = mybuyprice * 1;
 
     var table = document.getElementById("myTableData");
 
@@ -22,28 +26,27 @@ function addRow() {
 
     var rowCount = table.rows.length;
     var row = table.insertRow(rowCount);
-    var i = 1;
     row.insertCell(0).innerHTML = '<input type="button" value = "Delete" onClick="Javacsript:deleteRow(this)">';
     row.insertCell(1).innerHTML = myprname;
-    row.insertCell(2).innerHTML = mybuyprice;
-    row.insertCell(3).innerHTML = myqty;
-    row.insertCell(4).innerHTML = prtotal.toFixed(2);//value eka round krna ganne
-    document.getElementById('tblrowcount').value = i;
-    document.getElementById('prname').value = "";
-    document.getElementById('buyprice').value = "";
-    document.getElementById('qty').value = "";
-    i++;
+    row.insertCell(2).innerHTML = fixedbuyprice.toFixed(2);
+    row.insertCell(3).innerHTML = mycasetype;
+    row.insertCell(4).innerHTML = myqty;
+    row.insertCell(5).innerHTML = prtotal.toFixed(2);//value eka round krna ganne
+    row.insertCell(6).innerHTML = fixeddiscount.toFixed(2);
+
+    document.getElementById('qty').value = '';
+    document.getElementById('buyprice').value = '';
+    document.getElementById('prname').value = '0';
+    document.getElementById('casetype').value = "0";
+    document.getElementById('discount').value = '0';
+
 }
 
 function deleteRow(obj) {
 
     var index = obj.parentNode.parentNode.rowIndex;
     var table = document.getElementById("myTableData");
-    var tbvalue = parseFloat(document.getElementById('myTableData').rows[index].cells[3].value);
-    var getfulltotal = parseFloat(document.getElementById('total').value);
-    var fulltot = (getfulltotal - tbvalue);
-    document.getElementById('total').value = "";
-    document.getElementById('total').value = fulltot.toFixed(2);
+
     table.deleteRow(index);
 
 }
