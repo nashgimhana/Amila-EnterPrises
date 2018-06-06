@@ -5,6 +5,7 @@
  */
 package servlet;
 
+import controller.stockcontroller;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -34,8 +35,11 @@ public class Grn extends HttpServlet {
             String name = request.getParameter("obj");
             String[] split = name.split("/");
             System.out.println(split[1]);
-//            org.json.JSONObject object = new org.json.JSONObject(name);
 
+            pojo.Grn saveGrn = new stockcontroller().saveGrn(supid, date1, supid);
+            
+            
+//            org.json.JSONObject object = new org.json.JSONObject(name);
             JSONArray jsonArray = new JSONArray(split[0]);//import org.json jar eka use krna JSONArray ekakta string ekak convert kala
             for (int i = 0; i < jsonArray.length(); i++) {
                 System.out.println("loop awaaa");

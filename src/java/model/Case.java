@@ -48,12 +48,12 @@ public class Case {
         return un;
     }
 
-    public pojo.CaseType getBy(int id) {
+    public pojo.CaseType getBy(int casetype) {
         Session s = conn.NewHibernateUtil.getSessionFactory().openSession();
         pojo.CaseType uni = null;
         try {
             Criteria cr = s.createCriteria(pojo.CaseType.class);
-            cr.add(Restrictions.eq("id", id));
+            cr.add(Restrictions.eq("type", casetype));
             uni = (pojo.CaseType) cr.uniqueResult();
         } catch (Exception e) {
             e.printStackTrace();

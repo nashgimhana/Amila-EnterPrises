@@ -40,29 +40,29 @@ made subject to such option by the copyright holder.
 Contributor(s):
 -->
 <hibernate-reverse-engineering>
-  <schema-selection match-catalog="amiladb"/>
-  <table-filter match-name="cheques"/>
-  <table-filter match-name="grn"/>
-  <table-filter match-name="bank"/>
-  <table-filter match-name="route"/>
-  <table-filter match-name="dilivery"/>
-  <table-filter match-name="dilivery_item_log"/>
-  <table-filter match-name="case_type"/>
-  <table-filter match-name="employee"/>
-  <table-filter match-name="invoice_has_cheques"/>
-  <table-filter match-name="product"/>
-  <table-filter match-name="invoice"/>
-  <table-filter match-name="ongoing_dilivery"/>
-  <table-filter match-name="vehicle_stock"/>
-  <table-filter match-name="vehicle"/>
-  <table-filter match-name="dilivery_employee_log"/>
-  <table-filter match-name="customer_credit"/>
-  <table-filter match-name="grn_log"/>
-  <table-filter match-name="units"/>
-  <table-filter match-name="dilivery_load"/>
-  <table-filter match-name="position"/>
-  <table-filter match-name="customer"/>
-  <table-filter match-name="supplier_has_cheques"/>
-  <table-filter match-name="supplier"/>
-  <table-filter match-name="invoice_log"/>
+    <schema-selection match-catalog="amiladb"/>
+    <table-filter match-name="route"/>
+    <table-filter match-name="invoice_has_cheques"/>
+    <table-filter match-name="vehicle"/>
+    <table-filter match-name="position"/>
+    <table-filter match-name="dilivery"/>
+    <table-filter match-name="dilivery_item_log"/>
+    <table-filter match-name="ongoing_dilivery"/>
+    <table-filter match-name="dilivery_employee_log"/>
+    <table-filter match-name="invoice"/>
+    <table-filter match-name="invoice_log"/>
+    <table-filter match-name="cheques"/>
+    <table-filter match-name="dilivery_load"/>
+    <table-filter match-name="grn"/>
+    <table-filter match-name="supplier_has_cheques"/>
+    <table-filter match-name="supplier"/>
+    <table-filter match-name="case_type"/>
+    <table-filter match-name="employee"/>
+    <table-filter match-name="customer"/>
+    <table-filter match-name="customer_credit"/>
+    <table-filter match-name="grn_log"/>
+    <table-filter match-name="product"/>
+    <table-filter match-name="bank"/>
+    <table-filter match-name="vehicle_stock"/>
+    <table-filter match-name="units"/>
 </hibernate-reverse-engineering>

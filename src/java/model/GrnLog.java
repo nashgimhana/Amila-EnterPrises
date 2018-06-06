@@ -5,23 +5,21 @@
  */
 package model;
 
-import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.criterion.Restrictions;
 
 /**
  *
  * @author Nash
  */
-public class GRN {
+public class GrnLog {
 
-    public int save(pojo.Grn grn) {
+    public int save(pojo.GrnLog grnLog) {
 //        System.out.println("save ekta awa");
         Session s = conn.NewHibernateUtil.getSessionFactory().openSession();
         try {
             Transaction beginTransaction = s.beginTransaction();
-            int i = (int) s.save(grn);
+            int i = (int) s.save(grnLog);
 //            System.out.println("save metto");
             beginTransaction.commit();
             s.flush();
@@ -34,18 +32,5 @@ public class GRN {
         } finally {
             s.close();
         }
-    }
-
-    public pojo.Grn getBy(int id) {
-        Session s = conn.NewHibernateUtil.getSessionFactory().openSession();
-        pojo.Grn uni = null;
-        try {
-            Criteria cr = s.createCriteria(pojo.Grn.class);
-            cr.add(Restrictions.eq("id", id));
-            uni = (pojo.Grn) cr.uniqueResult();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return uni;
     }
 }
