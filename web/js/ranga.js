@@ -28,14 +28,15 @@ function loadProduct() {
 
 $("#ptbody").on("click", ".btn-sm", function () {
     var y = $(this).val();
-    alert(y);
+   
 
-
-    function loadProduct() {
         var ajx = new XMLHttpRequest();
-        ajx.open("POST", "../ProductTable?pname=" + pnsearch.val(), "true");
+        ajx.open("POST", "../SelectProduct?pname="+y, "true");
         ajx.onload = function () {
             if (ajx.status >= 200 && ajx.status < 400) {
+
+                alert(ajx.responseText);
+
 
             }
         };
@@ -43,7 +44,6 @@ $("#ptbody").on("click", ".btn-sm", function () {
             console.log("Error");
         };
         ajx.send();
-    }
-    ;
+   
 });
 
