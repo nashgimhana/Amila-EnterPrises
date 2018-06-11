@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author Nash
  */
 public class Grn extends HttpServlet {
-
+    
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
@@ -35,7 +35,7 @@ public class Grn extends HttpServlet {
             String name = request.getParameter("obj");
             String[] split = name.split("/");
             System.out.println(split[1]);
-
+            
             pojo.Grn saveGrn = new stockcontroller().saveGrn(supid, date1, supid);
 
 //            org.json.JSONObject object = new org.json.JSONObject(name);
@@ -49,9 +49,11 @@ public class Grn extends HttpServlet {
                 Double qty = Double.parseDouble((String) jsnObj.get("Quantity"));
                 Double prtot = Double.parseDouble((String) jsnObj.get("Product_Total"));
                 Double dicount = Double.parseDouble((String) jsnObj.get("Total_Discount"));
-
+                
                 int saveGrnLog = new stockcontroller().saveGrnLog(saveGrn, prname, buyprice, qty, dicount, prtot, casetype);
-
+                if (saveGrnLog != 0) {
+                    response.sendRedirect("view/GRN.jsp");
+                }
             }
 //            Gson g = new Gson();
 //            testing p = g.fromJson(name, testing.class);
@@ -59,7 +61,7 @@ public class Grn extends HttpServlet {
 //            System.out.println(p.getQuantity());
         } catch (Exception e) {
             e.printStackTrace();
-
+            
         } finally {
             request.getSession().invalidate();
         }
