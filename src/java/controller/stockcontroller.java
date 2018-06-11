@@ -23,7 +23,7 @@ import servlet.Casesave;
  * @author Nash
  */
 public class stockcontroller {
-
+    
     public int saveUnits(String name) {
         try {
             Units un = new Units();
@@ -34,9 +34,9 @@ public class stockcontroller {
             e.printStackTrace();
             return 0;
         }
-
+        
     }
-
+    
     public int SaveProducts(String name, int unitid) {
         try {
             Units unid = new model.Units().getBy(unitid);
@@ -45,17 +45,17 @@ public class stockcontroller {
             p.setUnits(unid);
             p.setCurrentPrice(0.0);
             p.setCurrentStock(0.0);
-
+            
             int save = new model.Products().save(p);
             return save;
-
+            
         } catch (Exception e) {
             e.printStackTrace();
-
+            
             return 0;
         }
     }
-
+    
     public int saveCase(int type) {
         try {
             CaseType caseType = new CaseType();
@@ -66,9 +66,9 @@ public class stockcontroller {
             e.printStackTrace();
             return 0;
         }
-
+        
     }
-
+    
     public pojo.Grn saveGrn(int supid, Date date, double total) {
         try {
             pojo.Supplier supplier = new model.Supplier().getBy(supid);
@@ -76,7 +76,7 @@ public class stockcontroller {
             g.setSupplier(supplier);
             g.setFulltotal(total);
             g.setDate(date);
-
+            
             int save = new GRN().save(g);
             Grn grn = new GRN().getBy(save);
             return grn;
@@ -84,22 +84,24 @@ public class stockcontroller {
             e.printStackTrace();
             return null;
         }
-
+        
     }
-
-    public int saveGrnLog(Grn grnid, int prid, double buyingprice, double quantity, double discount, double total, int casetype) {
+    
+    public int saveGrnLog(Grn grnid, String prname, double buyingprice, double quantity, double discount, double total, int casetype) {
         try {
-            Product product = new Products().getBy(prid);
+            
+            Product product = new Products().getBy(prname);
             CaseType caseType = new Case().getBy(casetype);
             GrnLog gl = new GrnLog();
             gl.setGrn(grnid);
             gl.setProduct(product);
             gl.setBuyingPrice(buyingprice);
+            gl.setDiscount(discount);
             gl.setQuantity(quantity);
             gl.setCaseType(caseType);
             gl.setTotal(total);
             gl.setRemainingQuantity(quantity);
-
+            
             product.setCurrentStock(product.getCurrentStock() + quantity);
             new model.Products().update(product);
             //product table eka update krna
@@ -110,7 +112,7 @@ public class stockcontroller {
             e.printStackTrace();
             return 0;
         }
-
+        
     }
-
+    
 }

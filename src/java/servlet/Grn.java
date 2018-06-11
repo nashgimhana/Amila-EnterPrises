@@ -20,6 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author Nash
  */
 public class Grn extends HttpServlet {
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
@@ -36,16 +37,20 @@ public class Grn extends HttpServlet {
             System.out.println(split[1]);
 
             pojo.Grn saveGrn = new stockcontroller().saveGrn(supid, date1, supid);
-            
-            
+
 //            org.json.JSONObject object = new org.json.JSONObject(name);
             JSONArray jsonArray = new JSONArray(split[0]);//import org.json jar eka use krna JSONArray ekakta string ekak convert kala
             for (int i = 0; i < jsonArray.length(); i++) {
                 System.out.println("loop awaaa");
                 JSONObject jsnObj = (JSONObject) jsonArray.get(i);
-                String finalValue = (String) jsnObj.get("Product_Name");
-                System.out.println(finalValue);
-//                new stockcontroller().saveGrnLog(saveGrn, i, supid, supid, i, i, supid)
+                String prname = (String) jsnObj.get("Product_Name");
+                Double buyprice = Double.parseDouble((String) jsnObj.get("Buying_Price"));
+                int casetype = Integer.parseInt((String) jsnObj.get("Case_Type"));
+                Double qty = Double.parseDouble((String) jsnObj.get("Quantity"));
+                Double prtot = Double.parseDouble((String) jsnObj.get("Product_Total"));
+                Double dicount = Double.parseDouble((String) jsnObj.get("Total_Discount"));
+
+                int saveGrnLog = new stockcontroller().saveGrnLog(saveGrn, prname, buyprice, qty, dicount, prtot, casetype);
 
             }
 //            Gson g = new Gson();

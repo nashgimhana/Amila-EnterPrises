@@ -67,6 +67,21 @@ public class Products {
         return uni;
     }
 
+    public pojo.Product getBy(String name) {
+        Session s = conn.NewHibernateUtil.getSessionFactory().openSession();
+        pojo.Product uni = null;
+        try {
+            Criteria cr = s.createCriteria(pojo.Product.class);
+            cr.add(Restrictions.eq("name", name));
+            uni = (pojo.Product) cr.uniqueResult();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            s.close();
+        }
+        return uni;
+    }
+
     public int update(pojo.Product product) {
 
         Session s = conn.NewHibernateUtil.getSessionFactory().openSession();
