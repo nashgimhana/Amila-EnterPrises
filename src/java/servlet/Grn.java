@@ -20,7 +20,6 @@ import javax.servlet.http.HttpServletResponse;
  * @author Nash
  */
 public class Grn extends HttpServlet {
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
@@ -46,6 +45,7 @@ public class Grn extends HttpServlet {
                 JSONObject jsnObj = (JSONObject) jsonArray.get(i);
                 String finalValue = (String) jsnObj.get("Product_Name");
                 System.out.println(finalValue);
+//                new stockcontroller().saveGrnLog(saveGrn, i, supid, supid, i, i, supid)
 
             }
 //            Gson g = new Gson();

@@ -37,7 +37,8 @@ public class Products {
             s.close();
         }
     }
-     public ArrayList<pojo.Product> viewAllProducts() {
+
+    public ArrayList<pojo.Product> viewAllProducts() {
         Session s = conn.NewHibernateUtil.getSessionFactory().openSession();
         ArrayList<pojo.Product> un = null;
         try {
@@ -60,7 +61,29 @@ public class Products {
             uni = (pojo.Product) cr.uniqueResult();
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            s.close();
         }
         return uni;
+    }
+
+    public int update(pojo.Product product) {
+
+        Session s = conn.NewHibernateUtil.getSessionFactory().openSession();
+        try {
+            Transaction beginTransaction = s.beginTransaction();
+            s.update(product);
+
+            beginTransaction.commit();
+            s.flush();
+            return 1;
+        } catch (Exception e) {
+
+            return 0;
+
+        } finally {
+            s.close();
+        }
+
     }
 }

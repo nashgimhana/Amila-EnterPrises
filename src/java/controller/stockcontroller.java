@@ -87,7 +87,7 @@ public class stockcontroller {
 
     }
 
-    public pojo.Grn saveGrn(Grn grnid, int prid, double buyingprice, double quantity, double discount, double total, int casetype) {
+    public int saveGrnLog(Grn grnid, int prid, double buyingprice, double quantity, double discount, double total, int casetype) {
         try {
             Product product = new Products().getBy(prid);
             CaseType caseType = new Case().getBy(casetype);
@@ -99,15 +99,16 @@ public class stockcontroller {
             gl.setCaseType(caseType);
             gl.setTotal(total);
             gl.setRemainingQuantity(quantity);
-            
+
+            product.setCurrentStock(product.getCurrentStock() + quantity);
+            new model.Products().update(product);
             //product table eka update krna
 
-            int save = new GRN().save(g);
-            Grn grn = new GRN().getBy(save);
-            return grn;
+            int save = new model.GrnLog().save(gl);
+            return save;
         } catch (Exception e) {
             e.printStackTrace();
-            return null;
+            return 0;
         }
 
     }
