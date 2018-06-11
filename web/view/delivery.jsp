@@ -178,9 +178,9 @@
 
                                             <option value="<% out.print(route.getId()); %>"><% out.print(route.getName()); %></option>
 
-                                            
-                                            
-                                            
+
+
+
 
                                             <%  }
 
@@ -364,7 +364,7 @@
 
                             <div class="col-sm-4">
                                 <h6>Date : <% out.print(hm.get("date"));  %></h6>
-                                <h6>Vehicle No : <% out.print(hm.get("vn"));  %>    </h6>
+                                <h6>Vehicle No :<Strong id="vid"> <% out.print(hm.get("vn"));  %> </strong>   </h6>
                                 <h6>Route Name : <% out.print(hm.get("root"));  %></h6>
                                 <br>
                                 <h4>Product Name</h4>
@@ -405,7 +405,7 @@
                                     function searchProduct() {
                                         loadProduct();
                                     }
-                                   
+
                                     // Javascript to enable link to tab
                                     var url = document.location.toString();
                                     if (url.match('#')) {

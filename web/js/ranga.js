@@ -27,23 +27,24 @@ function loadProduct() {
 }
 
 $("#ptbody").on("click", ".btn-sm", function () {
+
     var y = $(this).val();
-   
+    var vid = $('#vid').html();
 
-        var ajx = new XMLHttpRequest();
-        ajx.open("POST", "../SelectProduct?pname="+y, "true");
-        ajx.onload = function () {
-            if (ajx.status >= 200 && ajx.status < 400) {
+    var ajx = new XMLHttpRequest();
+    ajx.open("POST", "../SelectProduct?pname=" + y + "&vid=" + vid, "true");
+    ajx.onload = function () {
+        if (ajx.status >= 200 && ajx.status < 400) {
 
-                alert(ajx.responseText);
+            alert(ajx.responseText);
 
 
-            }
-        };
-        ajx.onerror = function () {
-            console.log("Error");
-        };
-        ajx.send();
-   
+        }
+    };
+    ajx.onerror = function () {
+        console.log("Error");
+    };
+    ajx.send();
+
 });
 

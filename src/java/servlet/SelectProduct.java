@@ -7,13 +7,19 @@ package servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import pojo.Product;
+import pojo.Vehicle;
 
 /**
  *
@@ -37,18 +43,29 @@ public class SelectProduct extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             Session ses = conn.NewHibernateUtil.getSessionFactory().openSession();
+            JSONArray ja = new JSONArray();
+            JSONObject jo = new JSONObject();
             try {
                 Product product = (pojo.Product) ses.load(pojo.Product.class, Integer.parseInt(request.getParameter("pname")));
-                
-                //ithuru tika passe hadamu
-                
-                
+                List<pojo.Vehicle> list = ses.createCriteria(pojo.Vehicle.class).add(Restrictions.eq("vehicleNumber", request.getParameter("vid"))).list();
+                if (list != null) {
+                    Vehicle get = list.get(0);
+                    Criteria criteria = ses.createCriteria(pojo.VehicleStock.class).add(Restrictions.eq("vehicle", get));
+                    List<pojo.Product> pList = criteria.add(Restrictions.eq("product", product)).list();
+                    Product currentProduct = pList.get(0);
+                    //ithuru tika passe hadamu
+                    jo.put("cqty", currentProduct.getCurrentStock());
+                    jo.put("cprice", product.getCurrentPrice());
+                    jo.put("tot", currentProduct.getCurrentStock() * product.getCurrentPrice());
+                    ja.put(jo);
+                    
+                }
             } catch (Exception e) {
                 e.printStackTrace();
             } finally {
                 ses.close();
             }
-            out.print(request.getParameter("pname"));
+            out.print(ja.toString());
 
         }
     }
