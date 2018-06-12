@@ -12,6 +12,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.hibernate.Session;
+import pojo.Product;
 
 /**
  *
@@ -34,10 +36,18 @@ public class AddToVehicle extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            System.out.println(request.getParameter("pid"));
             if (request.getParameter("pid") != null) {
-                out.print(request.getParameter("pid"));
+                Session ses = conn.NewHibernateUtil.getSessionFactory().openSession();
+                try {
+                    Product product = (pojo.Product) ses.load(pojo.Product.class, Integer.parseInt(request.getParameter("pid")));
+                    out.print(product.getName());
+                } catch (Exception e) {
+                } finally {
+                    ses.close();
+                }
+
             }
+
         }
     }
 

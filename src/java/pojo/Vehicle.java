@@ -1,5 +1,5 @@
 package pojo;
-// Generated Jun 6, 2018 3:33:42 PM by Hibernate Tools 4.3.1
+// Generated Jun 13, 2018 3:21:00 AM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -14,13 +14,13 @@ public class Vehicle  implements java.io.Serializable {
      private Integer id;
      private String vehicleNumber;
      private String discription;
-     private Set diliveries = new HashSet(0);
-     private Set vehicleStocks = new HashSet(0);
+     private Set<Dilivery> diliveries = new HashSet<Dilivery>(0);
+     private Set<VehicleStock> vehicleStocks = new HashSet<VehicleStock>(0);
 
     public Vehicle() {
     }
 
-    public Vehicle(String vehicleNumber, String discription, Set diliveries, Set vehicleStocks) {
+    public Vehicle(String vehicleNumber, String discription, Set<Dilivery> diliveries, Set<VehicleStock> vehicleStocks) {
        this.vehicleNumber = vehicleNumber;
        this.discription = discription;
        this.diliveries = diliveries;
@@ -48,18 +48,18 @@ public class Vehicle  implements java.io.Serializable {
     public void setDiscription(String discription) {
         this.discription = discription;
     }
-    public Set getDiliveries() {
+    public Set<Dilivery> getDiliveries() {
         return this.diliveries;
     }
     
-    public void setDiliveries(Set diliveries) {
+    public void setDiliveries(Set<Dilivery> diliveries) {
         this.diliveries = diliveries;
     }
-    public Set getVehicleStocks() {
+    public Set<VehicleStock> getVehicleStocks() {
         return this.vehicleStocks;
     }
     
-    public void setVehicleStocks(Set vehicleStocks) {
+    public void setVehicleStocks(Set<VehicleStock> vehicleStocks) {
         this.vehicleStocks = vehicleStocks;
     }
 

@@ -46,29 +46,29 @@ Contributor(s):
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/amiladb?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">root</property>
-    <mapping resource="pojo/Invoice.hbm.xml"/>
-    <mapping resource="pojo/OngoingDilivery.hbm.xml"/>
     <mapping resource="pojo/Dilivery.hbm.xml"/>
+    <mapping resource="pojo/Grn.hbm.xml"/>
+    <mapping resource="pojo/InvoiceHasCheques.hbm.xml"/>
     <mapping resource="pojo/DiliveryItemLog.hbm.xml"/>
-    <mapping resource="pojo/Units.hbm.xml"/>
-    <mapping resource="pojo/DiliveryLoad.hbm.xml"/>
-    <mapping resource="pojo/Supplier.hbm.xml"/>
+    <mapping resource="pojo/OngoingDilivery.hbm.xml"/>
+    <mapping resource="pojo/Route.hbm.xml"/>
+    <mapping resource="pojo/Bank.hbm.xml"/>
+    <mapping resource="pojo/VehicleStock.hbm.xml"/>
     <mapping resource="pojo/DiliveryEmployeeLog.hbm.xml"/>
+    <mapping resource="pojo/Invoice.hbm.xml"/>
+    <mapping resource="pojo/CustomerCredit.hbm.xml"/>
+    <mapping resource="pojo/Customer.hbm.xml"/>
+    <mapping resource="pojo/Position.hbm.xml"/>
+    <mapping resource="pojo/CaseType.hbm.xml"/>
+    <mapping resource="pojo/InvoiceLog.hbm.xml"/>
     <mapping resource="pojo/SupplierHasCheques.hbm.xml"/>
     <mapping resource="pojo/Cheques.hbm.xml"/>
-    <mapping resource="pojo/Customer.hbm.xml"/>
-    <mapping resource="pojo/CaseType.hbm.xml"/>
-    <mapping resource="pojo/InvoiceHasCheques.hbm.xml"/>
-    <mapping resource="pojo/GrnLog.hbm.xml"/>
-    <mapping resource="pojo/InvoiceLog.hbm.xml"/>
-    <mapping resource="pojo/Vehicle.hbm.xml"/>
-    <mapping resource="pojo/Bank.hbm.xml"/>
-    <mapping resource="pojo/Route.hbm.xml"/>
-    <mapping resource="pojo/Product.hbm.xml"/>
-    <mapping resource="pojo/Position.hbm.xml"/>
     <mapping resource="pojo/Employee.hbm.xml"/>
-    <mapping resource="pojo/VehicleStock.hbm.xml"/>
-    <mapping resource="pojo/CustomerCredit.hbm.xml"/>
-    <mapping resource="pojo/Grn.hbm.xml"/>
+    <mapping resource="pojo/Units.hbm.xml"/>
+    <mapping resource="pojo/DiliveryLoad.hbm.xml"/>
+    <mapping resource="pojo/GrnLog.hbm.xml"/>
+    <mapping resource="pojo/Product.hbm.xml"/>
+    <mapping resource="pojo/Vehicle.hbm.xml"/>
+    <mapping resource="pojo/Supplier.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

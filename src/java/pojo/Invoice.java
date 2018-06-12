@@ -1,5 +1,5 @@
 package pojo;
-// Generated Jun 6, 2018 3:33:42 PM by Hibernate Tools 4.3.1
+// Generated Jun 13, 2018 3:21:00 AM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -19,8 +19,8 @@ public class Invoice  implements java.io.Serializable {
      private Double fulltotal;
      private Double cash;
      private Double cheack;
-     private Set invoiceHasChequeses = new HashSet(0);
-     private Set invoiceLogs = new HashSet(0);
+     private Set<InvoiceHasCheques> invoiceHasChequeses = new HashSet<InvoiceHasCheques>(0);
+     private Set<InvoiceLog> invoiceLogs = new HashSet<InvoiceLog>(0);
 
     public Invoice() {
     }
@@ -30,7 +30,7 @@ public class Invoice  implements java.io.Serializable {
         this.customer = customer;
         this.dilivery = dilivery;
     }
-    public Invoice(Customer customer, Dilivery dilivery, Date date, Double fulltotal, Double cash, Double cheack, Set invoiceHasChequeses, Set invoiceLogs) {
+    public Invoice(Customer customer, Dilivery dilivery, Date date, Double fulltotal, Double cash, Double cheack, Set<InvoiceHasCheques> invoiceHasChequeses, Set<InvoiceLog> invoiceLogs) {
        this.customer = customer;
        this.dilivery = dilivery;
        this.date = date;
@@ -90,18 +90,18 @@ public class Invoice  implements java.io.Serializable {
     public void setCheack(Double cheack) {
         this.cheack = cheack;
     }
-    public Set getInvoiceHasChequeses() {
+    public Set<InvoiceHasCheques> getInvoiceHasChequeses() {
         return this.invoiceHasChequeses;
     }
     
-    public void setInvoiceHasChequeses(Set invoiceHasChequeses) {
+    public void setInvoiceHasChequeses(Set<InvoiceHasCheques> invoiceHasChequeses) {
         this.invoiceHasChequeses = invoiceHasChequeses;
     }
-    public Set getInvoiceLogs() {
+    public Set<InvoiceLog> getInvoiceLogs() {
         return this.invoiceLogs;
     }
     
-    public void setInvoiceLogs(Set invoiceLogs) {
+    public void setInvoiceLogs(Set<InvoiceLog> invoiceLogs) {
         this.invoiceLogs = invoiceLogs;
     }
 

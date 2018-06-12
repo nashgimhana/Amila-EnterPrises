@@ -1,5 +1,5 @@
 package pojo;
-// Generated Jun 6, 2018 3:33:42 PM by Hibernate Tools 4.3.1
+// Generated Jun 13, 2018 3:21:00 AM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -20,7 +20,7 @@ public class Employee  implements java.io.Serializable {
      private String contact;
      private String contact2;
      private Integer status;
-     private Set diliveryEmployeeLogs = new HashSet(0);
+     private Set<DiliveryEmployeeLog> diliveryEmployeeLogs = new HashSet<DiliveryEmployeeLog>(0);
 
     public Employee() {
     }
@@ -29,7 +29,7 @@ public class Employee  implements java.io.Serializable {
     public Employee(Position position) {
         this.position = position;
     }
-    public Employee(Position position, String fname, String lname, String adressLine1, String adressLine2, String contact, String contact2, Integer status, Set diliveryEmployeeLogs) {
+    public Employee(Position position, String fname, String lname, String adressLine1, String adressLine2, String contact, String contact2, Integer status, Set<DiliveryEmployeeLog> diliveryEmployeeLogs) {
        this.position = position;
        this.fname = fname;
        this.lname = lname;
@@ -104,11 +104,11 @@ public class Employee  implements java.io.Serializable {
     public void setStatus(Integer status) {
         this.status = status;
     }
-    public Set getDiliveryEmployeeLogs() {
+    public Set<DiliveryEmployeeLog> getDiliveryEmployeeLogs() {
         return this.diliveryEmployeeLogs;
     }
     
-    public void setDiliveryEmployeeLogs(Set diliveryEmployeeLogs) {
+    public void setDiliveryEmployeeLogs(Set<DiliveryEmployeeLog> diliveryEmployeeLogs) {
         this.diliveryEmployeeLogs = diliveryEmployeeLogs;
     }
 

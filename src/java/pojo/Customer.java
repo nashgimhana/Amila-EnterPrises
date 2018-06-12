@@ -1,5 +1,5 @@
 package pojo;
-// Generated Jun 6, 2018 3:33:42 PM by Hibernate Tools 4.3.1
+// Generated Jun 13, 2018 3:21:00 AM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -21,13 +21,13 @@ public class Customer  implements java.io.Serializable {
      private String discription;
      private Integer status;
      private Double currentCredit;
-     private Set invoices = new HashSet(0);
-     private Set customerCredits = new HashSet(0);
+     private Set<Invoice> invoices = new HashSet<Invoice>(0);
+     private Set<CustomerCredit> customerCredits = new HashSet<CustomerCredit>(0);
 
     public Customer() {
     }
 
-    public Customer(String fame, String lname, String adressLine1, String adressLine2, String contact1, String contact2, String discription, Integer status, Double currentCredit, Set invoices, Set customerCredits) {
+    public Customer(String fame, String lname, String adressLine1, String adressLine2, String contact1, String contact2, String discription, Integer status, Double currentCredit, Set<Invoice> invoices, Set<CustomerCredit> customerCredits) {
        this.fame = fame;
        this.lname = lname;
        this.adressLine1 = adressLine1;
@@ -111,18 +111,18 @@ public class Customer  implements java.io.Serializable {
     public void setCurrentCredit(Double currentCredit) {
         this.currentCredit = currentCredit;
     }
-    public Set getInvoices() {
+    public Set<Invoice> getInvoices() {
         return this.invoices;
     }
     
-    public void setInvoices(Set invoices) {
+    public void setInvoices(Set<Invoice> invoices) {
         this.invoices = invoices;
     }
-    public Set getCustomerCredits() {
+    public Set<CustomerCredit> getCustomerCredits() {
         return this.customerCredits;
     }
     
-    public void setCustomerCredits(Set customerCredits) {
+    public void setCustomerCredits(Set<CustomerCredit> customerCredits) {
         this.customerCredits = customerCredits;
     }
 

@@ -1,5 +1,5 @@
 package pojo;
-// Generated Jun 6, 2018 3:33:42 PM by Hibernate Tools 4.3.1
+// Generated Jun 13, 2018 3:21:00 AM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -21,8 +21,8 @@ public class Cheques  implements java.io.Serializable {
      private Date chequeDate;
      private Integer status;
      private String chequeInfo;
-     private Set invoiceHasChequeses = new HashSet(0);
-     private Set supplierHasChequeses = new HashSet(0);
+     private Set<InvoiceHasCheques> invoiceHasChequeses = new HashSet<InvoiceHasCheques>(0);
+     private Set<SupplierHasCheques> supplierHasChequeses = new HashSet<SupplierHasCheques>(0);
 
     public Cheques() {
     }
@@ -31,7 +31,7 @@ public class Cheques  implements java.io.Serializable {
     public Cheques(Bank bank) {
         this.bank = bank;
     }
-    public Cheques(Bank bank, String chequeNo, String chequeAmount, Date date, String type, Date chequeDate, Integer status, String chequeInfo, Set invoiceHasChequeses, Set supplierHasChequeses) {
+    public Cheques(Bank bank, String chequeNo, String chequeAmount, Date date, String type, Date chequeDate, Integer status, String chequeInfo, Set<InvoiceHasCheques> invoiceHasChequeses, Set<SupplierHasCheques> supplierHasChequeses) {
        this.bank = bank;
        this.chequeNo = chequeNo;
        this.chequeAmount = chequeAmount;
@@ -107,18 +107,18 @@ public class Cheques  implements java.io.Serializable {
     public void setChequeInfo(String chequeInfo) {
         this.chequeInfo = chequeInfo;
     }
-    public Set getInvoiceHasChequeses() {
+    public Set<InvoiceHasCheques> getInvoiceHasChequeses() {
         return this.invoiceHasChequeses;
     }
     
-    public void setInvoiceHasChequeses(Set invoiceHasChequeses) {
+    public void setInvoiceHasChequeses(Set<InvoiceHasCheques> invoiceHasChequeses) {
         this.invoiceHasChequeses = invoiceHasChequeses;
     }
-    public Set getSupplierHasChequeses() {
+    public Set<SupplierHasCheques> getSupplierHasChequeses() {
         return this.supplierHasChequeses;
     }
     
-    public void setSupplierHasChequeses(Set supplierHasChequeses) {
+    public void setSupplierHasChequeses(Set<SupplierHasCheques> supplierHasChequeses) {
         this.supplierHasChequeses = supplierHasChequeses;
     }
 

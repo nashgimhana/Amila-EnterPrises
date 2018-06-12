@@ -12,18 +12,18 @@
     * {box-sizing: border-box}
     /* Full-width input fields */
     input[type=text], input[type=password] {
-        width: 100%;
-        padding: 15px;
-        margin: 5px 0 22px 0;
+/*        width: 100%;
+        padding: 5px;
+        margin: 0px 0 0px 0;
         display: inline-block;
         border: none;
-        background: #f1f1f1;
+        background: #f1f1f1;*/
     }
 
     /* Add a background color when the inputs get focus */
     input[type=text]:focus, input[type=password]:focus {
-        background-color: #ddd;
-        outline: none;
+/*        background-color: #ddd;
+        outline: none;*/
     }
 
     /* Set a style for all buttons */

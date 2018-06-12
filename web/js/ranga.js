@@ -61,18 +61,21 @@ $("#ptbody").on("click", ".btn-sm", function () {
 
 $('#morbtn').click(function () {
     var btnmor = $('#morbtn');
-    alert(btnmor.val());
+    var proname = $('#proname');
+   // alert(btnmor.val());
+    
     var ajx = new XMLHttpRequest();
     ajx.open("POST", "../AddToVehicle?pid=" + btnmor.val(), "true");
     ajx.onload = function () {
         if (ajx.status >= 200 && ajx.status < 400) {
-            alert(ajx.responseText);
+            proname.html(ajx.responseText);
+     //       alert(ajx.responseText);
         }
     };
     ajx.onerror = function () {
         console.log("Error");
     };
-
+    ajx.send();
 });
 
 
