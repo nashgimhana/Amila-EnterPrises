@@ -53,6 +53,7 @@ public class Grn extends HttpServlet {
                 int saveGrnLog = new stockcontroller().saveGrnLog(saveGrn, prname, buyprice, qty, dicount, prtot, casetype);
                 if (saveGrnLog != 0) {
                     
+                    
                 } else {
                     System.out.println("fuck uuu");
                 }
