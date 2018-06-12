@@ -20,6 +20,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import pojo.Product;
 import pojo.Vehicle;
+import pojo.VehicleStock;
 
 /**
  *
@@ -47,19 +48,25 @@ public class SelectProduct extends HttpServlet {
             JSONObject jo = new JSONObject();
             try {
                 Product product = (pojo.Product) ses.load(pojo.Product.class, Integer.parseInt(request.getParameter("pname")));
-                List<pojo.Vehicle> list = ses.createCriteria(pojo.Vehicle.class).add(Restrictions.eq("vehicleNumber", request.getParameter("vid"))).list();
-                if (list != null) {
-                    Vehicle get = list.get(0);
-                    Criteria criteria = ses.createCriteria(pojo.VehicleStock.class).add(Restrictions.eq("vehicle", get));
-                    List<pojo.Product> pList = criteria.add(Restrictions.eq("product", product)).list();
-                    Product currentProduct = pList.get(0);
-                    //ithuru tika passe hadamu
-                    jo.put("cqty", currentProduct.getCurrentStock());
-                    jo.put("cprice", product.getCurrentPrice());
-                    jo.put("tot", currentProduct.getCurrentStock() * product.getCurrentPrice());
-                    ja.put(jo);
-                    
+                Vehicle vehicle = (pojo.Vehicle) ses.createCriteria(pojo.Vehicle.class).add(Restrictions.eq("vehicleNumber", request.getParameter("vid"))).uniqueResult();
+
+                Criteria c = ses.createCriteria(pojo.VehicleStock.class);
+                c.add(Restrictions.eq("product", product));
+                c.add(Restrictions.eq("vehicle", vehicle));
+                List<pojo.VehicleStock> list = c.list();
+                if (list.size() > 0) {
+                    pojo.VehicleStock vs = list.get(0);
+                    jo.put("cqty", vs.getCurrentStock());
+                    jo.put("tot", vs.getCurrentStock() * product.getCurrentPrice());
                 }
+                else{
+                    jo.put("cqty", 0);
+                    jo.put("tot", 0);
+                }
+
+                jo.put("cprice", product.getCurrentPrice());
+                ja.put(jo);
+
             } catch (Exception e) {
                 e.printStackTrace();
             } finally {

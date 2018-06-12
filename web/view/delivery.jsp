@@ -262,7 +262,8 @@
                                 <div class="col-sm-12">
                                     <span onclick="document.getElementById('id01').style.display = 'none'" class="close" title="Close Modal">&times;</span>
                                     <h1>Add More</h1>
-                                    <p>Product Name</p>
+                                    <input type="hidden" value="" id="proid" name="proid">
+                                    <p id="proname"></p>
                                     <hr>
 
                                     <row>
@@ -364,15 +365,15 @@
 
                             <div class="col-sm-4">
                                 <h6>Date : <% out.print(hm.get("date"));  %></h6>
-                                <h6>Vehicle No :<Strong id="vid"> <% out.print(hm.get("vn"));  %> </strong>   </h6>
+                                <h6>Vehicle No :<Strong id="vid"><%out.print(hm.get("vn"));%></strong>   </h6>
                                 <h6>Route Name : <% out.print(hm.get("root"));  %></h6>
                                 <br>
                                 <h4>Product Name</h4>
-                                <h5>Current Stock In Vehicle : 3000 </h5>
-                                <h5>Current Unit Price : 3000 </h5>
-                                <h5>Current Total Price : 3000 </h5>
+                                <h5>Current Stock In Vehicle : <strong id="cstoc"></strong></h5>
+                                <h5>Current Unit Price : <strong id="uprice"></strong></h5>
+                                <h5>Current Total Price : <strong id="totp"></strong> </h5>
                                 <br>
-                                <button onclick="document.getElementById('id01').style.display = 'block'" style="width:auto;">Add More</button>
+                                <button id="morbtn" value="" onclick="document.getElementById('id01').style.display = 'block'" style="width:auto;">Add More</button>
 
                             </div>
 
