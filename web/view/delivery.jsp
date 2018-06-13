@@ -12,18 +12,18 @@
     * {box-sizing: border-box}
     /* Full-width input fields */
     input[type=text], input[type=password] {
-        width: 100%;
-        padding: 15px;
-        margin: 5px 0 22px 0;
-        display: inline-block;
-        border: none;
-        background: #f1f1f1;
+        /*        width: 100%;
+                padding: 5px;
+                margin: 0px 0 0px 0;
+                display: inline-block;
+                border: none;
+                background: #f1f1f1;*/
     }
 
     /* Add a background color when the inputs get focus */
     input[type=text]:focus, input[type=password]:focus {
-        background-color: #ddd;
-        outline: none;
+        /*        background-color: #ddd;
+                outline: none;*/
     }
 
     /* Set a style for all buttons */
@@ -262,22 +262,11 @@
                                 <div class="col-sm-12">
                                     <span onclick="document.getElementById('id01').style.display = 'none'" class="close" title="Close Modal">&times;</span>
                                     <h1>Add More</h1>
-                                    <p>Product Name</p>
+                                    <input type="hidden" value="" id="proid" name="proid">
+                                    <p id="proname"></p>
                                     <hr>
 
-                                    <row>
-                                        <div class="col-sm-5 form-group">
-                                            <select name="case" class="form-control">
-                                                <option>Bottles</option>
-                                                <option>Case 9B</option>
-                                                <option>Case 12B</option>
-                                                <option>Case 24B</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-sm-5 form-group">
-                                            <h4> Current Total Stock Qty : 200</h4>
-                                        </div>  
-                                    </row>
+
 
 
 
@@ -287,37 +276,15 @@
                                                 <tr>
                                                     <th>GRN No</th>
                                                     <th>Date :</th>
+                                                    <th>Case Type</th>
                                                     <th>Current Qty :</th>
-                                                    <th>Load Qty</th>
-                                                    <th>Load </th>
+                                                    <th>Load Qty</th>                                                 
                                                 </tr>
                                             </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>10</td>
-                                                    <td>2018-5-14</td>
-                                                    <td>20.5</td>
-                                                    <td><input type="text" class="form-control" name=""/></td>
-                                                    <td><button class="btn btn-sm btn-info">Load</button></td>
-                                                </tr>
+                                            <tbody id="tblMore">
 
-                                                <tr>
-                                                    <td>10</td>
-                                                    <td>2018-5-14</td>
-                                                    <td>20.5</td>
-                                                    <td><input type="text" name=""/></td>
-                                                    <td><button class="btn btn-sm btn-info">Load</button></td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td>10</td>
-                                                    <td>2018-5-14</td>
-                                                    <td>20.5</td>
-                                                    <td><input type="text" name=""/></td>
-                                                    <td><button class="btn btn-sm btn-info">Load</button></td>
-                                                </tr>
-
-
+                                             
+                                               
                                             </tbody>
                                         </table>
                                     </div>
@@ -327,7 +294,7 @@
 
                                 <div class="clearfix col-sm-12">
                                     <button type="button" onclick="document.getElementById('id01').style.display = 'none'" class="cancelbtn ">Cancel</button>
-                                    <button type="submit" class="signupbtn">DONE</button>
+                                    <button id="getall" type="submit" class="signupbtn">DONE</button>
                                 </div>
                         </div>
                         </form>
@@ -364,15 +331,15 @@
 
                             <div class="col-sm-4">
                                 <h6>Date : <% out.print(hm.get("date"));  %></h6>
-                                <h6>Vehicle No :<Strong id="vid"> <% out.print(hm.get("vn"));  %> </strong>   </h6>
+                                <h6>Vehicle No :<Strong id="vid"><%out.print(hm.get("vn"));%></strong>   </h6>
                                 <h6>Route Name : <% out.print(hm.get("root"));  %></h6>
                                 <br>
                                 <h4>Product Name</h4>
-                                <h5>Current Stock In Vehicle : 3000 </h5>
-                                <h5>Current Unit Price : 3000 </h5>
-                                <h5>Current Total Price : 3000 </h5>
+                                <h5>Current Stock In Vehicle : <strong id="cstoc"></strong></h5>
+                                <h5>Current Unit Price : <strong id="uprice"></strong></h5>
+                                <h5>Current Total Price : <strong id="totp"></strong> </h5>
                                 <br>
-                                <button onclick="document.getElementById('id01').style.display = 'block'" style="width:auto;">Add More</button>
+                                <button id="morbtn" value="" onclick="document.getElementById('id01').style.display = 'block'" style="width:auto;">Add More</button>
 
                             </div>
 

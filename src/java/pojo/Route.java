@@ -1,5 +1,5 @@
 package pojo;
-// Generated Jun 6, 2018 3:33:42 PM by Hibernate Tools 4.3.1
+// Generated Jun 13, 2018 3:21:00 AM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -14,12 +14,12 @@ public class Route  implements java.io.Serializable {
      private Integer id;
      private String name;
      private String discription;
-     private Set diliveries = new HashSet(0);
+     private Set<Dilivery> diliveries = new HashSet<Dilivery>(0);
 
     public Route() {
     }
 
-    public Route(String name, String discription, Set diliveries) {
+    public Route(String name, String discription, Set<Dilivery> diliveries) {
        this.name = name;
        this.discription = discription;
        this.diliveries = diliveries;
@@ -46,11 +46,11 @@ public class Route  implements java.io.Serializable {
     public void setDiscription(String discription) {
         this.discription = discription;
     }
-    public Set getDiliveries() {
+    public Set<Dilivery> getDiliveries() {
         return this.diliveries;
     }
     
-    public void setDiliveries(Set diliveries) {
+    public void setDiliveries(Set<Dilivery> diliveries) {
         this.diliveries = diliveries;
     }
 

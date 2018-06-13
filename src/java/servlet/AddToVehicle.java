@@ -7,27 +7,31 @@ package servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
+import pojo.GrnLog;
 import pojo.Product;
-import pojo.Vehicle;
-import pojo.VehicleStock;
 
 /**
  *
  * @author RM.LasanthaRanga@gmail.com
  */
-@WebServlet(name = "SelectProduct", urlPatterns = {"/SelectProduct"})
-public class SelectProduct extends HttpServlet {
+@WebServlet(name = "AddToVehicle", urlPatterns = {"/AddToVehicle"})
+public class AddToVehicle extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -43,37 +47,52 @@ public class SelectProduct extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            Session ses = conn.NewHibernateUtil.getSessionFactory().openSession();
-            JSONArray ja = new JSONArray();
-            JSONObject jo = new JSONObject();
-            try {
-                Product product = (pojo.Product) ses.load(pojo.Product.class, Integer.parseInt(request.getParameter("pname")));
-                Vehicle vehicle = (pojo.Vehicle) ses.createCriteria(pojo.Vehicle.class).add(Restrictions.eq("vehicleNumber", request.getParameter("vid"))).uniqueResult();
-
-                Criteria c = ses.createCriteria(pojo.VehicleStock.class);
-                c.add(Restrictions.eq("product", product));
-                c.add(Restrictions.eq("vehicle", vehicle));
-                List<pojo.VehicleStock> list = c.list();
-                if (list.size() > 0) {
-                    pojo.VehicleStock vs = list.get(0);
-                    jo.put("cqty", vs.getCurrentStock());
-                    jo.put("tot", vs.getCurrentStock() * product.getCurrentPrice());
+            if (request.getParameter("pid") != null) {
+                Session ses = conn.NewHibernateUtil.getSessionFactory().openSession();
+                HashMap<Object, Object> hm = new HashMap<>();
+                JSONArray ja = new JSONArray();
+                try {
+                    Product product = (pojo.Product) ses.load(pojo.Product.class, Integer.parseInt(request.getParameter("pid")));
+                    Criteria c = ses.createCriteria(pojo.GrnLog.class);
+                    c.add(Restrictions.eq("product", product)).list();
+                    List<pojo.GrnLog> list = c.list();
+                    int x = 0;
+                    for (GrnLog grnLog : list) {
+                        if (grnLog.getQuantity() > 0) {
+                            JSONObject jo = new JSONObject();
+                            jo.put("row", x);
+                            jo.put("grnNo", grnLog.getGrn().getId());
+                            jo.put("cqty", grnLog.getQuantity());
+                            jo.put("date", grnLog.getGrn().getDate().toString());
+                            jo.put("case", grnLog.getCaseType().getType());
+                            jo.put("load", 0);
+                            ja.put(jo);
+                            x++;
+                        }
+                    }
+                    out.print(ja.toString());
+                } catch (Exception e) {
+                } finally {
+                    ses.close();
                 }
-                else{
-                    jo.put("cqty", 0);
-                    jo.put("tot", 0);
-                }
-
-                jo.put("cprice", product.getCurrentPrice());
-                ja.put(jo);
-
-            } catch (Exception e) {
-                e.printStackTrace();
-            } finally {
-                ses.close();
             }
-            out.print(ja.toString());
 
+            if (request.getParameter("json") != null) {
+                request.getParameter("json");
+                
+                System.out.println(request.getParameter("json"));
+                
+                try {
+                    JSONArray joo = new JSONArray(request.getParameter("json"));
+                    for (int i = 0; i < joo.length(); i++) {
+                        JSONObject ob  = joo.getJSONObject(i);
+                        System.out.println(ob.get("load"));
+                    }
+                    
+                } catch (JSONException ex) {
+                    Logger.getLogger(AddToVehicle.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
         }
     }
 

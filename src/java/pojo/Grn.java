@@ -1,5 +1,5 @@
 package pojo;
-// Generated Jun 6, 2018 3:33:42 PM by Hibernate Tools 4.3.1
+// Generated Jun 13, 2018 3:21:00 AM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -16,7 +16,7 @@ public class Grn  implements java.io.Serializable {
      private Supplier supplier;
      private Date date;
      private Double fulltotal;
-     private Set grnLogs = new HashSet(0);
+     private Set<GrnLog> grnLogs = new HashSet<GrnLog>(0);
 
     public Grn() {
     }
@@ -25,7 +25,7 @@ public class Grn  implements java.io.Serializable {
     public Grn(Supplier supplier) {
         this.supplier = supplier;
     }
-    public Grn(Supplier supplier, Date date, Double fulltotal, Set grnLogs) {
+    public Grn(Supplier supplier, Date date, Double fulltotal, Set<GrnLog> grnLogs) {
        this.supplier = supplier;
        this.date = date;
        this.fulltotal = fulltotal;
@@ -60,11 +60,11 @@ public class Grn  implements java.io.Serializable {
     public void setFulltotal(Double fulltotal) {
         this.fulltotal = fulltotal;
     }
-    public Set getGrnLogs() {
+    public Set<GrnLog> getGrnLogs() {
         return this.grnLogs;
     }
     
-    public void setGrnLogs(Set grnLogs) {
+    public void setGrnLogs(Set<GrnLog> grnLogs) {
         this.grnLogs = grnLogs;
     }
 

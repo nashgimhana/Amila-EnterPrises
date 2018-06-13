@@ -1,5 +1,5 @@
 package pojo;
-// Generated Jun 6, 2018 3:33:42 PM by Hibernate Tools 4.3.1
+// Generated Jun 13, 2018 3:21:00 AM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -14,12 +14,12 @@ public class Position  implements java.io.Serializable {
      private Integer id;
      private String positionName;
      private String discription;
-     private Set employees = new HashSet(0);
+     private Set<Employee> employees = new HashSet<Employee>(0);
 
     public Position() {
     }
 
-    public Position(String positionName, String discription, Set employees) {
+    public Position(String positionName, String discription, Set<Employee> employees) {
        this.positionName = positionName;
        this.discription = discription;
        this.employees = employees;
@@ -46,11 +46,11 @@ public class Position  implements java.io.Serializable {
     public void setDiscription(String discription) {
         this.discription = discription;
     }
-    public Set getEmployees() {
+    public Set<Employee> getEmployees() {
         return this.employees;
     }
     
-    public void setEmployees(Set employees) {
+    public void setEmployees(Set<Employee> employees) {
         this.employees = employees;
     }
 

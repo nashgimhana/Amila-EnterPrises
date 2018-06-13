@@ -1,5 +1,5 @@
 package pojo;
-// Generated Jun 6, 2018 3:33:42 PM by Hibernate Tools 4.3.1
+// Generated Jun 13, 2018 3:21:00 AM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -13,12 +13,12 @@ public class Units  implements java.io.Serializable {
 
      private Integer id;
      private String unitName;
-     private Set products = new HashSet(0);
+     private Set<Product> products = new HashSet<Product>(0);
 
     public Units() {
     }
 
-    public Units(String unitName, Set products) {
+    public Units(String unitName, Set<Product> products) {
        this.unitName = unitName;
        this.products = products;
     }
@@ -37,11 +37,11 @@ public class Units  implements java.io.Serializable {
     public void setUnitName(String unitName) {
         this.unitName = unitName;
     }
-    public Set getProducts() {
+    public Set<Product> getProducts() {
         return this.products;
     }
     
-    public void setProducts(Set products) {
+    public void setProducts(Set<Product> products) {
         this.products = products;
     }
 

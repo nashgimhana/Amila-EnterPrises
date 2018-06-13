@@ -1,5 +1,5 @@
 package pojo;
-// Generated Jun 6, 2018 3:33:42 PM by Hibernate Tools 4.3.1
+// Generated Jun 13, 2018 3:21:00 AM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -16,11 +16,11 @@ public class Dilivery  implements java.io.Serializable {
      private Route route;
      private Vehicle vehicle;
      private Date date;
-     private Set invoices = new HashSet(0);
-     private Set ongoingDiliveries = new HashSet(0);
-     private Set diliveryEmployeeLogs = new HashSet(0);
-     private Set diliveryItemLogs = new HashSet(0);
-     private Set diliveryLoads = new HashSet(0);
+     private Set<Invoice> invoices = new HashSet<Invoice>(0);
+     private Set<OngoingDilivery> ongoingDiliveries = new HashSet<OngoingDilivery>(0);
+     private Set<DiliveryEmployeeLog> diliveryEmployeeLogs = new HashSet<DiliveryEmployeeLog>(0);
+     private Set<DiliveryItemLog> diliveryItemLogs = new HashSet<DiliveryItemLog>(0);
+     private Set<DiliveryLoad> diliveryLoads = new HashSet<DiliveryLoad>(0);
 
     public Dilivery() {
     }
@@ -30,7 +30,7 @@ public class Dilivery  implements java.io.Serializable {
         this.route = route;
         this.vehicle = vehicle;
     }
-    public Dilivery(Route route, Vehicle vehicle, Date date, Set invoices, Set ongoingDiliveries, Set diliveryEmployeeLogs, Set diliveryItemLogs, Set diliveryLoads) {
+    public Dilivery(Route route, Vehicle vehicle, Date date, Set<Invoice> invoices, Set<OngoingDilivery> ongoingDiliveries, Set<DiliveryEmployeeLog> diliveryEmployeeLogs, Set<DiliveryItemLog> diliveryItemLogs, Set<DiliveryLoad> diliveryLoads) {
        this.route = route;
        this.vehicle = vehicle;
        this.date = date;
@@ -69,39 +69,39 @@ public class Dilivery  implements java.io.Serializable {
     public void setDate(Date date) {
         this.date = date;
     }
-    public Set getInvoices() {
+    public Set<Invoice> getInvoices() {
         return this.invoices;
     }
     
-    public void setInvoices(Set invoices) {
+    public void setInvoices(Set<Invoice> invoices) {
         this.invoices = invoices;
     }
-    public Set getOngoingDiliveries() {
+    public Set<OngoingDilivery> getOngoingDiliveries() {
         return this.ongoingDiliveries;
     }
     
-    public void setOngoingDiliveries(Set ongoingDiliveries) {
+    public void setOngoingDiliveries(Set<OngoingDilivery> ongoingDiliveries) {
         this.ongoingDiliveries = ongoingDiliveries;
     }
-    public Set getDiliveryEmployeeLogs() {
+    public Set<DiliveryEmployeeLog> getDiliveryEmployeeLogs() {
         return this.diliveryEmployeeLogs;
     }
     
-    public void setDiliveryEmployeeLogs(Set diliveryEmployeeLogs) {
+    public void setDiliveryEmployeeLogs(Set<DiliveryEmployeeLog> diliveryEmployeeLogs) {
         this.diliveryEmployeeLogs = diliveryEmployeeLogs;
     }
-    public Set getDiliveryItemLogs() {
+    public Set<DiliveryItemLog> getDiliveryItemLogs() {
         return this.diliveryItemLogs;
     }
     
-    public void setDiliveryItemLogs(Set diliveryItemLogs) {
+    public void setDiliveryItemLogs(Set<DiliveryItemLog> diliveryItemLogs) {
         this.diliveryItemLogs = diliveryItemLogs;
     }
-    public Set getDiliveryLoads() {
+    public Set<DiliveryLoad> getDiliveryLoads() {
         return this.diliveryLoads;
     }
     
-    public void setDiliveryLoads(Set diliveryLoads) {
+    public void setDiliveryLoads(Set<DiliveryLoad> diliveryLoads) {
         this.diliveryLoads = diliveryLoads;
     }
 

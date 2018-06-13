@@ -1,5 +1,5 @@
 package pojo;
-// Generated Jun 6, 2018 3:33:42 PM by Hibernate Tools 4.3.1
+// Generated Jun 13, 2018 3:21:00 AM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -16,11 +16,11 @@ public class Product  implements java.io.Serializable {
      private String name;
      private Double currentStock;
      private Double currentPrice;
-     private Set grnLogs = new HashSet(0);
-     private Set diliveryItemLogs = new HashSet(0);
-     private Set invoiceLogs = new HashSet(0);
-     private Set vehicleStocks = new HashSet(0);
-     private Set diliveryLoads = new HashSet(0);
+     private Set<GrnLog> grnLogs = new HashSet<GrnLog>(0);
+     private Set<DiliveryItemLog> diliveryItemLogs = new HashSet<DiliveryItemLog>(0);
+     private Set<InvoiceLog> invoiceLogs = new HashSet<InvoiceLog>(0);
+     private Set<VehicleStock> vehicleStocks = new HashSet<VehicleStock>(0);
+     private Set<DiliveryLoad> diliveryLoads = new HashSet<DiliveryLoad>(0);
 
     public Product() {
     }
@@ -29,7 +29,7 @@ public class Product  implements java.io.Serializable {
     public Product(Units units) {
         this.units = units;
     }
-    public Product(Units units, String name, Double currentStock, Double currentPrice, Set grnLogs, Set diliveryItemLogs, Set invoiceLogs, Set vehicleStocks, Set diliveryLoads) {
+    public Product(Units units, String name, Double currentStock, Double currentPrice, Set<GrnLog> grnLogs, Set<DiliveryItemLog> diliveryItemLogs, Set<InvoiceLog> invoiceLogs, Set<VehicleStock> vehicleStocks, Set<DiliveryLoad> diliveryLoads) {
        this.units = units;
        this.name = name;
        this.currentStock = currentStock;
@@ -76,39 +76,39 @@ public class Product  implements java.io.Serializable {
     public void setCurrentPrice(Double currentPrice) {
         this.currentPrice = currentPrice;
     }
-    public Set getGrnLogs() {
+    public Set<GrnLog> getGrnLogs() {
         return this.grnLogs;
     }
     
-    public void setGrnLogs(Set grnLogs) {
+    public void setGrnLogs(Set<GrnLog> grnLogs) {
         this.grnLogs = grnLogs;
     }
-    public Set getDiliveryItemLogs() {
+    public Set<DiliveryItemLog> getDiliveryItemLogs() {
         return this.diliveryItemLogs;
     }
     
-    public void setDiliveryItemLogs(Set diliveryItemLogs) {
+    public void setDiliveryItemLogs(Set<DiliveryItemLog> diliveryItemLogs) {
         this.diliveryItemLogs = diliveryItemLogs;
     }
-    public Set getInvoiceLogs() {
+    public Set<InvoiceLog> getInvoiceLogs() {
         return this.invoiceLogs;
     }
     
-    public void setInvoiceLogs(Set invoiceLogs) {
+    public void setInvoiceLogs(Set<InvoiceLog> invoiceLogs) {
         this.invoiceLogs = invoiceLogs;
     }
-    public Set getVehicleStocks() {
+    public Set<VehicleStock> getVehicleStocks() {
         return this.vehicleStocks;
     }
     
-    public void setVehicleStocks(Set vehicleStocks) {
+    public void setVehicleStocks(Set<VehicleStock> vehicleStocks) {
         this.vehicleStocks = vehicleStocks;
     }
-    public Set getDiliveryLoads() {
+    public Set<DiliveryLoad> getDiliveryLoads() {
         return this.diliveryLoads;
     }
     
-    public void setDiliveryLoads(Set diliveryLoads) {
+    public void setDiliveryLoads(Set<DiliveryLoad> diliveryLoads) {
         this.diliveryLoads = diliveryLoads;
     }
 

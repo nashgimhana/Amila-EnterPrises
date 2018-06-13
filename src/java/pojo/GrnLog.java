@@ -1,5 +1,5 @@
 package pojo;
-// Generated Jun 6, 2018 3:33:42 PM by Hibernate Tools 4.3.1
+// Generated Jun 13, 2018 3:21:00 AM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -20,7 +20,7 @@ public class GrnLog  implements java.io.Serializable {
      private Double remainingQuantity;
      private Double discount;
      private Double total;
-     private Set diliveryItemLogs = new HashSet(0);
+     private Set<DiliveryItemLog> diliveryItemLogs = new HashSet<DiliveryItemLog>(0);
 
     public GrnLog() {
     }
@@ -31,7 +31,7 @@ public class GrnLog  implements java.io.Serializable {
         this.grn = grn;
         this.product = product;
     }
-    public GrnLog(CaseType caseType, Grn grn, Product product, Double buyingPrice, Double quantity, Double remainingQuantity, Double discount, Double total, Set diliveryItemLogs) {
+    public GrnLog(CaseType caseType, Grn grn, Product product, Double buyingPrice, Double quantity, Double remainingQuantity, Double discount, Double total, Set<DiliveryItemLog> diliveryItemLogs) {
        this.caseType = caseType;
        this.grn = grn;
        this.product = product;
@@ -106,11 +106,11 @@ public class GrnLog  implements java.io.Serializable {
     public void setTotal(Double total) {
         this.total = total;
     }
-    public Set getDiliveryItemLogs() {
+    public Set<DiliveryItemLog> getDiliveryItemLogs() {
         return this.diliveryItemLogs;
     }
     
-    public void setDiliveryItemLogs(Set diliveryItemLogs) {
+    public void setDiliveryItemLogs(Set<DiliveryItemLog> diliveryItemLogs) {
         this.diliveryItemLogs = diliveryItemLogs;
     }
 

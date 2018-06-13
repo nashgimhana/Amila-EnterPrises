@@ -1,5 +1,5 @@
 package pojo;
-// Generated Jun 6, 2018 3:33:42 PM by Hibernate Tools 4.3.1
+// Generated Jun 13, 2018 3:21:00 AM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -20,13 +20,13 @@ public class Supplier  implements java.io.Serializable {
      private String mobile2;
      private Integer status;
      private String details;
-     private Set grns = new HashSet(0);
-     private Set supplierHasChequeses = new HashSet(0);
+     private Set<Grn> grns = new HashSet<Grn>(0);
+     private Set<SupplierHasCheques> supplierHasChequeses = new HashSet<SupplierHasCheques>(0);
 
     public Supplier() {
     }
 
-    public Supplier(String name, String lname, String adress, String email, String mobile1, String mobile2, Integer status, String details, Set grns, Set supplierHasChequeses) {
+    public Supplier(String name, String lname, String adress, String email, String mobile1, String mobile2, Integer status, String details, Set<Grn> grns, Set<SupplierHasCheques> supplierHasChequeses) {
        this.name = name;
        this.lname = lname;
        this.adress = adress;
@@ -102,18 +102,18 @@ public class Supplier  implements java.io.Serializable {
     public void setDetails(String details) {
         this.details = details;
     }
-    public Set getGrns() {
+    public Set<Grn> getGrns() {
         return this.grns;
     }
     
-    public void setGrns(Set grns) {
+    public void setGrns(Set<Grn> grns) {
         this.grns = grns;
     }
-    public Set getSupplierHasChequeses() {
+    public Set<SupplierHasCheques> getSupplierHasChequeses() {
         return this.supplierHasChequeses;
     }
     
-    public void setSupplierHasChequeses(Set supplierHasChequeses) {
+    public void setSupplierHasChequeses(Set<SupplierHasCheques> supplierHasChequeses) {
         this.supplierHasChequeses = supplierHasChequeses;
     }
 

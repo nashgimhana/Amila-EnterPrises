@@ -1,5 +1,5 @@
 package pojo;
-// Generated Jun 6, 2018 3:33:42 PM by Hibernate Tools 4.3.1
+// Generated Jun 13, 2018 3:21:00 AM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -13,12 +13,12 @@ public class Bank  implements java.io.Serializable {
 
      private Integer id;
      private String name;
-     private Set chequeses = new HashSet(0);
+     private Set<Cheques> chequeses = new HashSet<Cheques>(0);
 
     public Bank() {
     }
 
-    public Bank(String name, Set chequeses) {
+    public Bank(String name, Set<Cheques> chequeses) {
        this.name = name;
        this.chequeses = chequeses;
     }
@@ -37,11 +37,11 @@ public class Bank  implements java.io.Serializable {
     public void setName(String name) {
         this.name = name;
     }
-    public Set getChequeses() {
+    public Set<Cheques> getChequeses() {
         return this.chequeses;
     }
     
-    public void setChequeses(Set chequeses) {
+    public void setChequeses(Set<Cheques> chequeses) {
         this.chequeses = chequeses;
     }
 
