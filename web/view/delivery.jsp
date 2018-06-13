@@ -266,19 +266,7 @@
                                     <p id="proname"></p>
                                     <hr>
 
-                                    <row>
-                                        <div class="col-sm-5 form-group">
-                                            <select name="case" class="form-control">
-                                                <option>Bottles</option>
-                                                <option>Case 9B</option>
-                                                <option>Case 12B</option>
-                                                <option>Case 24B</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-sm-5 form-group">
-                                            <h4> Current Total Stock Qty : 200</h4>
-                                        </div>  
-                                    </row>
+                                    
 
 
 
@@ -289,6 +277,7 @@
                                                     <th>GRN No</th>
                                                     <th>Date :</th>
                                                     <th>Current Qty :</th>
+                                                    <th>Case Type</th>
                                                     <th>Load Qty</th>
                                                     <th>Load </th>
                                                 </tr>
@@ -298,26 +287,12 @@
                                                     <td>10</td>
                                                     <td>2018-5-14</td>
                                                     <td>20.5</td>
+                                                    <td>12</td>
                                                     <td><input type="text" class="form-control" name=""/></td>
                                                     <td><button class="btn btn-sm btn-info">Load</button></td>
                                                 </tr>
 
-                                                <tr>
-                                                    <td>10</td>
-                                                    <td>2018-5-14</td>
-                                                    <td>20.5</td>
-                                                    <td><input type="text" name=""/></td>
-                                                    <td><button class="btn btn-sm btn-info">Load</button></td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td>10</td>
-                                                    <td>2018-5-14</td>
-                                                    <td>20.5</td>
-                                                    <td><input type="text" name=""/></td>
-                                                    <td><button class="btn btn-sm btn-info">Load</button></td>
-                                                </tr>
-
+                                                
 
                                             </tbody>
                                         </table>

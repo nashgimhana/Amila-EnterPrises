@@ -7,12 +7,16 @@ package servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
+import pojo.GrnLog;
 import pojo.Product;
 
 /**
@@ -40,6 +44,15 @@ public class AddToVehicle extends HttpServlet {
                 Session ses = conn.NewHibernateUtil.getSessionFactory().openSession();
                 try {
                     Product product = (pojo.Product) ses.load(pojo.Product.class, Integer.parseInt(request.getParameter("pid")));
+
+                    Criteria c = ses.createCriteria(pojo.GrnLog.class);
+                    c.add(Restrictions.eq("product", product)).list();
+                    List<pojo.GrnLog> list = c.list();
+                    for (GrnLog grnLog : list) {
+                        if (grnLog.getQuantity() > 0) {
+                            System.out.print(grnLog.getGrn().getId());
+                        }
+                    }
                     out.print(product.getName());
                 } catch (Exception e) {
                 } finally {
