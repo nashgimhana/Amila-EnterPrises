@@ -7,15 +7,22 @@ package servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import pojo.GrnLog;
 import pojo.Product;
 
@@ -42,25 +49,50 @@ public class AddToVehicle extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
             if (request.getParameter("pid") != null) {
                 Session ses = conn.NewHibernateUtil.getSessionFactory().openSession();
+                HashMap<Object, Object> hm = new HashMap<>();
+                JSONArray ja = new JSONArray();
                 try {
                     Product product = (pojo.Product) ses.load(pojo.Product.class, Integer.parseInt(request.getParameter("pid")));
-
                     Criteria c = ses.createCriteria(pojo.GrnLog.class);
                     c.add(Restrictions.eq("product", product)).list();
                     List<pojo.GrnLog> list = c.list();
+                    int x = 0;
                     for (GrnLog grnLog : list) {
                         if (grnLog.getQuantity() > 0) {
-                            System.out.print(grnLog.getGrn().getId());
+                            JSONObject jo = new JSONObject();
+                            jo.put("row", x);
+                            jo.put("grnNo", grnLog.getGrn().getId());
+                            jo.put("cqty", grnLog.getQuantity());
+                            jo.put("date", grnLog.getGrn().getDate().toString());
+                            jo.put("case", grnLog.getCaseType().getType());
+                            jo.put("load", 0);
+                            ja.put(jo);
+                            x++;
                         }
                     }
-                    out.print(product.getName());
+                    out.print(ja.toString());
                 } catch (Exception e) {
                 } finally {
                     ses.close();
                 }
-
             }
 
+            if (request.getParameter("json") != null) {
+                request.getParameter("json");
+                
+                System.out.println(request.getParameter("json"));
+                
+                try {
+                    JSONArray joo = new JSONArray(request.getParameter("json"));
+                    for (int i = 0; i < joo.length(); i++) {
+                        JSONObject ob  = joo.getJSONObject(i);
+                        System.out.println(ob.get("load"));
+                    }
+                    
+                } catch (JSONException ex) {
+                    Logger.getLogger(AddToVehicle.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
         }
     }
 

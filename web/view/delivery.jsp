@@ -12,18 +12,18 @@
     * {box-sizing: border-box}
     /* Full-width input fields */
     input[type=text], input[type=password] {
-/*        width: 100%;
-        padding: 5px;
-        margin: 0px 0 0px 0;
-        display: inline-block;
-        border: none;
-        background: #f1f1f1;*/
+        /*        width: 100%;
+                padding: 5px;
+                margin: 0px 0 0px 0;
+                display: inline-block;
+                border: none;
+                background: #f1f1f1;*/
     }
 
     /* Add a background color when the inputs get focus */
     input[type=text]:focus, input[type=password]:focus {
-/*        background-color: #ddd;
-        outline: none;*/
+        /*        background-color: #ddd;
+                outline: none;*/
     }
 
     /* Set a style for all buttons */
@@ -266,7 +266,7 @@
                                     <p id="proname"></p>
                                     <hr>
 
-                                    
+
 
 
 
@@ -276,24 +276,15 @@
                                                 <tr>
                                                     <th>GRN No</th>
                                                     <th>Date :</th>
-                                                    <th>Current Qty :</th>
                                                     <th>Case Type</th>
-                                                    <th>Load Qty</th>
-                                                    <th>Load </th>
+                                                    <th>Current Qty :</th>
+                                                    <th>Load Qty</th>                                                 
                                                 </tr>
                                             </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>10</td>
-                                                    <td>2018-5-14</td>
-                                                    <td>20.5</td>
-                                                    <td>12</td>
-                                                    <td><input type="text" class="form-control" name=""/></td>
-                                                    <td><button class="btn btn-sm btn-info">Load</button></td>
-                                                </tr>
+                                            <tbody id="tblMore">
 
-                                                
-
+                                             
+                                               
                                             </tbody>
                                         </table>
                                     </div>
@@ -303,7 +294,7 @@
 
                                 <div class="clearfix col-sm-12">
                                     <button type="button" onclick="document.getElementById('id01').style.display = 'none'" class="cancelbtn ">Cancel</button>
-                                    <button type="submit" class="signupbtn">DONE</button>
+                                    <button id="getall" type="submit" class="signupbtn">DONE</button>
                                 </div>
                         </div>
                         </form>
