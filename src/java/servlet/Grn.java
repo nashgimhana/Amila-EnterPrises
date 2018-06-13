@@ -21,6 +21,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class Grn extends HttpServlet {
 
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
@@ -52,8 +53,7 @@ public class Grn extends HttpServlet {
 
                 int saveGrnLog = new stockcontroller().saveGrnLog(saveGrn, prname, buyprice, qty, dicount, prtot, casetype);
                 if (saveGrnLog != 0) {
-                    
-                    
+
                 } else {
                     System.out.println("fuck uuu");
                 }
