@@ -58,12 +58,12 @@ public class SelectProduct extends HttpServlet {
                     pojo.VehicleStock vs = list.get(0);
                     jo.put("cqty", vs.getCurrentStock());
                     jo.put("tot", vs.getCurrentStock() * product.getCurrentPrice());
-                }
-                else{
+                } else {
                     jo.put("cqty", 0);
                     jo.put("tot", 0);
                 }
 
+                jo.put("proname", product.getName());
                 jo.put("cprice", product.getCurrentPrice());
                 ja.put(jo);
 
