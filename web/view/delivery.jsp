@@ -270,7 +270,7 @@
 
 
 
-                                    <div id="selectpack"class="card-content table-responsive col-sm-12" style="overflow-y:scroll; height:350px;  display:block;">
+                                    <div id="selectpack" class="card-content table-responsive col-sm-12" style="overflow-y:scroll; height:350px;  display:block;">
                                         <table class="table table-bordered">
                                             <thead>
                                                 <tr>
@@ -296,8 +296,8 @@
                                     <button type="button" onclick="document.getElementById('id01').style.display = 'none'" class="cancelbtn ">Cancel</button>
                                     <button id="getall" type="submit" class="signupbtn">DONE</button>
                                 </div>
-                        </div>
                         </form>
+                        </div>
 
 
 
@@ -307,7 +307,7 @@
                         <div class=" row">
                             <div  class="col-sm-5 ">     
 
-                                <div id="selectpack"class="card-content table-responsive col-sm-12" style="overflow-y:scroll; height:350px;  display:block;">
+                                <div id="selectpack" class="card-content table-responsive col-sm-12" style="overflow-y:scroll; height:350px;  display:block;">
 
 
 
@@ -334,7 +334,7 @@
                                 <h6>Vehicle No :<Strong id="vid"><%out.print(hm.get("vn"));%></strong>   </h6>
                                 <h6>Route Name : <% out.print(hm.get("root"));  %></h6>
                                 <br>
-                                <h4>Product Name</h4>
+                                <h4 id="pronameis"></h4>
                                 <h5>Current Stock In Vehicle : <strong id="cstoc"></strong></h5>
                                 <h5>Current Unit Price : <strong id="uprice"></strong></h5>
                                 <h5>Current Total Price : <strong id="totp"></strong> </h5>

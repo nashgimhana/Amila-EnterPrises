@@ -34,6 +34,7 @@ $("#ptbody").on("click", ".btn-sm", function () {
     var uprice = $('#uprice');
     var totp = $('#totp');
     var btnmor = $('#morbtn');
+    var pronameis = $('#pronameis');
 
     var ajx = new XMLHttpRequest();
     ajx.open("POST", "../SelectProduct?pname=" + y + "&vid=" + vid, "true");
@@ -45,7 +46,9 @@ $("#ptbody").on("click", ".btn-sm", function () {
             var cqty = x[0].cqty;
             var tot = x[0].tot;
             var cprice = x[0].cprice;
+            var proname = x[0].proname;
             // alert(cqty +" "+tot+" "+cprice);
+            pronameis.html(proname);
             cstoc.html(cqty);
             uprice.html(cprice);
             totp.html(tot);

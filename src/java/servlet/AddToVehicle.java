@@ -66,6 +66,7 @@ public class AddToVehicle extends HttpServlet {
                             jo.put("date", grnLog.getGrn().getDate().toString());
                             jo.put("case", grnLog.getCaseType().getType());
                             jo.put("load", 0);
+                            jo.put("vehiclNO", 0);
                             ja.put(jo);
                             x++;
                         }
@@ -79,16 +80,13 @@ public class AddToVehicle extends HttpServlet {
 
             if (request.getParameter("json") != null) {
                 request.getParameter("json");
-                
                 System.out.println(request.getParameter("json"));
-                
                 try {
                     JSONArray joo = new JSONArray(request.getParameter("json"));
                     for (int i = 0; i < joo.length(); i++) {
                         JSONObject ob  = joo.getJSONObject(i);
                         System.out.println(ob.get("load"));
                     }
-                    
                 } catch (JSONException ex) {
                     Logger.getLogger(AddToVehicle.class.getName()).log(Level.SEVERE, null, ex);
                 }
